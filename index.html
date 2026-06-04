@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fun Art Festival | SMK Raden Umar Said</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Hanken+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hard-shadow-primary {
+            box-shadow: 8px 8px 0px 0px #303CC2;
+        }
+        .active-slide-shadow {
+            box-shadow: 0px 20px 40px -10px rgba(161, 59, 0, 0.3);
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            cursor: grab;
+        }
+        .carousel-container:active {
+            cursor: grabbing;
+        }
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            width: max-content;
+        }
+        .slide-item {
+            flex-shrink: 0;
+            width: 320px;
+            height: 500px;
+            padding: 0 1rem;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+        }
+        @media (min-width: 768px) {
+            .slide-item {
+                width: 700px;
+                height: 450px;
+            }
+        }
+        .slide-inactive {
+            opacity: 0.5;
+            filter: blur(4px) scale(0.9);
+        }
+        .slide-active {
+            opacity: 1;
+            filter: blur(0) scale(1);
+            z-index: 10;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        @keyframes bubble {
+            0% { transform: translateY(0) scale(1); opacity: 0; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-float-slow { animation: float 8s ease-in-out infinite; }
+        .animate-bubble { animation: bubble 4s linear infinite; }
+        
+        .ocean-gradient {
+            background: linear-gradient(180deg, #fff8f6 0%, #e0e0ff 100%);
+        }
+        .bubbly-button {
+            border-radius: 9999px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .bubbly-button:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(161, 59, 0, 0.4);
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+                column-gap: 1.5rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#f8ddd3",
+                        "on-tertiary-fixed-variant": "#2632ba",
+                        "on-tertiary-fixed": "#000568",
+                        "surface-tint": "#a53d00",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#fff8f6",
+                        "surface-container-high": "#fee2d8",
+                        "primary-fixed": "#ffdbcd",
+                        "surface": "#fff8f6",
+                        "primary-fixed-dim": "#ffb597",
+                        "inverse-on-surface": "#ffede7",
+                        "tertiary-fixed": "#e0e0ff",
+                        "surface-dim": "#efd4cb",
+                        "secondary": "#895100",
+                        "outline": "#8e7165",
+                        "secondary-container": "#fea12a",
+                        "background": "#fff8f6",
+                        "primary-container": "#c94c00",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#5a4137",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "tertiary-container": "#5a66ea",
+                        "on-secondary-fixed": "#2c1600",
+                        "on-secondary-fixed-variant": "#683c00",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#3d2d26",
+                        "on-primary-fixed-variant": "#7e2c00",
+                        "on-secondary-container": "#693d00",
+                        "secondary-fixed-dim": "#ffb86c",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#bec2ff",
+                        "on-surface": "#261812",
+                        "surface-variant": "#f8ddd3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container-low": "#fff1ec",
+                        "inverse-primary": "#ffb597",
+                        "primary": "#a13b00",
+                        "surface-container": "#ffe9e2",
+                        "outline-variant": "#e3bfb1",
+                        "on-background": "#261812",
+                        "tertiary": "#3f4bd0",
+                        "on-primary-fixed": "#360f00",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdcbc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "1.5rem",
+                        "xl": "2rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "container-width": "1280px",
+                        "grid-gutter": "24px",
+                        "grid-margin": "24px",
+                        "section-gap-mobile": "80px",
+                        "section-gap-desktop": "160px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-bold": ["Hanken Grotesk"],
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["20px", {"lineHeight": "32px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "700"}],
+                        "display-lg": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "800"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.01em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden ocean-gradient">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-white/60 dark:bg-surface-dim/60 backdrop-blur-xl border-b border-primary/10 shadow-sm rounded-b-[2rem]">
+<div class="flex justify-between items-center px-grid-margin py-4 max-w-container-width mx-auto">
+<div class="flex items-center gap-3 group cursor-pointer">
+<img alt="FAF Logo" class="h-14 w-auto object-contain hover:scale-110 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK8qjehjoX46-3GQv05oGBoA-ttPRF5QIVyb7bSLeX0BwDFMkYZG0tlLLe1KG1_wSZWla7MkW4C98YEwk9bda1TTCiENcQmtMtOpRhaiUWFmW2RlEHhFwzRZZGYPxXIHNA_h_cD3GPzUqlULAh0OIPYEJXFW5TOOOij4987BabENHzzdbkYVR9IqeHFct1m7FunSVDx_ALqiIEqF9Sn05AvAXg_-K_GHriGlWsPU59o27Mu4i1dCKitXHYP_E0pBPPGUdFccOVyC0"/>
+<span class="font-headline-md text-headline-md font-black text-primary tracking-tight">FAF</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-primary border-b-4 border-primary rounded-full px-2 pb-1 font-label-bold text-label-bold transition-all" href="#">Beranda</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#">Acara</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#">Sponsor</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#">Tentang Kami</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-bold text-label-bold" href="#">Kontak</a>
+</nav>
+<div class="flex items-center gap-4"></div>
+</div>
+</header>
+<main>
+<!-- Hero Section with Slideshow -->
+<section class="pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden relative">
+<!-- Marine Decorative Elements -->
+<img alt="bubble" class="absolute top-20 left-10 w-20 h-20 opacity-40 animate-bubble" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArL0KsI_NdaUjt9ZGnurJlJUE9w6vlu6JvVSWk9RfXfksoQtiJGxv5-Wm8Rq4A4EaH6SKPi0PJr2ic075ToWiGxQGAmdTnGrgFnOCbWJKFEIDsd36cxbvVxLZfILQAvJuiFY59t55Yust4-wSL1g_bm1ZvfaaQCth90Ju8LTUqV4ayeb3l4XL_MNTCZtAyDPpfICfHPqd_XBefUcEjFcbvVh7iTc6LMiTYFQe1eEz9WFYtHrUdWYge0olK_p1xg1p8o_C1SAn29ro"/>
+<img alt="bubble" class="absolute top-40 right-20 w-16 h-16 opacity-30 animate-bubble" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFAp2wU0cNdXoTWLPoYGWIm30EpoR3gZwhLdJeq5D7liyyK52GnSmSq5Yqd89tqQY35oPefSOl1aUo2N868Nmd8dB9aZdXaEcLhaP6e7zELfLIUv6WIa57C4mYaafmGFE2gFh2Eu3OtOsIz-Ew1fhYAexaDlcimbYrwGBGAkmT090n_5-At1K14jwE_p5eiqk9RzHAjSQ8rL6Kd8c8j9pVmwozGwXoshVqdEhCK4nula903riitA8KSZFo_EeVc8KWW0aIUEL7Uqw" style="animation-delay: 2s"/>
+<img alt="jellyfish" class="absolute bottom-20 left-[5%] w-32 h-32 animate-float opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChjHLrNqWgG3VJsmtyeWDenEtURO1tugSuZe1zUJ5I6WTJ_yFWx7dlAUHmASJyUunY9zVGy8_DX-NDJoMLEsi7UfhwFqEnKdbyCYfadV-6-DMdCDAM4drYv1OTrs0KxJGoRIYnJWqcqrNO6kGmwls-PTMuF5Ub7MXoBOy1YEMxwHYsVPkR8qi72MTttMfibMee94ROKgdIlFjpzdK9Sf9JcBOI-_rrYeY-7hSuPp0WYgw5IRAQ2i0UMhUGi_LqAMdlKo62c9A7gVY"/>
+<img alt="fish" class="absolute top-60 right-[10%] w-16 h-16 animate-float-slow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqQeHakaD0JE9wXmEJDZeojcOJ9ZpfniZMMbJWtgg7hjMhyxvKnaAZdie_0QrWMgbTe6hchnWeF48K3j0iUXtCnXof4a3wRjw46yMrZBnm2plvre1ILJz6lP_bgsSKIMAswpN-m6nHmevCwMCCGpvQhHjRuIrxgv1rfwwhThwGssfbXFPDFENTaYBNbAvhzV66eMoarj0eThP_2VQ67PBf4GZ0CdrfuIee2Z8ZKBQa1esN_2Tq-XnB3fXK4zvZ-Ph8hTPb3KUulxY"/>
+<div class="max-w-container-width mx-auto px-grid-margin mb-12 flex items-center justify-between relative">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Kreativitas Dimulai <span class="text-primary relative inline-block">Di Sini<img alt="mini fish" class="absolute -top-6 -right-10 w-8 h-8 rotate-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqQeHakaD0JE9wXmEJDZeojcOJ9ZpfniZMMbJWtgg7hjMhyxvKnaAZdie_0QrWMgbTe6hchnWeF48K3j0iUXtCnXof4a3wRjw46yMrZBnm2plvre1ILJz6lP_bgsSKIMAswpN-m6nHmevCwMCCGpvQhHjRuIrxgv1rfwwhThwGssfbXFPDFENTaYBNbAvhzV66eMoarj0eThP_2VQ67PBf4GZ0CdrfuIee2Z8ZKBQa1esN_2Tq-XnB3fXK4zvZ-Ph8hTPb3KUulxY"/></span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-md">Rasakan gelombang seni dan kreativitas terbaik di Fun Art Festival!</p>
+</div>
+<div class="hidden lg:block relative">
+<div class="absolute -inset-8 bg-primary/10 rounded-full blur-2xl animate-pulse"></div>
+<img alt="FAF Logo Mascot" class="w-48 h-48 transform animate-float z-10 relative" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK8qjehjoX46-3GQv05oGBoA-ttPRF5QIVyb7bSLeX0BwDFMkYZG0tlLLe1KG1_wSZWla7MkW4C98YEwk9bda1TTCiENcQmtMtOpRhaiUWFmW2RlEHhFwzRZZGYPxXIHNA_h_cD3GPzUqlULAh0OIPYEJXFW5TOOOij4987BabENHzzdbkYVR9IqeHFct1m7FunSVDx_ALqiIEqF9Sn05AvAXg_-K_GHriGlWsPU59o27Mu4i1dCKitXHYP_E0pBPPGUdFccOVyC0"/>
+</div>
+</div>
+<!-- Carousel Wrapper -->
+<div class="carousel-container" id="carouselContainer">
+<div class="carousel-track items-stretch" id="carouselTrack">
+<!-- Slides are managed by JS -->
+</div>
+</div>
+</section>
+<!-- Bento Grid Feature Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low relative overflow-hidden">
+<img alt="Coral" class="absolute -bottom-10 -left-10 w-48 h-48 rotate-12 opacity-60 pointer-events-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ouHav3MbGK-Vc9BBLqvPTvlBf6EF1SqtliVBjL14N9jcNktGlnRN0kvTxoed8v_Vu3sLqJ-UX5xX3sc6AIlpX02vo0KIWj1E-ZGOok5JifuKnelrxzdsF55Zyss4BsuPtEKX7qC5nBe5DU5v16onKqwdxgqiqIt0yhuHltmxU0etef_f-zChxKm0sDWVuVjk2j0uIZICAI9kV2q7X-JS1N_99tQ2DJHj5-K69n-GgzMgpprbclIt8xUf1makdmUe-Cd1_Qx12Ls"/>
+<img alt="Coral" class="absolute -bottom-10 right-0 w-64 h-64 -rotate-6 opacity-60 pointer-events-none" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKi-LbNbRsOLQFAQA4xrwoDwJotSwyRqcl5IVfrtyiSqTldC1hcHIkVmlwDgx8Dzp4xPI1H09IR2-XZ9-TDfvf3A_OnWOTh9cgruwQeD3B9Any3-SEKuEodTQ8q1-T0rYf-jVaquzRyhA5gx47AnalkzMiWZfiFzAOSkWnmX8FhotgUIkP4_Uz0GRlWDI9MqQ-W_uT8krTUPuJQ6BlDtv4Uyty2YuS1TiDo1qQUgtudhG46g4pXlE2lMibA5lCXmFL9-uIM9Jk_oY"/>
+<div class="max-w-container-width mx-auto px-grid-margin relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Mengenal Fun Art Festival</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">Lebih dari sekadar festival; kami adalah wadah inspirasi tanpa batas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-grid-gutter h-auto md:min-h-[650px]">
+<!-- Tentang FAF with Image 3 -->
+<div class="md:col-span-2 md:row-span-2 bg-white rounded-[3rem] p-10 border-4 border-primary/5 flex flex-col justify-between group hover:shadow-2xl transition-all overflow-hidden relative">
+<div class="z-10">
+<img alt="fish icon" class="w-16 h-16 mb-6 group-hover:rotate-12 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_c6DFKAOmBZrkMOZrQEkZ3dhe0OrUR_fyQWAvc9ByBsVwt11JPikH3NwjUEnxiv_aMaq7RZzYVEvfdDJi-v7hRr621RfYQXVhwOzF6m4DAd4a3q92qMes9lNZRqwwdBktrvZoZp7rYnozt29aZbEbpFOP4cUbOR1hueJqt5pC-44RD2ILqskWZhAgz81X2HIIAMPKZbN7Eu7EC4nKA4b2ifBmEwaeCfSfzVxBjc2uqKAHlR1MQ6DXMFSY7bZx3C05PjS7PeM4jCI"/>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4">Tentang FAF</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Fun Art Festival (FAF) adalah perayaan tahunan SMK Raden Umar Said (RUS) untuk menghidupkan kreativitas, menginspirasi jiwa, dan memperkaya pengalaman dengan inovasi yang mendukung perubahan positif.</p>
+</div>
+<div class="relative mt-8 rounded-2xl overflow-hidden">
+<img alt="FAF atmosphere" class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr3PEl33OQ6Lpp5-nGUBCez0vb9cG7WfgxvxZo63_944q-yVrbd4S3Bg98doCd8GLSL7y4tNwOCyzQ2-Ux6w5FEZ1I68yUKTUBjaL3D-0kisMZd5oNPAAqGcyzIHp1FOxqINsFRc4J0EwhUVO4fsTLnLj1yOghJCG2GozJvyg2mEUCBzmvsKeiEg-esajLuT3MmdfpBsPi2P7YljsOGZ5QRkcmyiaSQbD5jlIUXztNuQwMaQZ2XEUpDsI7gKN1hXJyEVHFJb7fHqo"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+</div>
+<!-- Tema: 21st Wave with Image 2 -->
+<div class="md:col-span-2 bg-gradient-to-br from-secondary-container to-orange-400 rounded-[3rem] p-10 flex items-center gap-6 group hover:translate-y-[-8px] transition-all border-4 border-white/20">
+<div class="flex-1 text-on-secondary-container">
+<h3 class="font-headline-md text-headline-md mb-2">Tema: 21st Wave</h3>
+<p class="font-body-md text-body-md opacity-90">'Surfing the art to celebrate 21st wave of SMK RUS'. Merayakan harlah ke-21 dengan semangat inovasi dan dedikasi pada bakat seni generasi muda.</p>
+</div>
+<img alt="Wave Icon" class="w-32 h-32 bg-white/30 rounded-full p-2 animate-float object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5wTaF6MvX_2_jLUqeporB-GodBXeDVZwiWSDHdcFBXConetS7T_hkrVoaWVQRLhkndnOIDJv1DVRftzRC5ykHr7bW5Dm9ncBc_nr7gGo0dz3Hw82U7N2Kz5iG03phN-twev-WjGhUtK7uAQ0cLZFA7CqSnKE8F50bAge9uOnrZNnLRg8QLTfBmd_OmO0dT8-LZixhieRAyJGlTv7EUt8Xa99kH2Pbs-JzcyjJihQd_k1TJJR_u4cdXFA0_R89t9mJ_zium7dpLxM"/>
+</div>
+<!-- Jejak Karya -->
+<div class="md:col-span-2 bg-tertiary rounded-[3rem] p-8 border-4 border-white/20 flex flex-col justify-center text-white group hover:rotate-1 transition-transform shadow-lg">
+<div class="flex items-center gap-6">
+<img alt="Jellyfish" class="w-16 h-16 animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrJNT40-mTAs5Kf934DrVWhpO6Ggp_DwVmEeJh1cZSnqLykaqaoLFh7iuf8TJETzg6HL2qNlM3rZoQU73RSuWr-duUmEEky0F0EUqKHjZ2PC7nLjpdUJtJu3JR0rNcSGdFP55SYJ-TnnbdxeAKLF-zUUh2UxkWvTqaL7SAt1RfATga-_DMNWC5Al3MOaXblcDvyYOcJeqqi66gB6I4mqK47-K8fyXYbKHOoZM4gc5I6aAJkz8B9WpiR5GTlhXw-J6fTkZFesXt-dc"/>
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Jejak Karya</h4>
+<p class="font-body-md opacity-90">FAF telah diselenggarakan dari tahun ke tahun sebagai wadah bagi siswa untuk berkembang, berinovasi, dan berkarya yang berdampak bagi masyarakat.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Past Highlights Section -->
+<section class="py-section-gap-mobile md:py-section-gap-desktop bg-surface relative overflow-hidden">
+<div class="absolute top-10 left-[15%] w-12 h-12 opacity-30 animate-bubble" style="animation-duration: 5s"></div>
+<div class="absolute bottom-20 right-[10%] w-20 h-20 opacity-20 animate-bubble" style="animation-delay: 1s; animation-duration: 7s"></div>
+<div class="max-w-container-width mx-auto px-grid-margin relative z-10">
+<div class="text-center mb-16">
+<span class="inline-block px-4 py-1.5 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-bold text-sm uppercase tracking-wider mb-4">Nostalgia</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Keseruan Tahun Lalu</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4">Saksikan gelombang keseruan dari edisi-edisi sebelumnya.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Image 1: Musical performance -->
+<div class="group relative overflow-hidden rounded-[2rem] border-4 border-white shadow-xl hover:-translate-y-2 transition-all duration-500">
+<img alt="FAF Session Highlight - Musical Performance" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkJPze45Q36s-YouDmchUAHtawTF-oD6Jg1pWgRzt9jvzXSd7CgVn359M1xLSriXQMt14-HhsmPFrY-taLp4p7mhk1smKM9WP_uk2kQeB6opDgYzzHPI3GQN1brMODH4FDW41kPIJOSEvDKRk0SJwlWsG3_jVpZKf-fOJF2oeo-qRklwFRzp77QJtD33Xk-nAWkY5CJ97UDVV3kAGcp7AMgAuCaqekEEk7dA-hoiyw16bmj1lC2ftyF3fTtcCDHNSA3S2FMVFN0sY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white font-label-bold">Pertunjukan Musik</p>
+</div>
+</div>
+<!-- Image 2: Ceremonial doves -->
+<div class="group relative overflow-hidden rounded-[2rem] border-4 border-white shadow-xl hover:-translate-y-2 transition-all duration-500">
+<img alt="FAF Session Highlight - Ceremonial Doves" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9oxuJqmMo9VBFza5De0qyWlWWIT2gAuKCOUKFNQLkpODVJnPMmVkm6vs2yM4FzxxYhfs13EoOgiAIAkiLPhHPkTH_-9-XN--eDgqHgdd2GX14DN8z28ZE2048y_J91xQMa9yA7_ws0E69rsGrJI2W56BeH8L5vsNZXufdRVi4ZzOtg-eW5iu2bKlSnuo6_9wziu6RyPN3Xn6TisaOcB4DeQz5Q_W0qioa25X0vNMMuM4X3Wsn8RmLC-HqPHjARbPKvqYcI9euuyo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary-container/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white font-label-bold">Upacara Simbolis</p>
+</div>
+</div>
+<!-- Image 3: Large group on stage -->
+<div class="group relative overflow-hidden rounded-[2rem] border-4 border-white shadow-xl hover:-translate-y-2 transition-all duration-500">
+<img alt="FAF Session Highlight - Group Photo" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu5yGYK3yhfbwOOjIcI1rY4WFvfhxHkKCc6xYbTdYGfxFnnN4UdWzqKYDK6LneH2nfZiAVDnfpJf_mZCm8mXJQQbAfjrJmiDj-GbounvuJEumva_I6jfLwV78DBWgVYLrG8KK1S3WKP2R1JvZiZif0xS8z8_ZEHJ0m0OYcJaPto78rxENHBxQ5C4Rk8DIqY2XQLKLaqeojKCq-C5f5WnEw2ui3H42z_kJWIjMebTBDuPn-lE8VyuStkJA64VsDiw6EAkN13hSZ5DM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white font-label-bold">Foto Bersama</p>
+</div>
+</div>
+<!-- Image 4: Audience/students -->
+<div class="group relative overflow-hidden rounded-[2rem] border-4 border-white shadow-xl hover:-translate-y-2 transition-all duration-500">
+<img alt="FAF Session Highlight - Audience" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH_VWsqpeW6qmvqOfzvOfFoPrRYYsPQ1yxsMtjiTGmLCntNCA3696jWRnx8MRn4-SzzvRObeHzIgezB-l1z1sxEqI-4zjrJcMSBix41mrV-y4bhQDLNQSpR04Yf12fSRuanlD7EurRh3oswOsBl0muGdrVhfkA-Loqgsn9VZixl5mXRPCirwdBHH8g7CMeFHL9i4T2wYCz6IN1FWBvOOArBQiRyyrpbaNKQFn2ql8o6RD7hL7BMv419Ydsdkq9CYV_cbKiL4Jade8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white font-label-bold">Keseruan Penonton</p>
+</div>
+</div>
+<!-- Image 5: Traditional dance -->
+<div class="group relative overflow-hidden rounded-[2rem] border-4 border-white shadow-xl hover:-translate-y-2 transition-all duration-500">
+<img alt="FAF Session Highlight - Traditional Dance" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_QjcFBdYdHuh-2X5aUY1iWb1PAxx92v7EOOKlC00hJTY8WKPI3VjuZcYzTCxLxJvXLy2BpJ1dTvI5-8TQsgT-cflTQlIj_JmmkNqKB1-6Wsk2gMMY0cbySy2z-lG3RqLTULe2tmn-NjbPEC8PwZMjwI8k--Hipbi_J17a8CJNAsXAd1XwYzT8WXGiw3cgEPqDWzOKKIABrDXM4YP9mwlLDzaWw8FoiI6-LteqTMxIipjIfAsk4834Iu4s6IpOtD4hnQHG1rpW-CE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-secondary-container/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white font-label-bold">Tari Tradisional</p>
+</div>
+</div>
+<!-- Image 6: Singing performance -->
+<div class="group relative overflow-hidden rounded-[2rem] border-4 border-white shadow-xl hover:-translate-y-2 transition-all duration-500">
+<img alt="FAF Session Highlight - Singing Performance" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEm-GSPrIqi7tVviJkvimeBLLPDGEDr4tXzOmxFH-Igpo7T1WcRFmTqnVQu1b5Ne0Tfw-b2Jf9iGBfjsTxostUhtwONY_cU-KQaiLEQul-13BXNvka1H6b0Rc40QrWt8Pw5E5oVNapQ5wjcIKMRT72xyWYQlBvmdbqrhnYoArHU_IZ7_lOltiAbfQCiM22YzDoS5kmGFHCRe2fWc9gvU9eG2XCwmM1XOsc9EE2RkEi7wrkdtqfx2R6F3a9KtW96xptx84DfikfSYA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+<p class="text-white font-label-bold">Penampilan Vokal</p>
+</div>
+</div></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 bg-white relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-4 bg-gradient-to-b from-inverse-surface/10 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 flex justify-around items-end opacity-40 pointer-events-none">
+<img alt="coral" class="w-32 h-32" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3ouHav3MbGK-Vc9BBLqvPTvlBf6EF1SqtliVBjL14N9jcNktGlnRN0kvTxoed8v_Vu3sLqJ-UX5xX3sc6AIlpX02vo0KIWj1E-ZGOok5JifuKnelrxzdsF55Zyss4BsuPtEKX7qC5nBe5DU5v16onKqwdxgqiqIt0yhuHltmxU0etef_f-zChxKm0sDWVuVjk2j0uIZICAI9kV2q7X-JS1N_99tQ2DJHj5-K69n-GgzMgpprbclIt8xUf1makdmUe-Cd1_Qx12Ls"/>
+<img alt="coral" class="w-48 h-48 mb-[-20px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKi-LbNbRsOLQFAQA4xrwoDwJotSwyRqcl5IVfrtyiSqTldC1hcHIkVmlwDgx8Dzp4xPI1H09IR2-XZ9-TDfvf3A_OnWOTh9cgruwQeD3B9Any3-SEKuEodTQ8q1-T0rYf-jVaquzRyhA5gx47AnalkzMiWZfiFzAOSkWnmX8FhotgUIkP4_Uz0GRlWDI9MqQ-W_uT8krTUPuJQ6BlDtv4Uyty2YuS1TiDo1qQUgtudhG46g4pXlE2lMibA5lCXmFL9-uIM9Jk_oY"/>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-center px-grid-margin max-w-container-width mx-auto gap-12 relative z-10">
+<div class="flex flex-col items-center md:items-start gap-4">
+<div class="flex items-center gap-3">
+<img alt="logo" class="w-12 h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAK8qjehjoX46-3GQv05oGBoA-ttPRF5QIVyb7bSLeX0BwDFMkYZG0tlLLe1KG1_wSZWla7MkW4C98YEwk9bda1TTCiENcQmtMtOpRhaiUWFmW2RlEHhFwzRZZGYPxXIHNA_h_cD3GPzUqlULAh0OIPYEJXFW5TOOOij4987BabENHzzdbkYVR9IqeHFct1m7FunSVDx_ALqiIEqF9Sn05AvAXg_-K_GHriGlWsPU59o27Mu4i1dCKitXHYP_E0pBPPGUdFccOVyC0"/>
+<span class="font-headline-md text-headline-md text-primary">FAF</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant text-center md:text-left max-w-xs">© 2024 Fun Art Festival SMK Raden Umar Said. Hak cipta dilindungi undang-undang.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-10">
+<a class="text-on-surface-variant hover:text-primary transition-transform hover:scale-110 font-label-bold" href="#">Privasi</a>
+<a class="text-on-surface-variant hover:text-primary transition-transform hover:scale-110 font-label-bold" href="#">Syarat &amp; Ketentuan</a>
+<a class="text-on-surface-variant hover:text-primary transition-transform hover:scale-110 font-label-bold" href="#">FAQ</a>
+<a class="text-on-surface-variant hover:text-primary transition-transform hover:scale-110 font-label-bold" href="#">Pers</a>
+</nav>
+<div class="flex gap-4">
+<a class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</a>
+<a class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+    const originalSlidesData = [
+        {
+            tag: "Ayo Berkolaborasi!",
+            title: "Peluang Sponsorship",
+            desc: "Jadilah mitra kami dan selami audiens masif kami. Kembangkan brand Anda dengan energi setinggi samudra.",
+            btnText: "Gabung Sekarang",
+            imgMarkup: `<img alt="Sponsorship" class="w-40 h-40 md:w-64 md:h-64 object-contain animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANJoVHPNFecj7RvnC08Y2uYBmVlrSB4sN7Ij8MSKWFtXmzSgr9aeaDfhdPEvJZfl_8dhBV9XVFvCH_jfKwcmfMxyfXMnstFAcgvdyK4y_dDTdLwxxHjd3wiMIJZJM2-Neb4ieyevQfppAMdyJX0P_9xNl9qJ_4IFaoktT8gulP2R1jJ7PogmHiNpEDRYaYCRN1Cb5Jk0RzK-t0-yHL7UVJ9pQ__Go9WBrVv7O-h5EX-F-9e7TpG6f6Jsy72y2x6Lk5A287ztYybVg"/>`,
+            gradient: "from-primary-container to-primary/80",
+            tagColor: "text-primary",
+            btnStyles: "bg-white text-primary hard-shadow-primary"
+        },
+        {
+            tag: "Gelombang Besar!",
+            title: "Informasi Lomba",
+            desc: "Daftarkan diri Anda untuk kompetisi mendatang. Hadiah hingga total jutaan Rupiah! Tunjukkan bakat terbaikmu.",
+            btnText: "Daftar Sekarang",
+            imgMarkup: `<img alt="Mascot Sailor" class="w-40 h-40 md:w-64 md:h-64 object-contain animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5wTaF6MvX_2_jLUqeporB-GodBXeDVZwiWSDHdcFBXConetS7T_hkrVoaWVQRLhkndnOIDJv1DVRftzRC5ykHr7bW5Dm9ncBc_nr7gGo0dz3Hw82U7N2Kz5iG03phN-twev-WjGhUtK7uAQ0cLZFA7CqSnKE8F50bAge9uOnrZNnLRg8QLTfBmd_OmO0dT8-LZixhieRAyJGlTv7EUt8Xa99kH2Pbs-JzcyjJihQd_k1TJJR_u4cdXFA0_R89t9mJ_zium7dpLxM"/>`,
+            gradient: "from-tertiary-container to-tertiary/80",
+            tagColor: "text-tertiary",
+            btnStyles: "bg-white text-tertiary hard-shadow-primary"
+        },
+        {
+            tag: "Segera Hadir",
+            title: "Guest Star Spesial",
+            desc: "Nantikan pengumuman besar! Penampil utama kami sedang dalam perjalanan menuju panggung FAF.",
+            btnText: "Pantau Terus",
+            imgMarkup: `
+                <div class="relative w-40 h-40 md:w-64 md:h-64 flex items-center justify-center">
+                    <img alt="Mascot Boat" class="w-full h-full object-contain animate-float z-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArEO6dRtev0e9ON8RSTGa1Q7PUEdHICakeaB8SsiG1U4mP8TtwqoVZ-Vhjm46giTR5pw62ynOfLzNoZMNyituZLk8E537DN6oYyiyHmjoOYOr5j1pH-tu3gOBO1x5Huh7lwb1ZNU0gwnzsGCTkpPidbgf2kOvDIMIOyL51AK7JEJVBSUxE-jXaJkiEoqIdCzuIjFRfJXNLgHZyWKLZZ1gE8kJFUfzedPamAsOWZf-i0hvcr7xygK_gUQZf0VJml0MaBxTxJmMEYNM"/>
+                </div>`,
+            gradient: "from-inverse-surface to-slate-900",
+            tagColor: "text-on-secondary-container bg-secondary-container",
+            btnStyles: "bg-primary text-white shadow-lg"
+        }
+    ];
+
+    const track = document.getElementById('carouselTrack');
+    const container = document.getElementById('carouselContainer');
+
+    let currentIndex = 0;
+    let isTransitioning = false;
+    const totalSlides = originalSlidesData.length;
+    
+    let startX = 0;
+    let isDragging = false;
+
+    function setupSlides() {
+        const slidesToRender = [
+            originalSlidesData[totalSlides - 1],
+            ...originalSlidesData,
+            originalSlidesData[0]
+        ];
+
+        track.innerHTML = slidesToRender.map((slide, i) => `
+            <div class="slide-item cursor-pointer" data-index="${i-1}">
+                <div class="bg-gradient-to-br ${slide.gradient} rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-6 relative overflow-hidden border-4 border-white/30 w-full h-full">
+                    <div class="flex-1 z-10 text-center md:text-left flex flex-col items-center md:items-start h-full">
+                        <span class="bg-white/90 ${slide.tagColor} font-label-bold text-[10px] md:text-xs uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-3 shadow-sm">${slide.tag}</span>
+                        <h2 class="font-display-lg text-2xl md:text-4xl lg:text-5xl text-white mb-4 leading-tight">${slide.title}</h2>
+                        <p class="font-body-md md:font-body-lg text-sm md:text-base text-white/90 mb-6 max-w-sm line-clamp-3 md:line-clamp-none">${slide.desc}</p>
+                        <button class="${slide.btnStyles} font-label-bold px-8 py-3 bubbly-button text-sm md:text-base mt-auto">
+                            ${slide.btnText}
+                        </button>
+                    </div>
+                    <div class="flex-1 flex justify-center items-center z-10 pointer-events-none">
+                        <div class="relative w-full h-full flex justify-center items-center">
+                            <div class="absolute inset-0 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+                            ${slide.imgMarkup}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        currentIndex = 0;
+        updateCarousel(false);
+        
+        const slideElements = Array.from(track.children);
+        slideElements.forEach((el) => {
+            el.addEventListener('click', () => {
+                if(isDragging) return;
+                const targetIndex = parseInt(el.getAttribute('data-index'));
+                currentIndex = targetIndex;
+                updateCarousel(true);
+            });
+        });
+    }
+
+    function updateCarousel(animate = true) {
+        const slideWidth = window.innerWidth < 768 ? 320 : 700;
+        const viewportWidth = window.innerWidth;
+        const centerOffset = (viewportWidth - slideWidth) / 2;
+        
+        const translateX = centerOffset - ((currentIndex + 1) * slideWidth);
+        
+        if (!animate) track.style.transition = 'none';
+        else {
+            track.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            isTransitioning = true;
+        }
+
+        track.style.transform = `translateX(${translateX}px)`;
+
+        const allSlides = Array.from(track.children);
+        allSlides.forEach((slide, i) => {
+            if (i === currentIndex + 1) {
+                slide.classList.remove('slide-inactive');
+                slide.classList.add('slide-active');
+            } else {
+                slide.classList.add('slide-inactive');
+                slide.classList.remove('slide-active');
+            }
+        });
+
+        if (animate) {
+            setTimeout(() => {
+                isTransitioning = false;
+                checkLoop();
+            }, 600);
+        }
+    }
+
+    function checkLoop() {
+        if (currentIndex >= totalSlides) {
+            currentIndex = 0;
+            updateCarousel(false);
+        } else if (currentIndex <= -1) {
+            currentIndex = totalSlides - 1;
+            updateCarousel(false);
+        }
+    }
+
+    container.addEventListener('mousedown', e => {
+        startX = e.pageX;
+        isDragging = true;
+    });
+
+    window.addEventListener('mouseup', e => {
+        if (!isDragging) return;
+        const diff = startX - e.pageX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) currentIndex++;
+            else currentIndex--;
+            updateCarousel(true);
+        }
+        setTimeout(() => isDragging = false, 50);
+    });
+
+    container.addEventListener('touchstart', e => {
+        startX = e.touches[0].pageX;
+        isDragging = true;
+    });
+
+    container.addEventListener('touchend', e => {
+        if (!isDragging) return;
+        const diff = startX - e.changedTouches[0].pageX;
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) currentIndex++;
+            else currentIndex--;
+            updateCarousel(true);
+        }
+        isDragging = false;
+    });
+
+    setupSlides();
+    window.addEventListener('resize', () => updateCarousel(false));
+    
+    setInterval(() => {
+        if(!isDragging && !isTransitioning) {
+            currentIndex++;
+            updateCarousel(true);
+        }
+    }, 6000);
+</script>
+</body></html>
