@@ -1,935 +1,648 @@
-<!doctype html>
+<!DOCTYPE html>
 
-<html class="light" lang="id">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Fun Art Festival | SMK Raden Umar Said</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&amp;family=Hanken+Grotesk:wght@400;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
-      }
-      .hard-shadow-primary {
-        box-shadow: 8px 8px 0px 0px #303cc2;
-      }
-      .active-slide-shadow {
-        box-shadow: 0px 20px 40px -10px rgba(161, 59, 0, 0.3);
-      }
-      .glass-nav {
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-      }
-      .carousel-container {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        cursor: grab;
-      }
-      .carousel-container:active {
-        cursor: grabbing;
-      }
-      .carousel-track {
-        display: flex;
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        width: max-content;
-      }
-      .slide-item {
-        flex-shrink: 0;
-        width: 320px;
-        height: 500px;
-        padding: 0 1rem;
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        display: flex;
-      }
-      @media (min-width: 768px) {
-        .slide-item {
-          width: 700px;
-          height: 450px;
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fun Art Festival 21 | Waves of Creativity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@900&amp;family=Space+Grotesk:wght@700&amp;family=Work+Sans:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#bec2ff",
+                        "secondary-fixed": "#e0e0ff",
+                        "surface-container-high": "#282a2b",
+                        "on-tertiary-container": "#ffad8b",
+                        "secondary-fixed-dim": "#bdc2ff",
+                        "on-tertiary": "#591d00",
+                        "secondary-container": "#2f39a4",
+                        "secondary": "#bdc2ff",
+                        "primary-fixed": "#e0e0ff",
+                        "on-secondary-fixed-variant": "#2f39a4",
+                        "on-background": "#e2e2e2",
+                        "primary-container": "#303cc2",
+                        "on-tertiary-fixed": "#360f00",
+                        "on-secondary-fixed": "#000767",
+                        "surface-variant": "#333535",
+                        "surface-container-lowest": "#0c0f0f",
+                        "error-container": "#93000a",
+                        "inverse-surface": "#e2e2e2",
+                        "on-tertiary-fixed-variant": "#7e2c00",
+                        "tertiary-fixed": "#ffdbcd",
+                        "primary-fixed-dim": "#bec2ff",
+                        "tertiary-container": "#8b3200",
+                        "surface-container-low": "#1a1c1c",
+                        "on-secondary-container": "#a8afff",
+                        "surface-container": "#1e2020",
+                        "on-primary-fixed": "#000568",
+                        "surface-container-highest": "#333535",
+                        "on-surface": "#e2e2e2",
+                        "surface-bright": "#37393a",
+                        "tertiary": "#ffb597",
+                        "tertiary-fixed-dim": "#ffb597",
+                        "on-secondary": "#131e8d",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "outline-variant": "#454654",
+                        "on-primary-container": "#b6bcff",
+                        "surface-tint": "#bec2ff",
+                        "surface-dim": "#121414",
+                        "surface": "#121414",
+                        "outline": "#908fa0",
+                        "inverse-primary": "#424ed2",
+                        "inverse-on-surface": "#2f3131",
+                        "on-primary-fixed-variant": "#2632ba",
+                        "background": "#121414",
+                        "on-surface-variant": "#c6c5d7",
+                        "on-primary": "#000ea4",
+                        "on-error": "#690005",
+                        "festival-navy": "#010D85"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "section-gap": "120px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "label-bold": ["Space Grotesk"],
+                        "display-xl": ["Anybody"],
+                        "body-lg": ["Work Sans"],
+                        "headline-lg": ["Anybody"],
+                        "display-xl-mobile": ["Anybody"],
+                        "body-md": ["Work Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "52px", "fontWeight": "800"}],
+                        "display-xl-mobile": ["64px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
         }
-      }
-      .slide-inactive {
-        opacity: 0.5;
-        filter: blur(4px) scale(0.9);
-      }
-      .slide-active {
-        opacity: 1;
-        filter: blur(0) scale(1);
-        z-index: 10;
-      }
+    </script>
+<style>
+        body {
+            background-color: #010D85;
+            color: #e2e2e2;
+            overflow-x: hidden;
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .liquid-bg {
+            background: radial-gradient(circle at 50% 50%, #010D85 0%, #000767 100%);
+        }
+        .btn-block {
+            background-color: #ffb597;
+            color: white;
+            border: 2px solid transparent;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .btn-block:hover {
+            box-shadow: 6px 6px 0px #303cc2;
+            transform: translate(-3px, -3px);
+        }
+        .parallax-text {
+            white-space: nowrap;
+            font-size: 15rem;
+            opacity: 0.05;
+            position: absolute;
+            z-index: 0;
+            pointer-events: none;
+            will-change: transform;
+        }
 
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px) rotate(0deg);
+        /* Float Animation for Hero Image */
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
         }
-        50% {
-          transform: translateY(-15px) rotate(3deg);
+        .float-animation {
+            animation: floating 6s ease-in-out infinite;
         }
-      }
-      @keyframes float-side {
-        0%,
-        100% {
-          transform: translateX(0px) rotate(0deg);
-        }
-        50% {
-          transform: translateX(20px) rotate(-5deg);
-        }
-      }
-      @keyframes bubble {
-        0% {
-          transform: translateY(0) scale(1);
-          opacity: 0;
-        }
-        50% {
-          opacity: 0.7;
-        }
-        100% {
-          transform: translateY(-120px) scale(1.3);
-          opacity: 0;
-        }
-      }
-      .animate-float {
-        animation: float 6s ease-in-out infinite;
-      }
-      .animate-float-slow {
-        animation: float 8s ease-in-out infinite;
-      }
-      .animate-float-side {
-        animation: float-side 7s ease-in-out infinite;
-      }
-      .animate-bubble {
-        animation: bubble 5s linear infinite;
-      }
 
-      .vector-beach-bg {
-        background:
-          radial-gradient(
-            circle at 100% 0%,
-            rgba(254, 161, 42, 0.1) 0%,
-            transparent 40%
-          ),
-          linear-gradient(180deg, #e0f7fa 0%, #b2ebf2 60%, #ffe9e2 100%);
-      }
-      .bubbly-button {
-        border-radius: 9999px;
-        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      }
-      .bubbly-button:hover {
-        transform: scale(1.1) translateY(-2px);
-        box-shadow: 0 10px 20px -5px rgba(161, 59, 0, 0.4);
-      }
+        /* Scroll Reveal Base */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Particle System Base */
+        #particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            background: rgba(190, 194, 255, 0.2);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            perspective: 1000px;
+        }
+        .carousel-slide {
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .carousel-slide.side {
+            transform: scale(0.8) translateZ(-200px);
+            filter: blur(4px);
+            opacity: 0.6;
+        }
+        .carousel-slide.active {
+            transform: scale(1) translateZ(0);
+            filter: blur(0);
+            opacity: 1;
+            z-index: 10;
+        }
+
+        /* Gallery Hover */
+        .gallery-item {
+            transition: all 0.5s ease;
+        }
+        .gallery-container:hover .gallery-item:not(:hover) {
+            filter: blur(4px) brightness(0.6);
+            transform: scale(0.95);
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            z-index: 20;
+        }
+
+        /* Custom Scrollbar for Gallery */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Timeline Drawing */
+        .timeline-path {
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            transition: stroke-dashoffset 2s linear;
+        }
     </style>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-container-highest": "#f8ddd3",
-              "on-tertiary-fixed-variant": "#2632ba",
-              "on-tertiary-fixed": "#000568",
-              "surface-tint": "#a53d00",
-              "on-secondary": "#ffffff",
-              "surface-bright": "#E0F7FA",
-              "surface-container-high": "#B2EBF2",
-              "primary-fixed": "#ffdbcd",
-              surface: "#E0F7FA",
-              "primary-fixed-dim": "#ffb597",
-              "inverse-on-surface": "#ffede7",
-              "tertiary-fixed": "#e0e0ff",
-              "surface-dim": "#B2EBF2",
-              secondary: "#895100",
-              outline: "#8e7165",
-              "secondary-container": "#fea12a",
-              background: "#E0F7FA",
-              "primary-container": "#c94c00",
-              error: "#ba1a1a",
-              "on-surface-variant": "#5a4137",
-              "on-primary": "#ffffff",
-              "on-primary-container": "#fffbff",
-              "tertiary-container": "#5a66ea",
-              "on-secondary-fixed": "#2c1600",
-              "on-secondary-fixed-variant": "#683c00",
-              "on-error": "#ffffff",
-              "inverse-surface": "#3d2d26",
-              "on-primary-fixed-variant": "#7e2c00",
-              "on-secondary-container": "#693d00",
-              "secondary-fixed-dim": "#ffb86c",
-              "on-tertiary": "#ffffff",
-              "error-container": "#ffdad6",
-              "tertiary-fixed-dim": "#bec2ff",
-              "on-surface": "#261812",
-              "surface-variant": "#f8ddd3",
-              "surface-container-lowest": "#ffffff",
-              "on-tertiary-container": "#fffbff",
-              "surface-container-low": "#B2EBF2",
-              "inverse-primary": "#ffb597",
-              primary: "#a13b00",
-              "surface-container": "#E0F7FA",
-              "outline-variant": "#e3bfb1",
-              "on-background": "#261812",
-              tertiary: "#3f4bd0",
-              "on-primary-fixed": "#360f00",
-              "on-error-container": "#93000a",
-              "secondary-fixed": "#ffdcbc",
-            },
-            borderRadius: {
-              DEFAULT: "1rem",
-              lg: "1.5rem",
-              xl: "2rem",
-              full: "9999px",
-            },
-            spacing: {
-              base: "8px",
-              "container-width": "1280px",
-              "grid-gutter": "24px",
-              "grid-margin": "24px",
-              "section-gap-mobile": "80px",
-              "section-gap-desktop": "160px",
-            },
-            fontFamily: {
-              "body-lg": ["Hanken Grotesk"],
-              "body-md": ["Hanken Grotesk"],
-              "label-bold": ["Hanken Grotesk"],
-              "display-lg": ["Montserrat"],
-              "headline-md": ["Montserrat"],
-              "headline-lg-mobile": ["Montserrat"],
-              "headline-lg": ["Montserrat"],
-            },
-            fontSize: {
-              "body-lg": ["20px", { lineHeight: "32px", fontWeight: "400" }],
-              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-              "label-bold": ["14px", { lineHeight: "20px", fontWeight: "700" }],
-              "display-lg": [
-                "80px",
-                {
-                  lineHeight: "90px",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "900",
-                },
-              ],
-              "headline-md": [
-                "32px",
-                { lineHeight: "40px", fontWeight: "700" },
-              ],
-              "headline-lg-mobile": [
-                "32px",
-                { lineHeight: "40px", fontWeight: "800" },
-              ],
-              "headline-lg": [
-                "48px",
-                {
-                  lineHeight: "56px",
-                  letterSpacing: "-0.01em",
-                  fontWeight: "800",
-                },
-              ],
-            },
-          },
-        },
-      };
-    </script>
-  </head>
-  <body
-    class="bg-background text-on-background font-body-md overflow-x-hidden vector-beach-bg"
-  >
-    <!-- TopNavBar -->
-    <main>
-      <!-- Hero Section -->
-      <section class="pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden relative">
-        <!-- Stylized Vector Beach Background Elements -->
-        <div
-          class="absolute top-40 left-0 w-full overflow-hidden pointer-events-none opacity-40 z-0"
-        >
-          <img
-            alt="Wave"
-            class="w-full h-auto min-w-[1400px] transform translate-y-12"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcOQVjBirN03OkntJdwGRf6QZI5LREb30fUg2CBgtglRLYn7-Ht-zC0WGRhq1BSk24MGrzoUX6SWJVACfpOB1IXKAlJp2FI1yzFb-Cavrpep0_kdvcy45rgzyXi7wJoevjwUNAv9TelIbjA2UeMfNTaJRzNlFyWDvZAkgbjeXW57qVoXQUyPQEHl1p0t4X1uE4Dh5J6FdgBvZKEvgnwQNdpX4dMTizq7QVw8TwH3AwxuQFEfI5W__FWNC-m1F2wXUq8HuNY14lPCg"
-          />
-        </div>
-        <!-- Abstract Accents & Marine Elements -->
-        <img
-          alt="Abstract Accent"
-          class="absolute top-24 left-[10%] w-32 h-32 opacity-20 animate-float pointer-events-none"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Z-DUqxLfdAU111Hj9e97-RBrvRrdqnIkIxOF5CucEqX0jVhj3WkSSo95yPxTc0Z7jFa0VPgICJkMQEis_pxNa2gfycqMiWHXSzNQ0B1cylIR7EBPNXTr54LubzjJ06hPJEOZqlrFTlf4RAF6jj7uiEGp0go28Bi74goUm4nF763QTu689AFyhazd-loyYvbLY8w7OSj0TZsa9fIAMLSdNwT6eBPGm2R0FnKkPMbJMpm2-dennfWqMfSq1fqlJhZWqKiqAMrrvGo"
-        />
-        <img
-          alt="Abstract Accent"
-          class="absolute top-1/2 right-[5%] w-40 h-40 opacity-15 animate-float-side pointer-events-none"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKCCM6Apht9zTCjjKB_e1XggAN3YJYqc2DTKbiRYJGHWkC6H9a4ZMrE6st2RoGYcL1T1dHGBTg4fdYiVpJWYg8bsBW7wjND25gEbApnPq1vShpcieyi0UExNvtNRLJ96JUEzFfijvYyXx1mo8DCU0Rcfc82OXnshrR9F098mZpaUxS5WR9dbuFN4Mskt1DxFz3NR0jrqI_4VaTavK6z8dHVWZCKyy3ICoqWdGwFdW1N0l4Ei2uMYiyuNyemgKyUPepDaBnh5lFrLs"
-        />
-        <img
-          alt="Bubble"
-          class="absolute bottom-20 left-[15%] w-12 h-12 opacity-40 animate-bubble"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMW9ub4SXLZo3iCqV2aylRdZPk70o1gMkMm_Ocq7cxW94kO9BL0r8zDr8UJ_Yc9kLaTgOf0-AaIdQddIxdWgargJIkfW90-tdg85WNG2RiYdnP-uEXc0PtAqP1Kpf_kw2ywCQab9B5i_434ll88VDZ58_qT7WSy3xrEaC1DfbqElhVelRaGVGsGKODvfGoze9D2t6hUHBUjrf-OrT7Uzjx380tAUsIEAbVIqmEkSMxenlL4YzsMoHZD-fMYi33FLis6TZkLzJpTDA"
-        />
-        <img
-          alt="Bubble"
-          class="absolute bottom-40 right-[20%] w-8 h-8 opacity-30 animate-bubble"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMW9ub4SXLZo3iCqV2aylRdZPk70o1gMkMm_Ocq7cxW94kO9BL0r8zDr8UJ_Yc9kLaTgOf0-AaIdQddIxdWgargJIkfW90-tdg85WNG2RiYdnP-uEXc0PtAqP1Kpf_kw2ywCQab9B5i_434ll88VDZ58_qT7WSy3xrEaC1DfbqElhVelRaGVGsGKODvfGoze9D2t6hUHBUjrf-OrT7Uzjx380tAUsIEAbVIqmEkSMxenlL4YzsMoHZD-fMYi33FLis6TZkLzJpTDA"
-          style="animation-delay: 2s"
-        />
-        <div class="max-w-container-width mx-auto px-grid-margin relative z-10">
-          <div
-            class="flex flex-col lg:flex-row items-center justify-between gap-12"
-          >
-            <div class="flex-1 text-center lg:text-left">
-              <div
-                class="inline-flex items-center gap-2 mb-6 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full border border-white/40 shadow-sm animate-float"
-              >
-                <img
-                  alt="Mini Fish"
-                  class="w-6 h-6"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyfxJ3V_32vlB-aLRDWQvJU56natZLGtaSnYM2uVxSbxhqCOEK-AkdE6s_XsSzP9fJz7oFgQM2dZsdkMNdDUM5Lpd7Yi7Qyb-4UGhhUd0zQCbSeGUKmLGYoqhn9oCoVKXOvK24VfeZPaRRpo1levB2ky_8qlv-hZCLjjCnjselpPonc1sb9uOm_hdDrsuIE2qYFzoimrPCf51Cs8pFj2AyTW_l_2-Lq_YvufjHM0Ss6WFq8B5bAKjziP-JTd1mK5r6OTjtmupIVr0"
-                />
-                <span
-                  class="text-primary font-label-bold text-xs uppercase tracking-widest"
-                  >SMK Raden Umar Said Present</span
-                >
-              </div>
-              <h1
-                class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface leading-tight"
-              >
-                Kreativitas Dimulai
-                <span class="text-primary relative inline-block"
-                  >Di Sini
-                  <img
-                    alt="vector curve"
-                    class="absolute -bottom-2 left-0 w-full h-3"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW2Qq-JFWFexr0ALbV4SjoxFjnbTbgReYwueeYEH_05jSL7BgvooZ-om3fTkHee8qEz6MORrIA0YCBgGkyEzz7Xai1uhZc8d_rlF4skF0hqAfPxO_tXvXatLGDuXYpvc0xUnO4FDBGr0dW9M31x91WAlsHZHi-HBOA2LEYKFHgGn8uVYBxLOiJ5NT82Hims0YM0PuFd9jrBSsJ_8dKugElTuwdOuHp9US6i1E6lfAHtxnvtOw1FH71MUTHyyiTRkhg8GVQ7pq0onw"
-                  />
-                </span>
-              </h1>
-              <p
-                class="font-body-lg text-body-lg text-on-surface-variant mt-6 max-w-xl mx-auto lg:mx-0"
-              >
-                Rasakan gelombang seni dan kreativitas terbaik di Fun Art
-                Festival! Merayakan harlah ke-21 dengan semangat inovasi tanpa
-                batas.
-              </p>
-              <div
-                class="mt-10 flex flex-wrap gap-4 justify-center lg:justify-start"
-              >
-                <button
-                  class="px-10 py-4 bg-primary text-white rounded-full font-label-bold text-lg bubbly-button shadow-xl shadow-primary/20"
-                >
-                  Eksplorasi Sekarang
-                </button>
-                <button
-                  class="px-10 py-4 bg-white/80 text-primary border-2 border-primary/20 rounded-full font-label-bold text-lg bubbly-button backdrop-blur-sm"
-                >
-                  Lihat Jadwal
-                </button>
-              </div>
-            </div>
-            <!-- Prominent Large Logo -->
-            <div class="flex-1 flex justify-center items-center relative">
-              <div
-                class="absolute inset-0 bg-white/40 rounded-full blur-[100px] animate-pulse"
-              ></div>
-              <div class="relative z-10 group">
-                <!-- Background Accents behind logo -->
-                <img
-                  alt="Accent Circle"
-                  class="absolute -top-10 -right-10 w-32 h-32 opacity-30 animate-float-slow"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuALoKAGyW-alFOaTRbCsJ5V6z1H2yl-1R1QPn0UtlltC6GrBh137rYZuo2h8wZ2d5Iay6Uz8H3LcDVhxrT_fUj_bahEq4ZUctJKJG8KBtDdaBw0gf_njjwIZsp01cnDhAqXwdvESwDKNRiTco5HpewxlZRojluAIl-Yb1fAqwC11pxOncbb-HIiw66UMq3ICh-cGlwxMOBNFzLAJYu-jQXwrokjbATJqLrIn8LjEvgeLDbxdJR8fREZ0s9JJxWJPHJGozeygZTy3b4"
-                />
-                <img
-                  alt="Accent Spiral"
-                  class="absolute -bottom-12 -left-12 w-48 h-48 opacity-20 animate-float"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzh2WZ5oyiQTtl5TE2h2Cpxu_s92edspsBrseQKL59NdY57EXB3gVcRdeMtoZAdr2JBJ-lNqzMBuHCznZ1gnvk1xrG7mKnhyAiSxmVEwTn5XE77Z1Y531-GcKJBwGpskuq9lm4nPYXQc6SOKRKp4PxO729Jrz4fur8lbZC0050vfx7AwoaTg_ETL5qiD1JqkBdlg8BrXqaFL8LF_ur8N_PkO9e3usCMcRwAjMwHzfbGWArcOsX5ZUdWFV8OBfYwtQbChBWZ1SbQVs"
-                />
-                <img
-                  alt="FAF Logo Prominent"
-                  class="w-72 md:w-[480px] h-auto transform transition-all duration-700 hover:scale-105 hover:rotate-2 drop-shadow-2xl"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkV-Jv8bb9ygTQAA_yRx4jFScB-vpk-X2toylOCTdWtBlJvS9Z1CfwEyIO_d0rMRs-RsdV3BIjq--gZOeSlW78N7IQFGsyG9fbrY7Qow4igM3FvKwPth9yPMgDlH-AXV9O1so4t4hFLTLycqt2APumyq5PNpHF4N02YCXEQnd6-FaQEPYkgGH8htYkIGlwtu6wQXYFtFggAeeLl5NoN1avM7Nb1dIg0nx4aqcTn0od274GlYJcc-_wkTVr75Ns2QCQgqWR6lEDySY"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Carousel Section (Unchanged logic, updated styling context) -->
-      <section class="py-10 relative overflow-hidden">
-        <div class="carousel-container relative z-10" id="carouselContainer">
-          <div class="carousel-track items-stretch" id="carouselTrack"></div>
-        </div>
-      </section>
-      <!-- Bento Grid Feature Section -->
-      <section
-        class="py-section-gap-mobile md:py-section-gap-desktop bg-surface-container-low/60 backdrop-blur-md relative overflow-hidden"
-      >
-        <!-- Decorative Vector Elements -->
-        <img
-          alt="Coral"
-          class="absolute -bottom-20 -left-10 w-64 h-64 opacity-50 pointer-events-none"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6mKJWnK17jCXKmaYxPkuxMUYnjoOCWLq2PQsltK1HIS1f0vP9swpgQOYgLGA20BLXmDAMhSw8ldB2MLliYF24qk_BPqyJFoClZqRX2eXTBLvG8G88c2lGWlkiXLVanFZTiDJ-Fbh3uYUOZbiE0H0xDMGlsVEoUz7JltbvKvLYqetoyAr5u7vxpSH_i91AU6d3QM0V39H3BogvJuIi3MmmfhOCzUPj7EJFzrmnllXfspKlHAaCeVvENOWHEHyM_0WOqtfa-nfqv78"
-        />
-        <img
-          alt="Coral"
-          class="absolute -top-20 -right-10 w-80 h-80 opacity-40 pointer-events-none rotate-180"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_INI-n-h4wjjinFnug-SX5YMN-okOchkPA8gsDuajvyGT3Mlm6AH2OIGThekdgKuj8d8NEN51YN7Nq_xQwFkgUfz-AMf2SZ72W5iU1Ldct-K0BgUZV6gC63GIc2RCJGhJaBI0JSHkmQCrgaEUs0dxDwNbwvXxH72m2nCxWnz76lLS8zr8njTwLwBjwlUDshI3xo2swmSEXCsNhXfZNA3YtxjlTYbIs78U_SKVxcvsNUURLAgzMztIbGFJlxUtV1pa7LKGdD66JRc"
-        />
-        <img
-          alt="Abstract Shape"
-          class="absolute top-1/4 left-[5%] w-24 h-24 opacity-20 animate-float"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW06l2BcL6XaSzGyLAExZ5Ii8K4jZpYJdSx8LLGvFBt4TlDoV0EqwZ-lqCWf6vCroPMo6uRpNNjYpFF7cNPXn7YMb-pGfU9Ue0jeQGbBVKZ0f3-VxE8cNJjIgYyWbSlhfNUKIMr3dFilotWGJBhV2ZQS6v1ciEXtixDwCAIR6_WQuN5XFyiO4y2RHyLxNP_OXdNcLY9YH6bYiWB2J8dKaOV0K12oTh0-yYPHXGWuMiBrVA6RG-r7cVINP4Ib-0wyiElra8z4I_VLE"
-        />
-        <img
-          alt="Abstract Shape"
-          class="absolute bottom-1/4 right-[8%] w-32 h-32 opacity-15 animate-float-side"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL72eaYoNwis-0HM5NwFBtANQQr0Hy1w7nctgW8qrGjBglayI6Al04UV_k5Ud9uBuVtZeJVcKOF_hXKCSlhFkPA0LodqVil0nM14r1bG6915FTawQQJBnGeY-T32dZEK2kAID_2kBPFWBUkYMQeKvJ5WNywQgGUsdUy6bFV-PAKh1JKkLEfHipTPZziZt-SCgvCUsCaKO9-mR4d5XS9IwD7UtHWrnKC4DhmCvxGliY7aWWRGLJ0VYo8rm5_EpbKODRY66J2rpj0CQ"
-        />
-        <div class="max-w-container-width mx-auto px-grid-margin relative z-10">
-          <div class="text-center mb-20">
-            <div
-              class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-label-bold text-xs uppercase tracking-widest mb-4"
-            >
-              Tentang Kami
-            </div>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface">
-              Mengenal Fun Art Festival
-            </h2>
-            <p
-              class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-2xl mx-auto"
-            >
-              Lebih dari sekadar festival; kami adalah wadah inspirasi yang
-              menghidupkan setiap gelombang kreativitas.
-            </p>
-          </div>
-          <div
-            class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-grid-gutter h-auto md:min-h-[650px]"
-          >
-            <!-- Tentang FAF -->
-            <div
-              class="md:col-span-2 md:row-span-2 bg-white/90 rounded-[3rem] p-10 border border-primary/5 flex flex-col justify-between group hover:shadow-2xl transition-all overflow-hidden relative backdrop-blur-sm"
-            >
-              <div class="z-10">
-                <div
-                  class="w-16 h-16 mb-8 flex items-center justify-center bg-primary/10 rounded-2xl group-hover:rotate-12 transition-transform"
-                >
-                  <img
-                    alt="Icon"
-                    class="w-10 h-10"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA24tRgJLeKePUJb-ZXgntgctx8puEGSH-X_zY4z3iCOFgMymhAeE5ivXAQ_LUlsFwL3Z1m4RGT-czqpNnD72GkAwdt1jzlGVcA0LT4ZwlBG6ZpAIi3-wXiUifp16GHBNiPQ2GGiHagpaU_H6Sk36GB9BDRO-cQHVs0ZaO_rkpmz6gLrg2SbMts7fpw4qYFnJNEmYUJ1gzGzNBJHnGB8s9gQWLhhapEuMGHxp-NX_fACRzznwbPeRpceQWF0Q6j5GLeMaEjwnXZgM"
-                  />
-                </div>
-                <h3
-                  class="font-headline-md text-headline-md text-on-surface mb-6"
-                >
-                  Misi Kreatif Kami
-                </h3>
-                <p
-                  class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
-                >
-                  Fun Art Festival (FAF) adalah perayaan tahunan SMK Raden Umar
-                  Said (RUS) untuk menghidupkan kreativitas, menginspirasi jiwa,
-                  dan memperkaya pengalaman dengan inovasi yang mendukung
-                  perubahan positif di dunia seni digital.
+</head>
+<body class="font-body-md text-on-background relative">
+<!-- Particles Background -->
+<div id="particles-container"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-[100] h-20 bg-transparent backdrop-blur-0 transition-all duration-500 border-b border-transparent" id="navbar">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full h-full max-w-container-max mx-auto">
+<div class="font-display-xl-mobile text-headline-md text-primary flex items-center gap-2">
+<img alt="Fun Art Festival Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEq3Ad-XilW8qJc-vqrMGxP0hx5TDYMSVeSsop461i8mmIVk6BDdqGZYH90JG8x0Pbt_BlJ7CheH1Lv5wMB6nQgFnlu4bTEl53g_XRZKf6W21ttdK8SI1Q8dUnVDr9CvucfeVddOSoHPa72HxUOMiIUif1WGcEVbL30g-eESqYgN18WTcfFWK2jsVXR-ZQu0-9ntOape_9jzxSYea6qSTzFAOvreMd9mIfCCKcVQW9WQVe6zvSHWj4CwmWpTQgZx5kI7WwdlcB_EG"/>
+</div>
+<nav class="hidden md:flex gap-gutter items-center">
+<a class="font-label-bold text-label-bold text-tertiary font-bold border-b-2 border-tertiary pb-1 hover:text-tertiary transition-colors duration-300" href="#home">Home</a>
+<a class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300" href="#about">About</a>
+<a class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300" href="#timeline">Timeline</a>
+<a class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300" href="#gallery">Gallery</a>
+<a class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300" href="#sponsor">Sponsor</a>
+<a class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300" href="#contact">Contact</a>
+</nav>
+<button class="btn-block px-6 py-3 font-label-bold text-label-bold uppercase tracking-widest">
+                Join The Festival
+            </button>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-section-gap overflow-hidden liquid-bg" id="home">
+<div class="parallax-text font-display-xl top-1/4 left-0" data-speed="0.2">FESTIVAL</div>
+<div class="parallax-text font-display-xl bottom-1/4 right-0" data-speed="-0.15">CREATIVITY</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop relative z-10 editorial-grid">
+<div class="col-span-12 lg:col-span-8 flex flex-col justify-center reveal">
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl leading-none text-white drop-shadow-2xl mb-8">
+                    WAVES OF<br/>CREATIVITY<br/><span class="text-tertiary">FAF 21</span>
+</h1>
+<p class="font-body-lg text-body-lg max-w-xl text-primary/80 mb-10">
+                    Dive into a professional creative ocean where imagination breaks the shoreline. Fun Art Festival 21 brings together the wildest minds for a high-fashion, tropical art odyssey.
                 </p>
-              </div>
-              <div
-                class="relative mt-8 rounded-3xl overflow-hidden shadow-inner group"
-              >
-                <img
-                  alt="FAF atmosphere"
-                  class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-1000"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr3PEl33OQ6Lpp5-nGUBCez0vb9cG7WfgxvxZo63_944q-yVrbd4S3Bg98doCd8GLSL7y4tNwOCyzQ2-Ux6w5FEZ1I68yUKTUBjaL3D-0kisMZd5oNPAAqGcyzIHp1FOxqINsFRc4J0EwhUVO4fsTLnLj1yOghJCG2GozJvyg2mEUCBzmvsKeiEg-esajLuT3MmdfpBsPi2P7YljsOGZ5QRkcmyiaSQbD5jlIUXztNuQwMaQZ2XEUpDsI7gKN1hXJyEVHFJb7fHqo"
-                />
-                <div
-                  class="absolute inset-0 bg-primary/20 mix-blend-overlay"
-                ></div>
-                <div
-                  class="absolute bottom-4 right-4 bg-white/80 backdrop-blur-md p-3 rounded-2xl shadow-lg border border-white/40"
-                >
-                  <img
-                    alt="Abstract Accent"
-                    class="w-8 h-8"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXJYCuUAv46zkPZSn8owrr5f6Y866xYdFXWIxq9ZoMKLJlnVPGF8YvGT-pbPIJ_mIB_vp_f3DEszTXPC8zbyHy0sUzY1G_fhlWbmycJfu2nbpeEK8f7jEqGQaMar3DNXIrGVEQk_x8GaNg0f6kIyU-LqG9Q0CtFy6180UAtSqnZeyZuxFCmWCk5xMHlGpXhYgSqZjl7SEFlxsHCpAdYX4VNrVWLbD25q3JkZi10o-ykrEjlXZqYF5yNQ48gGELlaQEQinqH_d1mT8"
-                  />
-                </div>
-              </div>
-            </div>
-            <!-- Tema Section -->
-            <div
-              class="md:col-span-2 bg-gradient-to-br from-secondary-container to-orange-400 rounded-[3rem] p-10 flex flex-col md:flex-row items-center gap-8 group hover:-translate-y-2 transition-all border-4 border-white/40 shadow-xl relative overflow-hidden"
-            >
-              <!-- Subtle abstract background for card -->
-              <img
-                alt="Accent"
-                class="absolute -top-10 -right-10 w-40 h-40 opacity-10"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8UNDucHrw3-6q3OLSVy5qKKMUnqqU9gq_15MhDolasbik6-Qi9gmpw8Xsox2qaumSdHWDwAdYF5lMpMbMtd50kjut66BLv6BrbUIoLKt7BLvxrdFXyi7gt71OxISRcrBGFH5kxX36pvvXT9gdGtsAYESCtBoFWgtjhPTQf7OM6N-zukSpDgAyAgv0RNdSq8JQCrCts-ux-5KqZ7eiut5UCUjKCCxzhG4hzLRzL7K_aOZdiULEA8SUYaxzlOg9vWd1UOfstkxfkm4"
-              />
-              <div class="flex-1 text-on-secondary-container z-10">
-                <h3 class="font-headline-md text-headline-md mb-4">
-                  Tema: 21st Wave
-                </h3>
-                <p class="font-body-md text-body-md opacity-90 leading-relaxed">
-                  'Surfing the art to celebrate 21st wave of SMK RUS'. Merayakan
-                  harlah ke-21 dengan semangat inovasi dan dedikasi pada bakat
-                  seni generasi muda masa kini.
-                </p>
-              </div>
-              <div class="relative z-10">
-                <div
-                  class="w-40 h-40 bg-white/20 rounded-full flex items-center justify-center p-4 animate-float backdrop-blur-sm"
-                >
-                  <img
-                    alt="Mascot on Boat"
-                    class="w-full h-auto object-contain"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaXtALc_U02CWvxdACRaE7KSg5P-oy8BRqwLuxyaZMJry2oJGJ80ihNRcUnLIEVIjLaNB-qPkce9WNnC0O84LYi85oCiDoZBF3b0dDNQScb39dl5s8BOUVb5B_AWdMOLBKjEpi5AJQSouXgNHaPMJLcS3tFft-bu40Av6yjzA-8-hhH6XU2Rl-LAR9bnZ1nDrhbxL0yHpyAiBA8ei6Ep4MDEF7fBPvnOiWR6z3RG_wmuhUpmu-ApfXXiVUEZnOzyMQMGqcnyV6t0o"
-                  />
-                </div>
-              </div>
-            </div>
-            <!-- Jejak Karya Section -->
-            <div
-              class="md:col-span-2 bg-tertiary rounded-[3rem] p-10 border-4 border-white/30 flex flex-col justify-center text-white group hover:rotate-1 transition-transform shadow-2xl relative overflow-hidden"
-            >
-              <img
-                alt="Accent"
-                class="absolute -bottom-8 -left-8 w-32 h-32 opacity-20"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwI4KrlQo0xMk8fd86Tn-GRApZ0uyt7tKI8sV0XBkssj5LiN6CKo92urlhKJfzsCq-QbZJENyI9wxKRzs9f5tD2kJKkMDsd5dMqeebZl0Ak9XKRFCa3aLcEuYy8cbcfTlwHI_GVFdL5h7xhhRUGBYFqK1NC17ve31QcZQpw_rMAH00r-Js-wg2HB5vtorJn3wZVzuhmamJX50BclatxooeKjZoAdCvsu4CEFcSYPYpWCIjASBBkC2Rdqj9dMruat435y3YknT-dMc"
-              />
-              <div class="flex items-center gap-8 z-10">
-                <div class="p-6 bg-white/10 rounded-full animate-float-slow">
-                  <img
-                    alt="Jellyfish"
-                    class="w-16 h-16 object-contain"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGzlvdwvgKtf3-gtdk5drSajeTE8YJ8yA4gRa4Y5JGyrj0T0gB0cskuV_xVn3Z128nxKBODovvXSNW8APnHnPecaS3jjX7aIwlFiV_P8eykmhbS5Q2KuUJyjue2l-wgL7VseRNJWq1zVqea1or3ytTl4AFjT4K_gliTKJwQZ4nmsU_LKaZ3lzkAatB3uUJXVjqlV30cJv11mMMjtgiDl50AhwIa2J8mnxOJnS7h69HhqR5jxVyVbovj2Cbwyst6OCoHLEaMCUhP3I"
-                  />
-                </div>
-                <div>
-                  <h4 class="font-headline-md text-headline-md mb-3">
-                    Jejak Karya Abadi
-                  </h4>
-                  <p class="font-body-md opacity-90 leading-relaxed">
-                    FAF telah diselenggarakan dari tahun ke tahun sebagai wadah
-                    bagi siswa untuk berkembang, berinovasi, dan melahirkan
-                    karya yang berdampak nyata bagi masyarakat luas.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Past Highlights Section -->
-      <section
-        class="py-section-gap-mobile md:py-section-gap-desktop relative overflow-hidden"
-      >
-        <div class="absolute inset-0 z-0 opacity-30">
-          <img
-            alt="Beach Texture"
-            class="w-full h-full object-cover mix-blend-overlay"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDW2Qq-JFWFexr0ALbV4SjoxFjnbTbgReYwueeYEH_05jSL7BgvooZ-om3fTkHee8qEz6MORrIA0YCBgGkyEzz7Xai1uhZc8d_rlF4skF0hqAfPxO_tXvXatLGDuXYpvc0xUnO4FDBGr0dW9M31x91WAlsHZHi-HBOA2LEYKFHgGn8uVYBxLOiJ5NT82Hims0YM0PuFd9jrBSsJ_8dKugElTuwdOuHp9US6i1E6lfAHtxnvtOw1FH71MUTHyyiTRkhg8GVQ7pq0onw"
-          />
-        </div>
-        <div class="max-w-container-width mx-auto px-grid-margin relative z-10">
-          <div class="text-center mb-16">
-            <div
-              class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/20 text-on-secondary-container font-label-bold text-xs uppercase tracking-widest border border-secondary-container/30 mb-4"
-            >
-              <img
-                alt="Icon"
-                class="w-4 h-4"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwAv0tFhD710oBCcU1bEKI0vugULvqSwt3D48ju2kuIHHErkmJucb2fV4F31igL8AfP5CrZSu-ESkOOkm2tiSLUTeb0nHfsY644e9h02FKmoTW8PanI3z5rmqcq5_SUR_mo5yveWAJhbYyt6KTc6CBukwUj-4ec2-PyRaUYw0VvmJfTEcrQFNpZ9PeOqtxR3OGvk1qz_Bu-fUGQkwHDNIAtrJ4D_TvZrOoh0n8io44VUG2B5XVwm55wCleFTILOz6x_0ItD4aTU9g"
-              />
-              Nostalgia
-            </div>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface">
-              Keseruan Tahun Lalu
-            </h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mt-4">
-              Saksikan gelombang keseruan dari edisi-edisi sebelumnya yang penuh
-              warna.
-            </p>
-          </div>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- 6-photo gallery -->
-            <div
-              class="group relative overflow-hidden rounded-[2.5rem] border-8 border-white shadow-2xl hover:-translate-y-3 transition-all duration-500"
-            >
-              <img
-                alt="FAF Highlight 1"
-                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkJPze45Q36s-YouDmchUAHtawTF-oD6Jg1pWgRzt9jvzXSd7CgVn359M1xLSriXQMt14-HhsmPFrY-taLp4p7mhk1smKM9WP_uk2kQeB6opDgYzzHPI3GQN1brMODH4FDW41kPIJOSEvDKRk0SJwlWsG3_jVpZKf-fOJF2oeo-qRklwFRzp77QJtD33Xk-nAWkY5CJ97UDVV3kAGcp7AMgAuCaqekEEk7dA-hoiyw16bmj1lC2ftyF3fTtcCDHNSA3S2FMVFN0sY"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8"
-              >
-                <p class="text-white font-headline-md text-lg">
-                  Pertunjukan Musik
-                </p>
-              </div>
-            </div>
-            <div
-              class="group relative overflow-hidden rounded-[2.5rem] border-8 border-white shadow-2xl hover:-translate-y-3 transition-all duration-500"
-            >
-              <img
-                alt="FAF Highlight 2"
-                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9oxuJqmMo9VBFza5De0qyWlWWIT2gAuKCOUKFNQLkpODVJnPMmVkm6vs2yM4FzxxYhfs13EoOgiAIAkiLPhHPkTH_-9-XN--eDgqHgdd2GX14DN8z28ZE2048y_J91xQMa9yA7_ws0E69rsGrJI2W56BeH8L5vsNZXufdRVi4ZzOtg-eW5iu2bKlSnuo6_9wziu6RyPN3Xn6TisaOcB4DeQz5Q_W0qioa25X0vNMMuM4X3Wsn8RmLC-HqPHjARbPKvqYcI9euuyo"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-secondary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8"
-              >
-                <p class="text-white font-headline-md text-lg">
-                  Upacara Simbolis
-                </p>
-              </div>
-            </div>
-            <div
-              class="group relative overflow-hidden rounded-[2.5rem] border-8 border-white shadow-2xl hover:-translate-y-3 transition-all duration-500"
-            >
-              <img
-                alt="FAF Highlight 3"
-                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu5yGYK3yhfbwOOjIcI1rY4WFvfhxHkKCc6xYbTdYGfxFnnN4UdWzqKYDK6LneH2nfZiAVDnfpJf_mZCm8mXJQQbAfjrJmiDj-GbounvuJEumva_I6jfLwV78DBWgVYLrG8KK1S3WKP2R1JvZiZif0xS8z8_ZEHJ0m0OYcJaPto78rxENHBxQ5C4Rk8DIqY2XQLKLaqeojKCq-C5f5WnEw2ui3H42z_kJWIjMebTBDuPn-lE8VyuStkJA64VsDiw6EAkN13hSZ5DM"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-tertiary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8"
-              >
-                <p class="text-white font-headline-md text-lg">
-                  Momen Kebersamaan
-                </p>
-              </div>
-            </div>
-            <div
-              class="group relative overflow-hidden rounded-[2.5rem] border-8 border-white shadow-2xl hover:-translate-y-3 transition-all duration-500"
-            >
-              <img
-                alt="FAF Highlight 4"
-                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH_VWsqpeW6qmvqOfzvOfFoPrRYYsPQ1yxsMtjiTGmLCntNCA3696jWRnx8MRn4-SzzvRObeHzIgezB-l1z1sxEqI-4zjrJcMSBix41mrV-y4bhQDLNQSpR04Yf12fSRuanlD7EurRh3oswOsBl0muGdrVhfkA-Loqgsn9VZixl5mXRPCirwdBHH8g7CMeFHL9i4T2wYCz6IN1FWBvOOArBQiRyyrpbaNKQFn2ql8o6RD7hL7BMv419Ydsdkq9CYV_cbKiL4Jade8"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8"
-              >
-                <p class="text-white font-headline-md text-lg">
-                  Antusiasme Penonton
-                </p>
-              </div>
-            </div>
-            <div
-              class="group relative overflow-hidden rounded-[2.5rem] border-8 border-white shadow-2xl hover:-translate-y-3 transition-all duration-500"
-            >
-              <img
-                alt="FAF Highlight 5"
-                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_QjcFBdYdHuh-2X5aUY1iWb1PAxx92v7EOOKlC00hJTY8WKPI3VjuZcYzTCxLxJvXLy2BpJ1dTvI5-8TQsgT-cflTQlIj_JmmkNqKB1-6Wsk2gMMY0cbySy2z-lG3RqLTULe2tmn-NjbPEC8PwZMjwI8k--Hipbi_J17a8CJNAsXAd1XwYzT8WXGiw3cgEPqDWzOKKIABrDXM4YP9mwlLDzaWw8FoiI6-LteqTMxIipjIfAsk4834Iu4s6IpOtD4hnQHG1rpW-CE"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-secondary-container/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8"
-              >
-                <p class="text-white font-headline-md text-lg">
-                  Tari Tradisional
-                </p>
-              </div>
-            </div>
-            <div
-              class="group relative overflow-hidden rounded-[2.5rem] border-8 border-white shadow-2xl hover:-translate-y-3 transition-all duration-500"
-            >
-              <img
-                alt="FAF Highlight 6"
-                class="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-700"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEm-GSPrIqi7tVviJkvimeBLLPDGEDr4tXzOmxFH-Igpo7T1WcRFmTqnVQu1b5Ne0Tfw-b2Jf9iGBfjsTxostUhtwONY_cU-KQaiLEQul-13BXNvka1H6b0Rc40QrWt8Pw5E5oVNapQ5wjcIKMRT72xyWYQlBvmdbqrhnYoArHU_IZ7_lOltiAbfQCiM22YzDoS5kmGFHCRe2fWc9gvU9eG2XCwmM1XOsc9EE2RkEi7wrkdtqfx2R6F3a9KtW96xptx84DfikfSYA"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-tertiary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-8"
-              >
-                <p class="text-white font-headline-md text-lg">
-                  Penampilan Solo
-                </p>
-              </div>
-            </div>
-          </div>
-          <!-- Bottom Accent Section -->
-          <div class="mt-24 flex justify-center gap-12 opacity-40">
-            <img
-              alt="Accent"
-              class="w-24 h-24 animate-float"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOPDeMXRKh6jLeyuFLyFm8DCGcXSFpsY56FvCHo5swPaxEQ_0dADYkyC52FPFqZFQS_qMKDIN43HeCq1bmmwpNCsO7gBgfM6nPq3btzs6jzV8T5Mjpj1YI94aui-hCzY6YAMDwG8ACdbwfwxI_7HU66pGT6vEb0zYcOe14SPwBlGolOvh_nhtszlD8C_ack3ppZjjBoPuvmIluzjzt-uNn-6bagzlaNlKxrQ2wawoTUZgnZO37TpOCGyF57QVdrOMpHTU55kPy_r8"
-            />
-            <img
-              alt="Accent"
-              class="w-24 h-24 animate-float-slow"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQVEsJPhKWHcqnIFfmESV6AygQKlAqeJowLuU79x7VF1UMRhX_RYTo22eQQHSzh4MjSVHV7PIyVeRJgDuMXOQVeUYUCwlv3rxMKZtpTNpiDj6UNQvo3b_047U3-7KMkESLPMkstgEptSctMC3PX2CozLEpabOKp5L3UvHni7IBVdhFecB7lV0-QuDFSyK70ETivFcCAxI3VgtNrzOQHgWAMULLgTLR5aNRc4qvlygFysXSaUJp8UsxJOodF972wyAxlOLTBUcSUd0"
-            />
-            <img
-              alt="Accent"
-              class="w-24 h-24 animate-float"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrd_LYsmp98SROv_UqNCtg7PZwYcb9ldPxn9NRHXdIJ-szDuE_bdOM2Q_V9Jbp0SJ8aR6vKsu4SnGjfKkzjyH-YrjNK20Tq9_y9FICIimyWUhfye4GpDMclJNrvMf-TDJj-kRwAnazCkaLcp_sYy5phCjEea6tZMudLE8lmefJKokZOM6zjbV5OlFy1RS9Xwe1EzxNYeLxNyR2lH9yzKV9-bcHAkj-zllqYvqjTLvNSyoM1N2kq1fGsETDNo_aEYjgvjw1ZCPZWYE"
-            />
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- Footer -->
-    <footer
-      class="w-full py-20 bg-white/60 backdrop-blur-lg relative overflow-hidden border-t-4 border-white/40"
-    >
-      <div
-        class="absolute bottom-0 left-0 right-0 flex justify-around items-end opacity-20 pointer-events-none"
-      >
-        <img
-          alt="vector curve"
-          class="w-full h-20"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcOQVjBirN03OkntJdwGRf6QZI5LREb30fUg2CBgtglRLYn7-Ht-zC0WGRhq1BSk24MGrzoUX6SWJVACfpOB1IXKAlJp2FI1yzFb-Cavrpep0_kdvcy45rgzyXi7wJoevjwUNAv9TelIbjA2UeMfNTaJRzNlFyWDvZAkgbjeXW57qVoXQUyPQEHl1p0t4X1uE4Dh5J6FdgBvZKEvgnwQNdpX4dMTizq7QVw8TwH3AwxuQFEfI5W__FWNC-m1F2wXUq8HuNY14lPCg"
-        />
-      </div>
-      <div
-        class="flex flex-col md:flex-row justify-between items-center px-grid-margin max-w-container-width mx-auto gap-12 relative z-10"
-      >
-        <div class="flex flex-col items-center md:items-start gap-4">
-          <div class="flex items-center gap-3">
-            <img
-              alt="logo"
-              class="w-12 h-auto"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkV-Jv8bb9ygTQAA_yRx4jFScB-vpk-X2toylOCTdWtBlJvS9Z1CfwEyIO_d0rMRs-RsdV3BIjq--gZOeSlW78N7IQFGsyG9fbrY7Qow4igM3FvKwPth9yPMgDlH-AXV9O1so4t4hFLTLycqt2APumyq5PNpHF4N02YCXEQnd6-FaQEPYkgGH8htYkIGlwtu6wQXYFtFggAeeLl5NoN1avM7Nb1dIg0nx4aqcTn0od274GlYJcc-_wkTVr75Ns2QCQgqWR6lEDySY"
-            />
-            <span class="font-headline-md text-headline-md text-primary"
-              >FAF</span
-            >
-          </div>
-          <p
-            class="font-body-md text-body-md text-on-surface-variant text-center md:text-left max-w-xs"
-          >
-            © 2024 Fun Art Festival SMK Raden Umar Said. Hak cipta dilindungi
-            undang-undang.
-          </p>
-        </div>
-        <nav class="flex flex-wrap justify-center gap-10">
-          <a
-            class="text-on-surface-variant hover:text-primary transition-transform hover:scale-110 font-label-bold"
-            href="#"
-            >Privasi</a
-          >
-          <a
-            class="text-on-surface-variant hover:text-primary transition-transform hover:scale-110 font-label-bold"
-            href="#"
-            >Syarat &amp; Ketentuan</a
-          >
-          <a
-            class="text-on-surface-variant hover:text-primary transition-transform hover:scale-110 font-label-bold"
-            href="#"
-            >FAQ</a
-          >
-          <a
-            class="text-on-surface-variant hover:text-primary transition-transform hover:scale-110 font-label-bold"
-            href="#"
-            >Pers</a
-          >
-        </nav>
-        <div class="flex gap-4">
-          <a
-            class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm"
-            href="#"
-          >
-            <span class="material-symbols-outlined" data-icon="language"
-              >language</span
-            >
-          </a>
-          <a
-            class="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all shadow-sm"
-            href="#"
-          >
-            <span class="material-symbols-outlined" data-icon="campaign"
-              >campaign</span
-            >
-          </a>
-        </div>
-      </div>
-    </footer>
-    <script>
-      const originalSlidesData = [
-        {
-          tag: "Ayo Berkolaborasi!",
-          title: "Peluang Sponsorship",
-          desc: "Jadilah mitra kami dan selami audiens masif kami. Kembangkan brand Anda dengan energi setinggi samudra.",
-          btnText: "Gabung Sekarang",
-          imgMarkup: `<img alt="Sponsorship" class="w-40 h-40 md:w-64 md:h-64 object-contain animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANJoVHPNFecj7RvnC08Y2uYBmVlrSB4sN7Ij8MSKWFtXmzSgr9aeaDfhdPEvJZfl_8dhBV9XVFvCH_jfKwcmfMxyfXMnstFAcgvdyK4y_dDTdLwxxHjd3wiMIJZJM2-Neb4ieyevQfppAMdyJX0P_9xNl9qJ_4IFaoktT8gulP2R1jJ7PogmHiNpEDRYaYCRN1Cb5Jk0RzK-t0-yHL7UVJ9pQ__Go9WBrVv7O-h5EX-F-9e7TpG6f6Jsy72y2x6Lk5A287ztYybVg"/>`,
-          gradient: "from-primary-container to-primary/80",
-          tagColor: "text-primary",
-          btnStyles: "bg-white text-primary",
-        },
-        {
-          tag: "Gelombang Besar!",
-          title: "Informasi Lomba",
-          desc: "Daftarkan diri Anda untuk kompetisi mendatang. Hadiah hingga total jutaan Rupiah! Tunjukkan bakat terbaikmu.",
-          btnText: "Daftar Sekarang",
-          imgMarkup: `<img alt="Mascot Sailor" class="w-40 h-40 md:w-64 md:h-64 object-contain animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5wTaF6MvX_2_jLUqeporB-GodBXeDVZwiWSDHdcFBXConetS7T_hkrVoaWVQRLhkndnOIDJv1DVRftzRC5ykHr7bW5Dm9ncBc_nr7gGo0dz3Hw82U7N2Kz5iG03phN-twev-WjGhUtK7uAQ0cLZFA7CqSnKE8F50bAge9uOnrZNnLRg8QLTfBmd_OmO0dT8-LZixhieRAyJGlTv7EUt8Xa99kH2Pbs-JzcyjJihQd_k1TJJR_u4cdXFA0_R89t9mJ_zium7dpLxM"/>`,
-          gradient: "from-tertiary-container to-tertiary/80",
-          tagColor: "text-tertiary",
-          btnStyles: "bg-white text-tertiary",
-        },
-        {
-          tag: "Segera Hadir",
-          title: "Guest Star Spesial",
-          desc: "Nantikan pengumuman besar! Penampil utama kami sedang dalam perjalanan menuju panggung FAF.",
-          btnText: "Pantau Terus",
-          imgMarkup: `<img alt="Mascot Boat" class="w-40 h-40 md:w-64 md:h-64 object-contain animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArEO6dRtev0e9ON8RSTGa1Q7PUEdHICakeaB8SsiG1U4mP8TtwqoVZ-Vhjm46giTR5pw62ynOfLzNoZMNyituZLk8E537DN6oYyiyHmjoOYOr5j1pH-tu3gOBO1x5Huh7lwb1ZNU0gwnzsGCTkpPidbgf2kOvDIMIOyL51AK7JEJVBSUxE-jXaJkiEoqIdCzuIjFRfJXNLgHZyWKLZZ1gE8kJFUfzedPamAsOWZf-i0hvcr7xygK_gUQZf0VJml0MaBxTxJmMEYNM"/>`,
-          gradient: "from-inverse-surface to-slate-900",
-          tagColor: "text-on-secondary-container bg-secondary-container",
-          btnStyles: "bg-primary text-white",
-        },
-      ];
-
-      const track = document.getElementById("carouselTrack");
-      const container = document.getElementById("carouselContainer");
-
-      let currentIndex = 0;
-      let isTransitioning = false;
-      const totalSlides = originalSlidesData.length;
-
-      let startX = 0;
-      let isDragging = false;
-
-      function setupSlides() {
-        const slidesToRender = [
-          originalSlidesData[totalSlides - 1],
-          ...originalSlidesData,
-          originalSlidesData[0],
-        ];
-
-        track.innerHTML = slidesToRender
-          .map(
-            (slide, i) => `
-            <div class="slide-item cursor-pointer" data-index="${i - 1}">
-                <div class="bg-gradient-to-br ${slide.gradient} rounded-[3rem] p-8 md:p-12 flex flex-col md:flex-row items-center gap-6 relative overflow-hidden border-4 border-white/30 w-full h-full shadow-2xl">
-                    <div class="flex-1 z-10 text-center md:text-left flex flex-col items-center md:items-start h-full">
-                        <span class="bg-white/90 ${slide.tagColor} font-label-bold text-[10px] md:text-xs uppercase tracking-widest px-4 py-1.5 rounded-full inline-block mb-3 shadow-sm">${slide.tag}</span>
-                        <h2 class="font-display-lg text-2xl md:text-4xl lg:text-5xl text-white mb-4 leading-tight">${slide.title}</h2>
-                        <p class="font-body-md md:font-body-lg text-sm md:text-base text-white/90 mb-6 max-w-sm line-clamp-3 md:line-clamp-none">${slide.desc}</p>
-                        <button class="${slide.btnStyles} font-label-bold px-8 py-3 bubbly-button text-sm md:text-base mt-auto">
-                            ${slide.btnText}
-                        </button>
-                    </div>
-                    <div class="flex-1 flex justify-center items-center z-10 pointer-events-none">
-                        <div class="relative w-full h-full flex justify-center items-center">
-                            <div class="absolute inset-0 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
-                            ${slide.imgMarkup}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        `,
-          )
-          .join("");
-
-        currentIndex = 0;
-        updateCarousel(false);
-
-        const slideElements = Array.from(track.children);
-        slideElements.forEach((el) => {
-          el.addEventListener("click", () => {
-            if (isDragging) return;
-            const targetIndex = parseInt(el.getAttribute("data-index"));
-            currentIndex = targetIndex;
-            updateCarousel(true);
-          });
-        });
-      }
-
-      function updateCarousel(animate = true) {
-        const slideWidth = window.innerWidth < 768 ? 320 : 700;
-        const viewportWidth = window.innerWidth;
-        const centerOffset = (viewportWidth - slideWidth) / 2;
-
-        const translateX = centerOffset - (currentIndex + 1) * slideWidth;
-
-        if (!animate) track.style.transition = "none";
-        else {
-          track.style.transition =
-            "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
-          isTransitioning = true;
+<div class="flex flex-wrap gap-4">
+<button class="btn-block px-10 py-5 font-headline-md text-headline-md">GET TICKETS</button>
+<button class="border-2 border-primary text-primary px-10 py-5 font-headline-md text-headline-md hover:bg-primary hover:text-festival-navy transition-all">EXPLORE</button>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 relative mt-12 lg:mt-0 reveal" style="transition-delay: 200ms">
+<div class="absolute -top-20 -right-10 w-64 h-64 bg-tertiary/20 rounded-full blur-3xl"></div>
+<img alt="Character Illustration" class="w-full h-auto object-contain relative z-20 float-animation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAknlHeBrrmsOlt_FrgEz8ZklN4VUwMdhMlfJ-GA5IRcFsmyj6XbVM71KUFgdKAJoJXMvHM6JJ7FSNZh7xVGvKzQFDlRPLZvkrqWGV3Is0FV3WTKR_mol8ZgLZuX3BPxqQ_54pbCJCoqtBMqVhQ1QRZJiWuJAGUueC1ggffT-Y6gppXTF55omP65x3gnBqnA20tgj-attUbO-jb75sC52TU-zgWvXbva3_zLSsAEzkWP_AUI9EzjYFzBnF8YQW_kKfEAYZQTi73kDJ"/>
+</div>
+</div>
+<!-- Abstract Waves -->
+<div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
+<svg class="relative block w-[150%] h-48 parallax-wave" data-speed="0.05" preserveaspectratio="none" viewbox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path class="fill-primary/10" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C58.15,114.18,113.88,124,173.23,109.11,232.58,94.2,284.14,75.31,321.39,56.44Z"></path>
+</svg>
+</div>
+</section>
+<!-- Interactive Hero Slideshow -->
+<section class="py-section-gap bg-festival-navy/50 relative overflow-hidden reveal">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">WHAT'S HAPPENING?</h2>
+<div class="w-24 h-2 bg-tertiary mx-auto"></div>
+</div>
+<div class="relative flex justify-center items-center h-[550px] md:h-[650px] overflow-hidden px-4">
+<!-- Navigation -->
+<button class="absolute left-4 md:left-20 z-50 p-4 rounded-full bg-primary/10 hover:bg-primary/30 text-white transition-all" id="prevSlide">
+<span class="material-symbols-outlined text-4xl">chevron_left</span>
+</button>
+<button class="absolute right-4 md:right-20 z-50 p-4 rounded-full bg-primary/10 hover:bg-primary/30 text-white transition-all" id="nextSlide">
+<span class="material-symbols-outlined text-4xl">chevron_right</span>
+</button>
+<div class="flex justify-center items-center carousel-container w-full max-w-6xl transition-transform duration-700" id="carouselWrapper">
+<!-- Slide 1 -->
+<div class="carousel-slide side absolute w-[300px] md:w-[450px] aspect-square bg-surface-container-high p-8 border border-primary/20 flex flex-col justify-between group cursor-pointer" data-index="0">
+<img alt="Sponsor Opportunities" class="w-full h-3/4 object-cover mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Dkh_cQxR5d1CV40wn2A72ZSrbyk-N9tab_8zFvV8f5SQHfavbWVnhAEJT-W_rd0GzWFnwvaOsGBdpCFK_IXCDdjaCJP6iX9qumold6dRV5NXBfWZTn-IhEDRfQy-CZvNY0-c7R5viM3bJlt-5bBTnRq7pWh2DyN967zsG47dvu8I7eQutTJmknd7p3uxooO7q1GIM_sDVjDQxfKOq9z9DizdZlBFJ1Fa_8T8OkGodttVch1BABxQJ69xlFe7LxaVyfTig1NI6B_s"/>
+<div class="text-left">
+<h3 class="font-headline-md text-headline-md text-white mb-2 uppercase">Sponsor Us</h3>
+<p class="font-body-md text-body-md text-primary opacity-70 mb-4">Elevate your brand at the heart of creativity.</p>
+<a class="inline-flex items-center gap-2 text-tertiary font-label-bold group-hover:translate-x-2 transition-transform" href="#">WHATSAPP CTA <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+</div>
+<!-- Slide 2 (Active) -->
+<div class="carousel-slide active absolute w-[350px] md:w-[550px] aspect-square bg-secondary-container p-10 border border-primary flex flex-col justify-between group cursor-pointer shadow-[20px_20px_0px_0px_rgba(255,181,151,0.3)]" data-index="1">
+<img alt="Competition Registration" class="w-full h-3/4 object-cover mb-6 scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYMnm6pQ3JZOa746YAEOHrYDXJK65eJfBwpcXy7eAgs4HhCWw-JsStMt4mbBleVUvp15zxy5FdhYeG171PNEr-xb_UcvRAFa8W9pUnHnWbsrOqTfh-GvInAea3NFJ_0kY3v4gnuhnjjUwZCh9rcnLdrwP5d6VTjSz_O9PdFf6a1h7KXGgbWLy42LvV_QY7dm3NFLZ_DnfLia5Kgn8-ix8-Rm4ZXGQYaV77mZ3aG2whdEl3T_AHtIoETtZW1M2SUf8R63TYTrDcR-Xd"/>
+<div class="text-left">
+<h3 class="font-headline-lg text-headline-lg text-white mb-2 uppercase">Join Competition</h3>
+<p class="font-body-lg text-body-lg text-white/80 mb-6">Showcase your skills and win exclusive rewards.</p>
+<a class="inline-flex items-center gap-2 text-tertiary font-headline-md border-b-2 border-tertiary group-hover:gap-4 transition-all" href="#">LINKTREE REGISTRATION</a>
+</div>
+</div>
+<!-- Slide 3 -->
+<div class="carousel-slide side absolute w-[300px] md:w-[450px] aspect-square bg-surface-container-high p-8 border border-primary/20 flex flex-col justify-between group cursor-pointer" data-index="2">
+<img alt="Guest Star Lineup" class="w-full h-3/4 object-cover mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVnZ569vTdMQu8q1mSFW_nM-UGYNrQK07fcFcG2Fie48-ZRmvkCFrbB8CC92XE8PF3mCW06T1thDXoUSuBgnrrKMUfT1ZX42P3T8QZnnskwrGag5fIGwpRkGQCPlnsTkmTw2amvW5OD0OJVahqFU6HAXxP3LEZodY0kPbwn5nOCdKt713ht_Q9oFvs7AJTc7Zni4wyGJTbMdn0BdVbBxj2sPLZUKSLG7dVDARdmE8ujpgYdXGPpkCSnO6wjbe0i0cBU9W8cJbgjsIz"/>
+<div class="text-left">
+<h3 class="font-headline-md text-headline-md text-white mb-2 uppercase">Guest Stars</h3>
+<p class="font-body-md text-body-md text-primary opacity-70 mb-4">The biggest names in the creative industry.</p>
+<a class="inline-flex items-center gap-2 text-tertiary font-label-bold group-hover:translate-x-2 transition-transform" href="#">INSTAGRAM CTA <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-section-gap relative" id="about">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop editorial-grid">
+<div class="col-span-12 lg:col-span-6 lg:col-start-2 reveal">
+<span class="font-label-bold text-label-bold text-tertiary uppercase tracking-[0.4em] mb-4 block">Manifesto</span>
+<h2 class="font-display-xl-mobile md:font-headline-lg text-display-xl-mobile md:text-headline-lg text-white mb-8 leading-tight">
+                    A SYMPHONY OF<br/><span class="italic text-primary">CHAOS &amp; COLOR</span>
+</h2>
+<div class="space-y-6 font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+<p>
+                        Fun Art Festival is not just an event; it's a movement. Born from the need to break free from traditional gallery constraints, we invite creators to step into the "Wild at Heart" territory.
+                    </p>
+<p>
+                        This year, 2024, we focus on the fluid intersection of high-fashion aesthetics and tropical vibrancy. Our layout is asymmetric, our energy is uncontainable, and our goal is pure creative liberation.
+                    </p>
+</div>
+</div>
+<div class="col-span-12 lg:col-span-4 lg:col-start-8 mt-12 lg:mt-24 reveal" style="transition-delay: 200ms">
+<div class="p-12 border-2 border-primary bg-primary/5 hover:bg-primary/10 transition-colors group relative overflow-hidden">
+<h3 class="font-headline-md text-headline-md text-tertiary mb-4">THE VISION</h3>
+<p class="font-body-md text-body-md text-white/70 mb-8 italic">
+                        "To build a world where the character peeks over the headline and the grid is just a suggestion."
+                    </p>
+<div class="h-1 w-full bg-primary/20 overflow-hidden">
+<div class="h-full bg-tertiary w-0 group-hover:w-full transition-all duration-1000"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Event Timeline -->
+<section class="py-section-gap bg-surface-container-lowest relative overflow-hidden" id="timeline">
+<div class="absolute inset-0 z-0 flex justify-center items-center opacity-20">
+<svg fill="none" height="1000" viewbox="0 0 1000 1000" width="1000" xmlns="http://www.w3.org/2000/svg">
+<path class="timeline-path" d="M500,0 C600,150 400,250 500,400 C600,550 400,650 500,800 C600,950 400,1050 500,1200" id="scrollTimeline" stroke="#bec2ff" stroke-linecap="round" stroke-width="4"></path>
+</svg>
+</div>
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop text-center mb-24 relative z-10 reveal">
+<h2 class="font-headline-lg text-headline-lg text-white uppercase">The Voyage</h2>
+</div>
+<div class="relative max-w-4xl mx-auto px-margin-mobile z-10">
+<!-- Milestone 1 -->
+<div class="relative flex items-center justify-between mb-32 group reveal">
+<div class="w-5/12 text-right pr-8">
+<span class="font-headline-md text-headline-md text-tertiary block mb-2">OCT 15</span>
+<h4 class="font-label-bold text-headline-md text-white uppercase">Competition</h4>
+<p class="font-body-md text-body-md text-primary/60">Digital and traditional art submissions open worldwide.</p>
+</div>
+<div class="z-10 w-12 h-12 bg-festival-navy border-4 border-tertiary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform shadow-[0_0_20px_rgba(255,181,151,0.5)]">
+<span class="material-symbols-outlined text-tertiary">draw</span>
+</div>
+<div class="w-5/12 pl-8"></div>
+</div>
+<!-- Milestone 2 -->
+<div class="relative flex items-center justify-between mb-32 group reveal">
+<div class="w-5/12 pr-8"></div>
+<div class="z-10 w-12 h-12 bg-festival-navy border-4 border-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform shadow-[0_0_20px_rgba(190,194,255,0.5)]">
+<span class="material-symbols-outlined text-primary">celebration</span>
+</div>
+<div class="w-5/12 text-left pl-8">
+<span class="font-headline-md text-headline-md text-primary block mb-2">NOV 20</span>
+<h4 class="font-label-bold text-headline-md text-white uppercase">Ceremony</h4>
+<p class="font-body-md text-body-md text-primary/60">The grand announcement of winners and gala dinner.</p>
+</div>
+</div>
+<!-- Milestone 3 -->
+<div class="relative flex items-center justify-between group reveal">
+<div class="w-5/12 text-right pr-8">
+<span class="font-headline-md text-headline-md text-secondary block mb-2">DEC 05</span>
+<h4 class="font-label-bold text-headline-md text-white uppercase">Festival Day</h4>
+<p class="font-body-md text-body-md text-primary/60">A 12-hour explosion of music, art, and immersive installations.</p>
+</div>
+<div class="z-10 w-12 h-12 bg-festival-navy border-4 border-secondary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform shadow-[0_0_20px_rgba(189,194,255,0.5)]">
+<span class="material-symbols-outlined text-secondary">festival</span>
+</div>
+<div class="w-5/12 pl-8"></div>
+</div>
+</div>
+</section>
+<!-- Highlights from FAF 20 -->
+<section class="py-section-gap bg-festival-navy" id="gallery">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop mb-16 flex flex-col md:flex-row justify-between items-end gap-8 reveal">
+<div>
+<span class="font-label-bold text-label-bold text-primary mb-2 block uppercase tracking-widest">Flashback</span>
+<h2 class="font-headline-lg text-headline-lg text-white">HIGHLIGHTS FROM FAF 20</h2>
+</div>
+<button class="btn-block px-8 py-4 font-label-bold text-label-bold">WATCH FAF 20 RECAP</button>
+</div>
+<div class="flex overflow-x-auto pb-12 gap-6 px-margin-mobile md:px-margin-desktop no-scrollbar snap-x gallery-container">
+<!-- Card 1 -->
+<div class="gallery-item snap-center flex-shrink-0 w-80 md:w-[450px] relative group overflow-hidden cursor-pointer">
+<img alt="Performance Highlight" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQJfy3-9eBR6JWMzhmmOBHAmTlNQ52fe_f6x7dr5_x4P-8dE-CIotj7y7pdS8T2wAdOfZ-HKeFq1uDEAmgzBV_-ICxDdkd2ORdrZT-yIEh7T69sYj4BceOdRzvQBOF4TggoXj-qkH2XZH_zYbO_8dHoxMxk10kmkVmLU_-nshA7UAllirUoldOV6AAaTViSQOVBbvdtWh_zN4yVFZOi08NmtCWG_NjnAvED0hcL5oIFMw_X3-cSBXnWP84uvwLuTSyAQsfkreZDU2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-festival-navy via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0">
+<h3 class="font-headline-md text-headline-md text-white">Opening Act</h3>
+<p class="font-body-md text-body-md text-primary">Unforgettable energy that set the tone.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="gallery-item snap-center flex-shrink-0 w-80 md:w-[450px] relative group overflow-hidden cursor-pointer">
+<img alt="Stage Crowd" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDps-NrRnhmgh-kjEJBQpwhPJQ3PNYEU_F6ztlKMnVAjth2LgPPoxPOdTjJSdWhrAM4dVEo0PYXKHzsfbcxNZqS3AqULaTG17G1d4hUtLJlKbi3HLbpWcOJmAXslsYZMZvVm6nomZvXQ5j9xBrrBHCjr0DiCQeabPeRqpHeio_of5aNm33fZQvpIzgxNTqNoUsqaqyfq6Er268dCuOEbtZNH3-m3lddU6Td23Fmm1pzvbgxbGczXm8hiKsWTa8wxrvTlXebPjBNwZAT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-festival-navy via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0">
+<h3 class="font-headline-md text-headline-md text-white">The Big Stage</h3>
+<p class="font-body-md text-body-md text-primary">Where legends were born in 2020.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="gallery-item snap-center flex-shrink-0 w-80 md:w-[450px] relative group overflow-hidden cursor-pointer">
+<img alt="Release Ceremony" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBn19AmrLzQNaqd5kA2JklyBKu_BR_t8QJ3bVJ4JiUvMQO0aYwkAJFnaMtaoJc4QcHx0S5ibBkCQBv2MplYIMWFRST0W5bYFFlobfwVqCpvjuIJzcae0SBTWjhed1oe3bSsm7VHo-k-6gBwymGJfkcxc4SDbJyPJsFN7dxCZJ9iqvLxVDhWPuw9xdJLCEOKYKrWIMybuANPAv3E36t5_yKTAcRtXWvxUEzUe_aYbFuc4APEFPinQTO2JGcficDhKxvfnAPPY8ZWwn3"/>
+<div class="absolute inset-0 bg-gradient-to-t from-festival-navy via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0">
+<h3 class="font-headline-md text-headline-md text-white">Peace &amp; Art</h3>
+<p class="font-body-md text-body-md text-primary">Symbolic moments of artistic freedom.</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="gallery-item snap-center flex-shrink-0 w-80 md:w-[450px] relative group overflow-hidden cursor-pointer">
+<img alt="Music Performance" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA06B9ni0UFpqrsZgN1m5UusG1PTKyYFPNS4_AID8OC-ArPzlS700f1hYVZTpT67JTo34Cdhz-UH4LAi0mDgLZnq9ygqz-qddTElVxHzv-dKXPKgLeV20M1LNSmFo_3O8qd6pYPHiePDvVZrSu-C_aeGJ00nCoPzWuWwQGT02pXpcYgCxWzgbWvUmlu8UDhKsA5vztZQQg_-n3kpl4LUAz8dQYxkFozmLJBye_ea37-mZ4qSY5au4lDo7nfOFVrj-JzZ5eXJN3kvKGP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-festival-navy via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0">
+<h3 class="font-headline-md text-headline-md text-white">Midnight Melodies</h3>
+<p class="font-body-md text-body-md text-primary">Fusing sound and visual storytelling.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Sponsors -->
+<section class="py-section-gap bg-surface-container-low border-y border-primary/10 reveal" id="sponsor">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop text-center mb-12">
+<h2 class="font-label-bold text-label-bold text-primary opacity-50 uppercase tracking-[0.5em]">Our Creative Partners</h2>
+</div>
+<div class="flex flex-wrap justify-center items-center gap-16 px-margin-mobile opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="h-12 w-32 bg-white/20"></div>
+<div class="h-12 w-48 bg-white/20"></div>
+<div class="h-12 w-32 bg-white/20"></div>
+<div class="h-12 w-40 bg-white/20"></div>
+<div class="h-12 w-32 bg-white/20"></div>
+<div class="h-12 w-36 bg-white/20"></div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-section-gap reveal">
+<div class="container mx-auto px-margin-mobile md:px-margin-desktop editorial-grid">
+<div class="col-span-12 lg:col-span-4">
+<h2 class="font-display-xl-mobile text-display-xl-mobile text-white leading-none mb-8">FREQUENTLY ASKED <span class="text-tertiary">STUFF</span></h2>
+</div>
+<div class="col-span-12 lg:col-span-7 lg:col-start-6 space-y-8">
+<!-- Item 1 -->
+<div class="border-b border-primary/20 pb-6 group cursor-pointer" tabindex="0">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md text-white group-hover:text-tertiary transition-colors">How do I enter the competition?</h3>
+<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">add</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-h-0 overflow-hidden group-focus:max-h-40 transition-all duration-500">Click on the Registration slide above or head to our Instagram link in bio. Submissions are open for digital, traditional, and multimedia art categories.</p>
+</div>
+<!-- Item 2 -->
+<div class="border-b border-primary/20 pb-6 group cursor-pointer" tabindex="0">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-headline-md text-headline-md text-white group-hover:text-tertiary transition-colors">Is the festival open to all ages?</h3>
+<span class="material-symbols-outlined text-primary group-hover:rotate-45 transition-transform">add</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-h-0 overflow-hidden group-focus:max-h-40 transition-all duration-500">Yes! Fun Art Festival is a family-friendly celebration of creativity. We have specific zones for kids and professional workshop areas for adults.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="relative w-full py-section-gap bg-surface-container-low border-t border-primary/10 reveal" id="contact">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="lg:col-span-1">
+<img alt="FAF Logo" class="h-20 w-auto mb-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEq3Ad-XilW8qJc-vqrMGxP0hx5TDYMSVeSsop461i8mmIVk6BDdqGZYH90JG8x0Pbt_BlJ7CheH1Lv5wMB6nQgFnlu4bTEl53g_XRZKf6W21ttdK8SI1Q8dUnVDr9CvucfeVddOSoHPa72HxUOMiIUif1WGcEVbL30g-eESqYgN18WTcfFWK2jsVXR-ZQu0-9ntOape_9jzxSYea6qSTzFAOvreMd9mIfCCKcVQW9WQVe6zvSHWj4CwmWpTQgZx5kI7WwdlcB_EG"/>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Elevating creative boundaries since 2019. Join the movement.</p>
+<div class="flex gap-4">
+<a class="w-12 h-12 bg-primary flex items-center justify-center text-festival-navy hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="w-12 h-12 bg-tertiary flex items-center justify-center text-on-tertiary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="w-12 h-12 bg-secondary flex items-center justify-center text-on-secondary hover:scale-110 transition-transform" href="#"><span class="material-symbols-outlined">video_library</span></a>
+</div>
+</div>
+<div class="lg:col-start-3">
+<h4 class="font-label-bold text-label-bold text-tertiary mb-6 uppercase">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-tertiary-container transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-tertiary-container transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-tertiary mb-6 uppercase">Contact</h4>
+<ul class="space-y-4 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> hello@funartfest.com</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Creative Hub, Jakarta</li>
+<li class="flex items-center gap-2 font-bold text-primary">#FAF21 #WavesOfCreativity</li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-24 pt-8 border-t border-primary/5 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-50">© 2024 Fun Art Festival. All Rights Reserved. Created for the Wild at Heart.</p>
+</div>
+</footer>
+<script>
+        // --- 1. Particles System ---
+        const particleContainer = document.getElementById('particles-container');
+        const particleCount = 40;
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const size = Math.random() * 15 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.opacity = Math.random() * 0.4;
+            particle.style.animation = `floating ${Math.random() * 5 + 5}s ease-in-out infinite`;
+            particle.style.animationDelay = `${Math.random() * 5}s`;
+            particleContainer.appendChild(particle);
         }
 
-        track.style.transform = `translateX(${translateX}px)`;
-
-        const allSlides = Array.from(track.children);
-        allSlides.forEach((slide, i) => {
-          if (i === currentIndex + 1) {
-            slide.classList.remove("slide-inactive");
-            slide.classList.add("slide-active");
-          } else {
-            slide.classList.add("slide-inactive");
-            slide.classList.remove("slide-active");
-          }
+        // --- 2. Sticky Navbar Transition ---
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 80) {
+                nav.classList.add('bg-surface-container/90', 'backdrop-blur-md', 'shadow-xl', 'border-primary/20');
+                nav.classList.remove('bg-transparent', 'border-transparent');
+            } else {
+                nav.classList.remove('bg-surface-container/90', 'backdrop-blur-md', 'shadow-xl', 'border-primary/20');
+                nav.classList.add('bg-transparent', 'border-transparent');
+            }
         });
 
-        if (animate) {
-          setTimeout(() => {
-            isTransitioning = false;
-            checkLoop();
-          }, 600);
+        // --- 3. Parallax Effect for Background Text & Waves ---
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            
+            // Text Parallax
+            document.querySelectorAll('.parallax-text').forEach(el => {
+                const speed = el.getAttribute('data-speed') || 0.5;
+                el.style.transform = `translateX(${scrolled * speed}px)`;
+            });
+
+            // Wave Parallax
+            const wave = document.querySelector('.parallax-wave');
+            if (wave) {
+                const speed = wave.getAttribute('data-speed') || 0.1;
+                wave.style.transform = `translateX(-${scrolled * speed}px)`;
+            }
+
+            // Timeline Progress
+            const timeline = document.getElementById('scrollTimeline');
+            if (timeline) {
+                const scrollPercent = (scrolled - timeline.closest('section').offsetTop + window.innerHeight) / timeline.closest('section').offsetHeight;
+                const draw = 2000 * Math.max(0, Math.min(1, scrollPercent));
+                timeline.style.strokeDashoffset = 2000 - (draw * 1.5);
+            }
+        });
+
+        // --- 4. Interactive Hero Slideshow Carousel ---
+        const slides = document.querySelectorAll('.carousel-slide');
+        let currentSlideIdx = 1;
+        let autoPlayInterval;
+
+        function updateCarousel() {
+            slides.forEach((slide, idx) => {
+                slide.classList.remove('active', 'side');
+                slide.style.opacity = '0';
+                slide.style.pointerEvents = 'none';
+
+                if (idx === currentSlideIdx) {
+                    slide.classList.add('active');
+                    slide.style.opacity = '1';
+                    slide.style.pointerEvents = 'auto';
+                    slide.style.zIndex = '20';
+                    slide.style.transform = `translateX(0) scale(1) translateZ(0)`;
+                } else if (idx === (currentSlideIdx - 1 + slides.length) % slides.length) {
+                    slide.classList.add('side');
+                    slide.style.opacity = '0.4';
+                    slide.style.zIndex = '10';
+                    slide.style.transform = `translateX(-350px) scale(0.8) translateZ(-200px)`;
+                } else if (idx === (currentSlideIdx + 1) % slides.length) {
+                    slide.classList.add('side');
+                    slide.style.opacity = '0.4';
+                    slide.style.zIndex = '10';
+                    slide.style.transform = `translateX(350px) scale(0.8) translateZ(-200px)`;
+                }
+            });
         }
-      }
 
-      function checkLoop() {
-        if (currentIndex >= totalSlides) {
-          currentIndex = 0;
-          updateCarousel(false);
-        } else if (currentIndex <= -1) {
-          currentIndex = totalSlides - 1;
-          updateCarousel(false);
+        function next() {
+            currentSlideIdx = (currentSlideIdx + 1) % slides.length;
+            updateCarousel();
         }
-      }
 
-      container.addEventListener("mousedown", (e) => {
-        startX = e.pageX;
-        isDragging = true;
-      });
-
-      window.addEventListener("mouseup", (e) => {
-        if (!isDragging) return;
-        const diff = startX - e.pageX;
-        if (Math.abs(diff) > 50) {
-          if (diff > 0) currentIndex++;
-          else currentIndex--;
-          updateCarousel(true);
+        function prev() {
+            currentSlideIdx = (currentSlideIdx - 1 + slides.length) % slides.length;
+            updateCarousel();
         }
-        setTimeout(() => (isDragging = false), 50);
-      });
 
-      container.addEventListener("touchstart", (e) => {
-        startX = e.touches[0].pageX;
-        isDragging = true;
-      });
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            clearInterval(autoPlayInterval);
+            next();
+            startAutoPlay();
+        });
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            clearInterval(autoPlayInterval);
+            prev();
+            startAutoPlay();
+        });
 
-      container.addEventListener("touchend", (e) => {
-        if (!isDragging) return;
-        const diff = startX - e.changedTouches[0].pageX;
-        if (Math.abs(diff) > 50) {
-          if (diff > 0) currentIndex++;
-          else currentIndex--;
-          updateCarousel(true);
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(next, 5000);
         }
-        isDragging = false;
-      });
 
-      setupSlides();
-      window.addEventListener("resize", () => updateCarousel(false));
+        updateCarousel();
+        startAutoPlay();
 
-      setInterval(() => {
-        if (!isDragging && !isTransitioning) {
-          currentIndex++;
-          updateCarousel(true);
-        }
-      }, 6000);
+        // --- 5. Scroll Reveal Intersection Observer ---
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
-  </body>
-</html>
+</body></html>
