@@ -161,8 +161,6 @@
         box-shadow: 6px 6px 0px #303cc2;
         transform: translate(-3px, -3px);
       }
-
-      /* FIX: Parallax text overflow terkendali, tidak trigger horizontal scroll */
       .parallax-text {
         white-space: nowrap;
         font-size: 15rem;
@@ -180,7 +178,6 @@
           font-size: 6rem;
         }
       }
-
       @keyframes floating {
         0%,
         100% {
@@ -193,8 +190,6 @@
       .float-animation {
         animation: floating 6s ease-in-out infinite;
       }
-
-      /* Scroll Reveal */
       .reveal {
         opacity: 0;
         transform: translateY(30px);
@@ -204,8 +199,6 @@
         opacity: 1;
         transform: translateY(0);
       }
-
-      /* Particles */
       #particles-container {
         position: fixed;
         top: 0;
@@ -237,7 +230,6 @@
           height: 660px;
         }
       }
-
       .carousel-slide {
         position: absolute;
         transition: all 0.65s cubic-bezier(0.23, 1, 0.32, 1);
@@ -248,7 +240,6 @@
           width: 440px;
         }
       }
-
       .carousel-slide.center-slide {
         width: 310px;
         z-index: 20;
@@ -262,7 +253,6 @@
           width: 500px;
         }
       }
-
       .carousel-slide.left-slide {
         z-index: 10;
         transform: translateX(-260px) scale(0.78);
@@ -275,7 +265,6 @@
           transform: translateX(-360px) scale(0.78);
         }
       }
-
       .carousel-slide.right-slide {
         z-index: 10;
         transform: translateX(260px) scale(0.78);
@@ -288,7 +277,6 @@
           transform: translateX(360px) scale(0.78);
         }
       }
-
       .carousel-slide.hidden-slide {
         opacity: 0;
         pointer-events: none;
@@ -296,77 +284,61 @@
         transform: scale(0.5);
       }
 
-      /* Card-specific styles */
-      /* Sponsor card — dark industrial */
-      .card-sponsor {
-        background: #0c0f0f;
-        border: 1px solid rgba(190, 194, 255, 0.15);
+      /* ===== INFINITY GALLERY SCROLL ===== */
+      .gallery-track-wrapper {
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          black 8%,
+          black 92%,
+          transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent 0%,
+          black 8%,
+          black 92%,
+          transparent 100%
+        );
       }
-      .card-sponsor .card-tag {
-        background: rgba(190, 194, 255, 0.1);
-        color: #bec2ff;
-        font-size: 11px;
-        letter-spacing: 0.2em;
-        padding: 4px 10px;
-        font-family: "Space Grotesk", sans-serif;
-        font-weight: 700;
-        text-transform: uppercase;
-        display: inline-block;
-        margin-bottom: 12px;
+      .gallery-track {
+        display: flex;
+        gap: 24px;
+        width: max-content;
+        animation: gallery-scroll 28s linear infinite;
       }
-      /* Competition card — hero bold */
-      .card-competition {
-        background: #2f39a4;
-        border: 2px solid #bec2ff;
-        box-shadow: 16px 16px 0px rgba(255, 181, 151, 0.25);
+      .gallery-track:hover {
+        animation-play-state: paused;
       }
-      /* Guest Stars card — warm accent */
-      .card-guests {
-        background: #1a0c05;
-        border: 1px solid rgba(255, 181, 151, 0.25);
+      @keyframes gallery-scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
       }
-      .card-guests .card-accent-line {
-        height: 3px;
-        background: linear-gradient(90deg, #ffb597, transparent);
-        margin-bottom: 16px;
-      }
-
-      /* Gallery */
       .gallery-item {
+        flex-shrink: 0;
+        width: 288px;
         transition: all 0.5s ease;
         position: relative;
+        cursor: pointer;
       }
-      .gallery-container:hover .gallery-item:not(:hover) {
-        filter: blur(3px) brightness(0.6);
-        transform: scale(0.97);
+      @media (min-width: 768px) {
+        .gallery-item {
+          width: 420px;
+        }
       }
       .gallery-item:hover {
         transform: scale(1.03);
         z-index: 20;
       }
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
 
-      /* Timeline */
-      .timeline-path {
-        stroke-dasharray: 2000;
-        stroke-dashoffset: 2000;
-        transition: stroke-dashoffset 2s linear;
-      }
-      .timeline-item:hover > .z-10 {
-        border-color: #ffb597;
-        box-shadow: 0 0 24px rgba(255, 181, 151, 0.45);
-      }
-      .timeline-item:hover > .z-10 span {
-        color: #ffb597;
-      }
-
-      /* FIX: Navbar bg pakai inline style via JS, bukan Tailwind dynamic class */
+      /* Navbar */
       #navbar {
         transition:
           background-color 0.4s ease,
@@ -381,7 +353,7 @@
         border-bottom-color: rgba(190, 194, 255, 0.2);
       }
 
-      /* FIX: FAQ accordion JS-driven */
+      /* FAQ */
       .faq-answer {
         max-height: 0;
         overflow: hidden;
@@ -406,7 +378,7 @@
         color: #ffb597;
       }
 
-      /* FIX: Mobile nav hamburger */
+      /* Mobile nav */
       #mobile-menu {
         display: none;
         flex-direction: column;
@@ -441,15 +413,25 @@
       #hamburger-btn.open .hamburger-line:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
       }
-
-      /* FIX: Hero section overflow clip agar parallax text tidak bikin hscroll */
       #home {
         overflow: hidden;
+      }
+
+      .timeline-path {
+        stroke-dasharray: 2000;
+        stroke-dashoffset: 2000;
+        transition: stroke-dashoffset 2s linear;
+      }
+      .timeline-item:hover > .z-10 {
+        border-color: #ffb597;
+        box-shadow: 0 0 24px rgba(255, 181, 151, 0.45);
+      }
+      .timeline-item:hover > .z-10 span {
+        color: #ffb597;
       }
     </style>
   </head>
   <body class="font-body-md text-on-background relative">
-    <!-- Particles Background -->
     <div id="particles-container"></div>
 
     <!-- TopNavBar -->
@@ -469,8 +451,6 @@
             src="faf logo bold border.png"
           />
         </div>
-
-        <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-6 items-center">
           <a
             class="font-label-bold text-label-bold text-tertiary font-bold border-b-2 border-tertiary pb-1 hover:text-tertiary transition-colors duration-300"
@@ -503,9 +483,7 @@
             >Contact</a
           >
         </nav>
-
         <div class="flex items-center gap-4">
-          <!-- FIX: Hamburger menu button untuk mobile -->
           <button
             aria-label="Toggle menu"
             class="md:hidden flex flex-col gap-[6px] p-2"
@@ -516,8 +494,6 @@
             <span class="hamburger-line"></span>
           </button>
         </div>
-
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu">
           <a class="font-label-bold text-label-bold text-tertiary" href="#home"
             >Home</a
@@ -575,7 +551,6 @@
       >
         CREATIVITY
       </div>
-
       <div class="container mx-auto px-5 md:px-16 relative z-10 editorial-grid">
         <div
           class="col-span-12 lg:col-span-8 flex flex-col justify-center reveal"
@@ -595,9 +570,10 @@
             class="text-lg leading-7 max-w-xl text-primary/80 mb-10"
             style="font-family: &quot;Work Sans&quot;, sans-serif"
           >
-            Dive into a professional creative ocean where imagination breaks the
-            shoreline. Fun Art Festival 21 brings together the wildest minds for
-            a high-fashion, tropical art odyssey.
+            Tempat di mana ide-ide nyeleneh, karya terbaik, dan orang-orang
+            kreatif bertemu dalam satu perayaan. FAF 21 hadir sebagai ruang
+            untuk berkarya, berekspresi, dan menikmati seni dengan cara yang
+            lebih seru.
           </p>
         </div>
         <div
@@ -614,8 +590,6 @@
           />
         </div>
       </div>
-
-      <!-- Abstract Waves -->
       <div
         class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10"
       >
@@ -634,7 +608,7 @@
       </div>
     </section>
 
-    <!-- Interactive Hero Slideshow -->
+    <!-- What's Happening Carousel -->
     <section class="py-[120px] bg-[#010D85]/50 relative overflow-hidden reveal">
       <div class="container mx-auto px-5 md:px-16 text-center mb-16">
         <h2
@@ -645,8 +619,6 @@
         </h2>
         <div class="w-24 h-2 bg-tertiary mx-auto"></div>
       </div>
-
-      <!-- FIX: Carousel dengan struktur position yang benar -->
       <div class="relative overflow-hidden" style="padding: 0 20px">
         <button
           aria-label="Previous"
@@ -662,7 +634,6 @@
         >
           <span class="material-symbols-outlined text-4xl">chevron_right</span>
         </button>
-
         <div class="carousel-stage mx-auto max-w-6xl" id="carousel-stage">
           <!-- CARD 0 — SPONSOR -->
           <div
@@ -673,7 +644,6 @@
               border: 1px solid rgba(190, 194, 255, 0.2);
             "
           >
-            <!-- Tag -->
             <div
               class="flex items-center justify-between px-6 md:px-8 pt-6 pb-3"
             >
@@ -703,7 +673,6 @@
                 >PARTNERSHIP</span
               >
             </div>
-            <!-- Image -->
             <div
               class="relative w-full overflow-hidden"
               style="
@@ -731,7 +700,6 @@
                 "
               ></div>
             </div>
-            <!-- Content -->
             <div class="px-6 md:px-8 pt-5 pb-7">
               <h3
                 style="
@@ -755,8 +723,9 @@
                   margin-bottom: 20px;
                 "
               >
-                Elevate your brand at the heart of creativity. Reach 10K+
-                engaged artists &amp; collectors.
+                Jadilah bagian dari perjalanan FAF 21. Perkenalkan brand Anda
+                kepada ribuan peserta, pengunjung, dan komunitas kreatif yang
+                aktif dan penuh antusiasme.
               </p>
               <div
                 style="
@@ -787,7 +756,7 @@
             </div>
           </div>
 
-          <!-- CARD 1 — COMPETITION (default center) -->
+          <!-- CARD 1 — COMPETITION -->
           <div
             class="carousel-slide center-slide group cursor-pointer overflow-hidden"
             data-index="1"
@@ -796,7 +765,6 @@
               border: 1px solid rgba(190, 194, 255, 0.35);
             "
           >
-            <!-- Tag -->
             <div
               class="flex items-center justify-between px-6 md:px-8 pt-6 pb-3"
             >
@@ -826,7 +794,6 @@
                 >REG OPEN ●</span
               >
             </div>
-            <!-- Image -->
             <div
               class="relative w-full overflow-hidden"
               style="
@@ -854,7 +821,6 @@
                 "
               ></div>
             </div>
-            <!-- Content -->
             <div class="px-6 md:px-8 pt-5 pb-7">
               <h3
                 style="
@@ -878,8 +844,9 @@
                   margin-bottom: 20px;
                 "
               >
-                Showcase your skills and win exclusive rewards. Open for
-                digital, traditional &amp; multimedia.
+                Saatnya menunjukkan karya terbaikmu. Terbuka untuk berbagai
+                kategori kreatif dengan kesempatan meraih penghargaan,
+                pengalaman, dan relasi baru.
               </p>
               <div
                 style="
@@ -919,7 +886,6 @@
               border: 1px solid rgba(255, 181, 151, 0.2);
             "
           >
-            <!-- Tag -->
             <div
               class="flex items-center justify-between px-6 md:px-8 pt-6 pb-3"
             >
@@ -949,7 +915,6 @@
                 >CONFIRMED ✦</span
               >
             </div>
-            <!-- Image -->
             <div
               class="relative w-full overflow-hidden"
               style="
@@ -977,7 +942,6 @@
                 "
               ></div>
             </div>
-            <!-- Content -->
             <div class="px-6 md:px-8 pt-5 pb-7">
               <h3
                 style="
@@ -990,7 +954,7 @@
                   line-height: 1.1;
                 "
               >
-                Guest Stars
+                Guest Star
               </h3>
               <p
                 style="
@@ -1001,8 +965,8 @@
                   margin-bottom: 20px;
                 "
               >
-                The biggest names in creative industry. Live performances, talks
-                &amp; masterclasses.
+                Nantikan berbagai bintang tamu inspiratif yang akan berbagi
+                cerita, pengalaman, dan energi mereka langsung di FAF 21.
               </p>
               <div
                 style="
@@ -1058,15 +1022,15 @@
             style="font-family: &quot;Work Sans&quot;, sans-serif"
           >
             <p>
-              Fun Art Festival is not just an event; it's a movement. Born from
-              the need to break free from traditional gallery constraints, we
-              invite creators to step into the "Wild at Heart" territory.
+              Fun Art Festival bukan cuma soal lomba atau panggung hiburan. Ini
+              adalah tempat berkumpulnya orang-orang yang suka berkarya, berbagi
+              ide, dan menunjukkan apa yang mereka cintai lewat seni.
             </p>
             <p>
-              This year, 2026, we focus on the fluid intersection of
-              high-fashion aesthetics and tropical vibrancy. Our layout is
-              asymmetric, our energy is uncontainable, and our goal is pure
-              creative liberation.
+              Di FAF 21, kami membawa suasana yang lebih berani, lebih berwarna,
+              dan lebih hidup. Mulai dari kompetisi, pameran karya, hingga
+              penampilan spesial, semuanya dirancang untuk merayakan kreativitas
+              tanpa batas.
             </p>
           </div>
         </div>
@@ -1087,8 +1051,8 @@
               class="text-base text-white/70 mb-8 italic"
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
-              "To build a world where the character peeks over the headline and
-              the grid is just a suggestion."
+              "Memberi ruang bagi setiap orang untuk menunjukkan warna dan
+              caranya sendiri dalam berkarya."
             </p>
             <div class="h-1 w-full bg-primary/20 overflow-hidden">
               <div
@@ -1100,7 +1064,7 @@
       </div>
     </section>
 
-    <!-- Event Timeline -->
+    <!-- Timeline -->
     <section
       class="py-[120px] bg-[#0c0f0f] relative overflow-hidden"
       id="timeline"
@@ -1136,12 +1100,11 @@
         </h2>
       </div>
       <div class="relative max-w-4xl mx-auto px-5 z-10">
-        <!-- Center line -->
         <div
           class="absolute left-1/2 top-0 bottom-0 w-px bg-primary/10 -translate-x-1/2 hidden md:block"
         ></div>
 
-        <!-- Milestone 1 -->
+        <!-- M1 -->
         <div
           class="timeline-item relative flex items-center justify-between mb-24 md:mb-32 group reveal"
         >
@@ -1161,7 +1124,8 @@
               class="text-base text-primary/60 hidden md:block"
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
-              Registrasi peserta dibuka untuk semua kategori sampai batas akhir.
+              Periode pendaftaran dibuka untuk seluruh kategori lomba. Pastikan
+              kamu mendaftar sebelum batas waktu berakhir.
             </p>
           </div>
           <div
@@ -1183,7 +1147,7 @@
           </div>
         </div>
 
-        <!-- Milestone 2 -->
+        <!-- M2 -->
         <div
           class="timeline-item relative flex items-center justify-between mb-24 md:mb-32 group reveal"
         >
@@ -1220,12 +1184,13 @@
               class="text-base text-primary/60 hidden md:block"
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
-              Technical meeting untuk aturan dan panduan final.
+              Sesi pengarahan untuk peserta agar lebih memahami mekanisme,
+              aturan, dan alur kompetisi.
             </p>
           </div>
         </div>
 
-        <!-- Milestone 3 -->
+        <!-- M3 -->
         <div
           class="timeline-item relative flex items-center justify-between mb-24 md:mb-32 group reveal"
         >
@@ -1245,7 +1210,8 @@
               class="text-base text-primary/60 hidden md:block"
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
-              Peserta menyelesaikan karya dan mempersiapkannya untuk submission.
+              Waktu bagi peserta untuk mengembangkan ide dan menyelesaikan karya
+              terbaiknya.
             </p>
           </div>
           <div
@@ -1262,12 +1228,13 @@
               class="text-base text-primary/60 md:hidden"
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
-              Peserta menyelesaikan karya dan mempersiapkannya untuk submission.
+              Peserta mengerjakan dan menyempurnakan karya mereka untuk
+              persiapan submission.
             </p>
           </div>
         </div>
 
-        <!-- Milestone 4 -->
+        <!-- M4 -->
         <div
           class="timeline-item relative flex items-center justify-between mb-24 md:mb-32 group reveal"
         >
@@ -1276,7 +1243,7 @@
               class="text-base text-primary/60 md:hidden text-right"
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
-              Submission karya akan dibuka pada rentang tanggal yang ditentukan.
+              Periode pengumpulan karya sesuai tanggal yang ditentukan.
             </p>
           </div>
           <div
@@ -1304,12 +1271,13 @@
               class="text-base text-primary/60 hidden md:block"
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
-              Karya dikumpulkan dalam periode submission yang telah ditetapkan.
+              Seluruh karya dikirim sesuai ketentuan dan jadwal yang telah
+              ditentukan.
             </p>
           </div>
         </div>
 
-        <!-- Milestone 5 -->
+        <!-- M5 -->
         <div
           class="timeline-item relative flex items-center justify-between mb-24 md:mb-32 group reveal"
         >
@@ -1329,7 +1297,8 @@
               class="text-base text-primary/60 hidden md:block"
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
-              Perayaan acara, presentasi final, dan momen puncak kebersamaan.
+              Momen spesial yang mempertemukan seluruh peserta dalam rangkaian
+              acara seremoni FAF 21.
             </p>
           </div>
           <div
@@ -1346,12 +1315,13 @@
               class="text-base text-primary/60 md:hidden"
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
-              Perayaan acara, presentasi final, dan momen puncak kebersamaan.
+              Perayaan acara, presentasi final, dan momen puncak kebersamaan
+              seluruh peserta.
             </p>
           </div>
         </div>
 
-        <!-- Milestone 6 -->
+        <!-- M6 -->
         <div
           class="timeline-item relative flex items-center justify-between group reveal"
         >
@@ -1382,20 +1352,20 @@
               class="text-2xl font-bold text-white uppercase mb-1"
               style="font-family: &quot;Space Grotesk&quot;, sans-serif"
             >
-              Pengumuman & Puncak Acara
+              Pengumuman &amp; Puncak Acara
             </h4>
             <p
               class="text-base text-primary/60 hidden md:block"
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
-              Saatnya pengumuman pemenang dan klimaks acara festival.
+              Pengumuman pemenang sekaligus puncak perayaan Fun Art Festival 21.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Highlights from FAF 20 -->
+    <!-- Gallery — INFINITY SCROLL -->
     <section class="py-[120px] bg-[#010D85]" id="gallery">
       <div
         class="container mx-auto px-5 md:px-16 mb-16 flex flex-col md:flex-row justify-between items-end gap-8 reveal"
@@ -1423,157 +1393,288 @@
           WATCH FAF 20 RECAP
         </a>
       </div>
-      <div
-        class="flex overflow-x-auto pb-12 gap-6 px-5 md:px-16 no-scrollbar snap-x gallery-container"
-      >
-        <div
-          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
-        >
-          <img
-            alt="Performance Highlight"
-            class="w-full aspect-[4/5] object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQJfy3-9eBR6JWMzhmmOBHAmTlNQ52fe_f6x7dr5_x4P-8dE-CIotj7y7pdS8T2wAdOfZ-HKeFq1uDEAmgzBV_-ICxDdkd2ORdrZT-yIEh7T69sYj4BceOdRzvQBOF4TggoXj-qkH2XZH_zYbO_8dHoxMxk10kmkVmLU_-nshA7UAllirUoldOV6AAaTViSQOVBbvdtWh_zN4yVFZOi08NmtCWG_NjnAvED0hcL5oIFMw_X3-cSBXnWP84uvwLuTSyAQsfkreZDU2"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
-          >
-            <h3
-              class="text-2xl font-bold text-white"
-              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+
+      <!-- Infinity scroll track -->
+      <div class="gallery-track-wrapper px-0">
+        <div class="gallery-track" id="galleryTrack">
+          <!-- Original set -->
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Performance Highlight"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQJfy3-9eBR6JWMzhmmOBHAmTlNQ52fe_f6x7dr5_x4P-8dE-CIotj7y7pdS8T2wAdOfZ-HKeFq1uDEAmgzBV_-ICxDdkd2ORdrZT-yIEh7T69sYj4BceOdRzvQBOF4TggoXj-qkH2XZH_zYbO_8dHoxMxk10kmkVmLU_-nshA7UAllirUoldOV6AAaTViSQOVBbvdtWh_zN4yVFZOi08NmtCWG_NjnAvED0hcL5oIFMw_X3-cSBXnWP84uvwLuTSyAQsfkreZDU2"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
             >
-              Opening Act
-            </h3>
-            <p
-              class="text-base text-primary"
-              style="font-family: &quot;Work Sans&quot;, sans-serif"
-            >
-              Unforgettable energy that set the tone.
-            </p>
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Opening Act
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Awal dari rangkaian keseruan yang memenuhi festival.
+              </p>
+            </div>
           </div>
-        </div>
-        <div
-          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
-        >
-          <img
-            alt="Stage Crowd"
-            class="w-full aspect-[4/5] object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDps-NrRnhmgh-kjEJBQpwhPJQ3PNYEU_F6ztlKMnVAjth2LgPPoxPOdTjJSdWhrAM4dVEo0PYXKHzsfbcxNZqS3AqULaTG17G1d4hUtLJlKbi3HLbpWcOJmAXslsYZMZvVm6nomZvXQ5j9xBrrBHCjr0DiCQeabPeRqpHeio_of5aNm33fZQvpIzgxNTqNoUsqaqyfq6Er268dCuOEbtZNH3-m3lddU6Td23Fmm1pzvbgxbGczXm8hiKsWTa8wxrvTlXebPjBNwZAT"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
-          >
-            <h3
-              class="text-2xl font-bold text-white"
-              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Stage Crowd"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDps-NrRnhmgh-kjEJBQpwhPJQ3PNYEU_F6ztlKMnVAjth2LgPPoxPOdTjJSdWhrAM4dVEo0PYXKHzsfbcxNZqS3AqULaTG17G1d4hUtLJlKbi3HLbpWcOJmAXslsYZMZvVm6nomZvXQ5j9xBrrBHCjr0DiCQeabPeRqpHeio_of5aNm33fZQvpIzgxNTqNoUsqaqyfq6Er268dCuOEbtZNH3-m3lddU6Td23Fmm1pzvbgxbGczXm8hiKsWTa8wxrvTlXebPjBNwZAT"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
             >
-              The Big Stage
-            </h3>
-            <p
-              class="text-base text-primary"
-              style="font-family: &quot;Work Sans&quot;, sans-serif"
-            >
-              Where legends were born in 2020.
-            </p>
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                The Big Stage
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Pusat perhatian yang menghadirkan berbagai penampilan terbaik.
+              </p>
+            </div>
           </div>
-        </div>
-        <div
-          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
-        >
-          <img
-            alt="Release Ceremony"
-            class="w-full aspect-[4/5] object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBn19AmrLzQNaqd5kA2JklyBKu_BR_t8QJ3bVJ4JiUvMQO0aYwkAJFnaMtaoJc4QcHx0S5ibBkCQBv2MplYIMWFRST0W5bYFFlobfwVqCpvjuIJzcae0SBTWjhed1oe3bSsm7VHo-k-6gBwymGJfkcxc4SDbJyPJsFN7dxCZJ9iqvLxVDhWPuw9xdJLCEOKYKrWIMybuANPAv3E36t5_yKTAcRtXWvxUEzUe_aYbFuc4APEFPinQTO2JGcficDhKxvfnAPPY8ZWwn3"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
-          >
-            <h3
-              class="text-2xl font-bold text-white"
-              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Release Ceremony"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBn19AmrLzQNaqd5kA2JklyBKu_BR_t8QJ3bVJ4JiUvMQO0aYwkAJFnaMtaoJc4QcHx0S5ibBkCQBv2MplYIMWFRST0W5bYFFlobfwVqCpvjuIJzcae0SBTWjhed1oe3bSsm7VHo-k-6gBwymGJfkcxc4SDbJyPJsFN7dxCZJ9iqvLxVDhWPuw9xdJLCEOKYKrWIMybuANPAv3E36t5_yKTAcRtXWvxUEzUe_aYbFuc4APEFPinQTO2JGcficDhKxvfnAPPY8ZWwn3"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
             >
-              Peace &amp; Art
-            </h3>
-            <p
-              class="text-base text-primary"
-              style="font-family: &quot;Work Sans&quot;, sans-serif"
-            >
-              Symbolic moments of artistic freedom.
-            </p>
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Peace &amp; Art
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Potret semangat berkarya dan berekspresi tanpa batas.
+              </p>
+            </div>
           </div>
-        </div>
-        <div
-          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
-        >
-          <img
-            alt="Music Performance"
-            class="w-full aspect-[4/5] object-cover"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA06B9ni0UFpqrsZgN1m5UusG1PTKyYFPNS4_AID8OC-ArPzlS700f1hYVZTpT67JTo34Cdhz-UH4LAi0mDgLZnq9ygqz-qddTElVxHzv-dKXPKgLeV20M1LNSmFo_3O8qd6pYPHiePDvVZrSu-C_aeGJ00nCoPzWuWwQGT02pXpcYgCxWzgbWvUmlu8UDhKsA5vztZQQg_-n3kpl4LUAz8dQYxkFozmLJBye_ea37-mZ4qSY5au4lDo7nfOFVrj-JzZ5eXJN3kvKGP"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
-          >
-            <h3
-              class="text-2xl font-bold text-white"
-              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Music Performance"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA06B9ni0UFpqrsZgN1m5UusG1PTKyYFPNS4_AID8OC-ArPzlS700f1hYVZTpT67JTo34Cdhz-UH4LAi0mDgLZnq9ygqz-qddTElVxHzv-dKXPKgLeV20M1LNSmFo_3O8qd6pYPHiePDvVZrSu-C_aeGJ00nCoPzWuWwQGT02pXpcYgCxWzgbWvUmlu8UDhKsA5vztZQQg_-n3kpl4LUAz8dQYxkFozmLJBye_ea37-mZ4qSY5au4lDo7nfOFVrj-JzZ5eXJN3kvKGP"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
             >
-              Midnight Melodies
-            </h3>
-            <p
-              class="text-base text-primary"
-              style="font-family: &quot;Work Sans&quot;, sans-serif"
-            >
-              Fusing sound and visual storytelling.
-            </p>
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Midnight Melodies
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Perpaduan musik dan suasana yang menciptakan pengalaman tak
+                terlupakan.
+              </p>
+            </div>
           </div>
-        </div>
-        <div
-          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
-        >
-          <img
-            alt="Traditional Dance"
-            class="w-full aspect-[4/5] object-cover"
-            src="tari.jpg"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
-          >
-            <h3
-              class="text-2xl font-bold text-white"
-              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Traditional Dance"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="taro.jpg"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
             >
-              Traditional Dance
-            </h3>
-            <p
-              class="text-base text-primary"
-              style="font-family: &quot;Work Sans&quot;, sans-serif"
-            >
-              Celebrating cultural heritage through movement.
-            </p>
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Traditional Dance
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Merayakan warisan budaya melalui keindahan gerak tari.
+              </p>
+            </div>
           </div>
-        </div>
-        <div
-          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
-        >
-          <img
-            alt="Audience Vibes"
-            class="w-full aspect-[4/5] object-cover"
-            src="crowd.jpg"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
-          >
-            <h3
-              class="text-2xl font-bold text-white"
-              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Audience Vibes"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="crowd.jpg"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
             >
-              Audience Vibes
-            </h3>
-            <p
-              class="text-base text-primary"
-              style="font-family: &quot;Work Sans&quot;, sans-serif"
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Audience Vibes
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Antusiasme para pengunjung yang membuat festival terasa hidup.
+              </p>
+            </div>
+          </div>
+          <!-- Duplicate set for seamless loop -->
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Performance Highlight"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQJfy3-9eBR6JWMzhmmOBHAmTlNQ52fe_f6x7dr5_x4P-8dE-CIotj7y7pdS8T2wAdOfZ-HKeFq1uDEAmgzBV_-ICxDdkd2ORdrZT-yIEh7T69sYj4BceOdRzvQBOF4TggoXj-qkH2XZH_zYbO_8dHoxMxk10kmkVmLU_-nshA7UAllirUoldOV6AAaTViSQOVBbvdtWh_zN4yVFZOi08NmtCWG_NjnAvED0hcL5oIFMw_X3-cSBXnWP84uvwLuTSyAQsfkreZDU2"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
             >
-              The heartbeat of the festival experience.
-            </p>
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Opening Act
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Energi luar biasa yang mengawali segalanya.
+              </p>
+            </div>
+          </div>
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Stage Crowd"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDps-NrRnhmgh-kjEJBQpwhPJQ3PNYEU_F6ztlKMnVAjth2LgPPoxPOdTjJSdWhrAM4dVEo0PYXKHzsfbcxNZqS3AqULaTG17G1d4hUtLJlKbi3HLbpWcOJmAXslsYZMZvVm6nomZvXQ5j9xBrrBHCjr0DiCQeabPeRqpHeio_of5aNm33fZQvpIzgxNTqNoUsqaqyfq6Er268dCuOEbtZNH3-m3lddU6Td23Fmm1pzvbgxbGczXm8hiKsWTa8wxrvTlXebPjBNwZAT"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
+            >
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                The Big Stage
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Panggung utama tempat para legenda dilahirkan.
+              </p>
+            </div>
+          </div>
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Release Ceremony"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBn19AmrLzQNaqd5kA2JklyBKu_BR_t8QJ3bVJ4JiUvMQO0aYwkAJFnaMtaoJc4QcHx0S5ibBkCQBv2MplYIMWFRST0W5bYFFlobfwVqCpvjuIJzcae0SBTWjhed1oe3bSsm7VHo-k-6gBwymGJfkcxc4SDbJyPJsFN7dxCZJ9iqvLxVDhWPuw9xdJLCEOKYKrWIMybuANPAv3E36t5_yKTAcRtXWvxUEzUe_aYbFuc4APEFPinQTO2JGcficDhKxvfnAPPY8ZWwn3"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
+            >
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Peace &amp; Art
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Momen simbolis kebebasan berekspresi lewat karya.
+              </p>
+            </div>
+          </div>
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Music Performance"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA06B9ni0UFpqrsZgN1m5UusG1PTKyYFPNS4_AID8OC-ArPzlS700f1hYVZTpT67JTo34Cdhz-UH4LAi0mDgLZnq9ygqz-qddTElVxHzv-dKXPKgLeV20M1LNSmFo_3O8qd6pYPHiePDvVZrSu-C_aeGJ00nCoPzWuWwQGT02pXpcYgCxWzgbWvUmlu8UDhKsA5vztZQQg_-n3kpl4LUAz8dQYxkFozmLJBye_ea37-mZ4qSY5au4lDo7nfOFVrj-JzZ5eXJN3kvKGP"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
+            >
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Midnight Melodies
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Harmoni suara dan visual yang memukau sepanjang malam.
+              </p>
+            </div>
+          </div>
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Traditional Dance"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="taro.jpg"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
+            >
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Traditional Dance
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Merayakan warisan budaya melalui keindahan gerak tari.
+              </p>
+            </div>
+          </div>
+          <div class="gallery-item group overflow-hidden">
+            <img
+              alt="Audience Vibes"
+              class="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
+              src="crowd.jpg"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0"
+            >
+              <h3
+                class="text-xl font-bold text-white"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Audience Vibes
+              </h3>
+              <p
+                class="text-sm text-primary"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Denyut jantung festival yang sesungguhnya ada di sini.
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1604,7 +1705,7 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ -->
     <section class="py-[120px] reveal">
       <div class="container mx-auto px-5 md:px-16 editorial-grid">
         <div class="col-span-12 lg:col-span-4">
@@ -1618,7 +1719,6 @@
         <div
           class="col-span-12 lg:col-span-7 lg:col-start-6 space-y-6 mt-8 lg:mt-0"
         >
-          <!-- FAQ Item 1 -->
           <div class="faq-item border-b border-primary/20 pb-6" data-faq="0">
             <div class="flex justify-between items-center mb-2 py-2">
               <h3
@@ -1637,13 +1737,12 @@
                 class="text-base text-on-surface-variant pb-2"
                 style="font-family: &quot;Work Sans&quot;, sans-serif"
               >
-                Click on the Registration slide above or head to our Instagram
-                link in bio. Submissions are open for digital, traditional, and
-                multimedia art categories.
+                Klik pada slide Registrasi di atas atau kunjungi link di bio
+                Instagram kami. Pengiriman karya terbuka untuk kategori seni
+                digital, tradisional, dan multimedia.
               </p>
             </div>
           </div>
-          <!-- FAQ Item 2 -->
           <div class="faq-item border-b border-primary/20 pb-6" data-faq="1">
             <div class="flex justify-between items-center mb-2 py-2">
               <h3
@@ -1662,13 +1761,11 @@
                 class="text-base text-on-surface-variant pb-2"
                 style="font-family: &quot;Work Sans&quot;, sans-serif"
               >
-                Yes! Fun Art Festival is a family-friendly celebration of
-                creativity. We have specific zones for kids and professional
-                workshop areas for adults.
+                Tentu. FAF 21 terbuka untuk semua kalangan, baik peserta maupun
+                pengunjung yang ingin menikmati suasana festival.
               </p>
             </div>
           </div>
-          <!-- FAQ Item 3 bonus -->
           <div class="faq-item border-b border-primary/20 pb-6" data-faq="2">
             <div class="flex justify-between items-center mb-2 py-2">
               <h3
@@ -1687,9 +1784,9 @@
                 class="text-base text-on-surface-variant pb-2"
                 style="font-family: &quot;Work Sans&quot;, sans-serif"
               >
-                Reach out to us at osis@smkrus.sch.id or via our official
-                WhatsApp for sponsorship packages tailored to your brand's
-                goals.
+                Kamu bisa menghubungi panitia melalui WhatsApp atau email resmi
+                FAF untuk mendapatkan informasi lengkap mengenai kerja sama dan
+                sponsorship.
               </p>
             </div>
           </div>
@@ -1715,7 +1812,8 @@
             class="text-base text-on-surface-variant mb-8"
             style="font-family: &quot;Work Sans&quot;, sans-serif"
           >
-            Elevating creative boundaries since 2019. Join the movement.
+            Merayakan kreativitas, kolaborasi, dan semangat berkarya bersama
+            sejak 2019.
           </p>
           <div class="flex gap-4">
             <a
@@ -1776,12 +1874,12 @@
             style="font-family: &quot;Work Sans&quot;, sans-serif"
           >
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm">mail</span>
-              hello@funartfest.com
+              <span class="material-symbols-outlined text-sm">mail</span
+              >osis@smkrus.sch.id
             </li>
             <li class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-sm">location_on</span>
-              Creative Hub, Jakarta
+              <span class="material-symbols-outlined text-sm">location_on</span
+              >SMK RUS Kudus, Jawa Tengah
             </li>
             <li class="flex items-center gap-2 font-bold text-primary">
               #FAF21 #WavesOfCreativity
@@ -1796,152 +1894,113 @@
           class="text-base text-on-surface-variant opacity-50"
           style="font-family: &quot;Work Sans&quot;, sans-serif"
         >
-          © 2026 Fun Art Festival. All Rights Reserved. Created for the Wild at
-          Heart.
+          © 2026 Fun Art Festival. Semua Hak Dilindungi. Dibuat oleh dan untuk
+          para pencinta kreativitas.
         </p>
       </div>
     </footer>
 
     <script>
-      // --- 1. Particles System ---
+      // 1. Particles
       const particleContainer = document.getElementById("particles-container");
       for (let i = 0; i < 40; i++) {
-        const particle = document.createElement("div");
-        particle.className = "particle";
+        const p = document.createElement("div");
+        p.className = "particle";
         const size = Math.random() * 15 + 5;
-        particle.style.cssText = `
-        width:${size}px; height:${size}px;
-        left:${Math.random() * 100}%;
-        top:${Math.random() * 100}%;
-        opacity:${Math.random() * 0.4};
-        animation: floating ${Math.random() * 5 + 5}s ease-in-out infinite;
-        animation-delay: ${Math.random() * 5}s;
-    `;
-        particleContainer.appendChild(particle);
+        p.style.cssText = `width:${size}px;height:${size}px;left:${Math.random() * 100}%;top:${Math.random() * 100}%;opacity:${Math.random() * 0.4};animation:floating ${Math.random() * 5 + 5}s ease-in-out infinite;animation-delay:${Math.random() * 5}s`;
+        particleContainer.appendChild(p);
       }
 
-      // --- 2. FIX: Navbar sticky via class + active section highlighting ---
+      // 2. Navbar scroll
       window.addEventListener(
         "scroll",
         () => {
           const nav = document.getElementById("navbar");
-          if (window.scrollY > 80) {
-            nav.classList.add("scrolled");
-          } else {
-            nav.classList.remove("scrolled");
-          }
+          nav.classList.toggle("scrolled", window.scrollY > 80);
 
-          // Highlight active section
           const sections = document.querySelectorAll("section[id]");
           let activeSectionId = "home";
-
-          sections.forEach((section) => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionBottom = sectionTop + section.offsetHeight;
-            if (
-              window.scrollY >= sectionTop &&
-              window.scrollY < sectionBottom
-            ) {
-              activeSectionId = section.getAttribute("id");
-            }
+          sections.forEach((s) => {
+            const top = s.offsetTop - 100;
+            if (window.scrollY >= top && window.scrollY < top + s.offsetHeight)
+              activeSectionId = s.id;
           });
-
-          // Update navbar links
-          const navLinks = document.querySelectorAll("nav a, #mobile-menu a");
-          navLinks.forEach((link) => {
-            const href = link.getAttribute("href");
-            if (href && href.startsWith("#")) {
-              const targetId = href.substring(1);
-              if (targetId === activeSectionId) {
-                link.classList.add("text-tertiary");
-                link.classList.remove("opacity-80");
-                link.style.borderBottom = "2px solid #ffb597";
-                link.style.paddingBottom = "4px";
-              } else {
-                link.classList.remove("text-tertiary");
-                link.classList.add("opacity-80");
-                link.style.borderBottom = "none";
-                link.style.paddingBottom = "0px";
-              }
+          document.querySelectorAll("nav a, #mobile-menu a").forEach((link) => {
+            const id = link.getAttribute("href")?.substring(1);
+            if (id === activeSectionId) {
+              link.classList.add("text-tertiary");
+              link.classList.remove("opacity-80");
+              link.style.borderBottom = "2px solid #ffb597";
+              link.style.paddingBottom = "4px";
+            } else {
+              link.classList.remove("text-tertiary");
+              link.classList.add("opacity-80");
+              link.style.borderBottom = "none";
+              link.style.paddingBottom = "0px";
             }
           });
         },
         { passive: true },
       );
 
-      // --- 3. Parallax (hanya desktop, mobile skip untuk performa) ---
+      // 3. Parallax
       const isMobile = window.innerWidth < 768;
       window.addEventListener(
         "scroll",
         () => {
           const scrolled = window.pageYOffset;
-
           if (!isMobile) {
             document.querySelectorAll(".parallax-text").forEach((el) => {
-              const speed = parseFloat(el.getAttribute("data-speed")) || 0.5;
-              el.style.transform = `translateX(${scrolled * speed}px)`;
+              el.style.transform = `translateX(${scrolled * parseFloat(el.dataset.speed || 0.5)}px)`;
             });
             const wave = document.querySelector(".parallax-wave");
-            if (wave) {
-              const speed = parseFloat(wave.getAttribute("data-speed")) || 0.1;
-              wave.style.transform = `translateX(-${scrolled * speed}px)`;
-            }
+            if (wave)
+              wave.style.transform = `translateX(-${scrolled * parseFloat(wave.dataset.speed || 0.1)}px)`;
           }
-
-          // Timeline progress
-          const timeline = document.getElementById("scrollTimeline");
-          if (timeline) {
-            const section = timeline.closest("section");
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const scrollPercent =
-              (scrolled - sectionTop + window.innerHeight) /
-              (sectionHeight + window.innerHeight);
-            const draw = 2000 * Math.max(0, Math.min(1, scrollPercent));
-            timeline.style.strokeDashoffset = Math.max(0, 2000 - draw * 1.5);
+          const tl = document.getElementById("scrollTimeline");
+          if (tl) {
+            const sec = tl.closest("section");
+            const pct =
+              (scrolled - sec.offsetTop + window.innerHeight) /
+              (sec.offsetHeight + window.innerHeight);
+            tl.style.strokeDashoffset = Math.max(
+              0,
+              2000 - 2000 * Math.max(0, Math.min(1, pct)) * 1.5,
+            );
           }
         },
         { passive: true },
       );
 
-      // --- 4. Carousel — infinite loop to the LEFT, pause on hover ---
+      // 4. Carousel
       const slides = document.querySelectorAll(".carousel-slide");
-      const carouselStage = document.querySelector(".carousel-stage");
-
-      let currentIdx = 1;
-      let autoPlay = null;
-      let isPaused = false;
-      const INTERVAL = 4000;
+      let currentIdx = 1,
+        autoPlay = null,
+        isPaused = false;
 
       function updateCarousel(idx) {
         currentIdx = ((idx % slides.length) + slides.length) % slides.length;
         const prev = (currentIdx - 1 + slides.length) % slides.length;
         const next = (currentIdx + 1) % slides.length;
-
-        slides.forEach((slide, i) => {
-          slide.classList.remove(
+        slides.forEach((s, i) => {
+          s.classList.remove(
             "center-slide",
             "left-slide",
             "right-slide",
             "hidden-slide",
           );
-          if (i === currentIdx) slide.classList.add("center-slide");
-          else if (i === prev) slide.classList.add("left-slide");
-          else if (i === next) slide.classList.add("right-slide");
-          else slide.classList.add("hidden-slide");
+          if (i === currentIdx) s.classList.add("center-slide");
+          else if (i === prev) s.classList.add("left-slide");
+          else if (i === next) s.classList.add("right-slide");
+          else s.classList.add("hidden-slide");
         });
       }
-
       function startAuto() {
         clearInterval(autoPlay);
         autoPlay = setInterval(() => {
-          if (!isPaused) {
-            updateCarousel(currentIdx - 1);
-          }
-        }, INTERVAL);
+          if (!isPaused) updateCarousel(currentIdx - 1);
+        }, 4000);
       }
-
-      // Nav buttons
       document.getElementById("nextSlide").addEventListener("click", () => {
         updateCarousel(currentIdx + 1);
         startAuto();
@@ -1950,9 +2009,9 @@
         updateCarousel(currentIdx - 1);
         startAuto();
       });
-
-      // Pause on hover
-      const carouselSection = carouselStage.closest("section");
+      const carouselSection = document
+        .querySelector(".carousel-stage")
+        .closest("section");
       carouselSection.addEventListener("mouseenter", () => {
         isPaused = true;
         clearInterval(autoPlay);
@@ -1961,17 +2020,15 @@
         isPaused = false;
         startAuto();
       });
-
-      // Touch swipe
       let touchX = 0;
-      carouselStage.addEventListener(
-        "touchstart",
-        (e) => {
-          touchX = e.touches[0].clientX;
-        },
-        { passive: true },
-      );
-      carouselStage.addEventListener(
+      document
+        .querySelector(".carousel-stage")
+        .addEventListener(
+          "touchstart",
+          (e) => (touchX = e.touches[0].clientX),
+          { passive: true },
+        );
+      document.querySelector(".carousel-stage").addEventListener(
         "touchend",
         (e) => {
           const d = touchX - e.changedTouches[0].clientX;
@@ -1982,118 +2039,64 @@
         },
         { passive: true },
       );
-
       updateCarousel(1);
       startAuto();
 
-      // --- 5. Gallery Carousel — auto-scroll infinite loop with pause on hover ---
-      const galleryContainer = document.querySelector(".gallery-container");
-      const galleryItems = document.querySelectorAll(".gallery-item");
-
-      if (galleryContainer && galleryItems.length > 0) {
-        let galleryAutoScroll = null;
-        let galleryPaused = false;
-        const GALLERY_SCROLL_SPEED = 100; // pixels per interval
-        const GALLERY_INTERVAL = 20; // milliseconds (smooth scrolling)
-
-        // Keep original 6 gallery items only; no duplicate clone.
-
-        function autoScrollGallery() {
-          if (!galleryPaused && galleryContainer) {
-            galleryContainer.scrollLeft += GALLERY_SCROLL_SPEED;
-
-            // Reset to start when reaching end (seamless loop)
-            const scrollWidth = galleryContainer.scrollWidth;
-            const containerWidth = galleryContainer.offsetWidth;
-            if (galleryContainer.scrollLeft >= scrollWidth - containerWidth) {
-              galleryContainer.scrollLeft = 0;
-            }
-          }
-        }
-
-        function startGalleryAuto() {
-          clearInterval(galleryAutoScroll);
-          galleryAutoScroll = setInterval(autoScrollGallery, GALLERY_INTERVAL);
-        }
-
-        // Pause on hover
-        galleryContainer.addEventListener("mouseenter", () => {
-          galleryPaused = true;
-        });
-
-        galleryContainer.addEventListener("mouseleave", () => {
-          galleryPaused = false;
-        });
-
-        // Start auto-scroll
-        startGalleryAuto();
-      }
-
-      // --- 6. FIX: FAQ accordion dengan JS proper ---
+      // 5. FAQ
       document.querySelectorAll(".faq-item").forEach((item) => {
         item.addEventListener("click", () => {
-          const answer = item.querySelector(".faq-answer");
           const isOpen = item.classList.contains("open");
-
-          // Tutup semua dulu
-          document.querySelectorAll(".faq-item").forEach((other) => {
-            other.classList.remove("open");
-            other.querySelector(".faq-answer").classList.remove("open");
-            other.querySelector("h3").style.color = "";
+          document.querySelectorAll(".faq-item").forEach((o) => {
+            o.classList.remove("open");
+            o.querySelector(".faq-answer").classList.remove("open");
+            o.querySelector("h3").style.color = "";
           });
-
-          // Buka yang diklik kalau belum open
           if (!isOpen) {
             item.classList.add("open");
-            answer.classList.add("open");
+            item.querySelector(".faq-answer").classList.add("open");
             item.querySelector("h3").style.color = "#ffb597";
           }
         });
       });
 
-      // --- 7. FIX: Mobile nav hamburger ---
+      // 6. Mobile nav
       const hamburgerBtn = document.getElementById("hamburger-btn");
       const mobileMenu = document.getElementById("mobile-menu");
-
       hamburgerBtn.addEventListener("click", () => {
-        const isOpen = mobileMenu.classList.toggle("open");
-        hamburgerBtn.classList.toggle("open", isOpen);
-        // Tutup menu saat link diklik
+        hamburgerBtn.classList.toggle(
+          "open",
+          mobileMenu.classList.toggle("open"),
+        );
       });
-
-      mobileMenu.querySelectorAll("a").forEach((link) => {
+      mobileMenu.querySelectorAll("a").forEach((link) =>
         link.addEventListener("click", () => {
           mobileMenu.classList.remove("open");
           hamburgerBtn.classList.remove("open");
-        });
-      });
+        }),
+      );
 
-      // --- 8. Scroll Reveal ---
+      // 7. Scroll Reveal
       const revealObserver = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("active");
-            }
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("active");
           });
         },
         { threshold: 0.1 },
       );
-
       document
         .querySelectorAll(".reveal")
         .forEach((el) => revealObserver.observe(el));
 
-      // --- 9. Smooth Scroll ---
+      // 8. Smooth scroll
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           const href = this.getAttribute("href");
           if (href === "#") return;
           e.preventDefault();
           const target = document.querySelector(href);
-          if (target) {
+          if (target)
             window.scrollTo({ top: target.offsetTop - 80, behavior: "smooth" });
-          }
         });
       });
     </script>
