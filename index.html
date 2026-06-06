@@ -1,132 +1,169 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="dark" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Fun Art Festival 21 | Waves of Creativity</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@900&family=Space+Grotesk:wght@700&family=Work+Sans:wght@400&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-tailwind.config = {
-    darkMode: "class",
-    theme: {
-        extend: {
-            "colors": {
-                "primary": "#bec2ff",
-                "secondary-fixed": "#e0e0ff",
-                "surface-container-high": "#282a2b",
-                "on-tertiary-container": "#ffad8b",
-                "secondary-fixed-dim": "#bdc2ff",
-                "on-tertiary": "#591d00",
-                "secondary-container": "#2f39a4",
-                "secondary": "#bdc2ff",
-                "primary-fixed": "#e0e0ff",
-                "on-secondary-fixed-variant": "#2f39a4",
-                "on-background": "#e2e2e2",
-                "primary-container": "#303cc2",
-                "on-tertiary-fixed": "#360f00",
-                "on-secondary-fixed": "#000767",
-                "surface-variant": "#333535",
-                "surface-container-lowest": "#0c0f0f",
-                "error-container": "#93000a",
-                "inverse-surface": "#e2e2e2",
-                "on-tertiary-fixed-variant": "#7e2c00",
-                "tertiary-fixed": "#ffdbcd",
-                "primary-fixed-dim": "#bec2ff",
-                "tertiary-container": "#8b3200",
-                "surface-container-low": "#1a1c1c",
-                "on-secondary-container": "#a8afff",
-                "surface-container": "#1e2020",
-                "on-primary-fixed": "#000568",
-                "surface-container-highest": "#333535",
-                "on-surface": "#e2e2e2",
-                "surface-bright": "#37393a",
-                "tertiary": "#ffb597",
-                "tertiary-fixed-dim": "#ffb597",
-                "on-secondary": "#131e8d",
-                "on-error-container": "#ffdad6",
-                "error": "#ffb4ab",
-                "outline-variant": "#454654",
-                "on-primary-container": "#b6bcff",
-                "surface-tint": "#bec2ff",
-                "surface-dim": "#121414",
-                "surface": "#121414",
-                "outline": "#908fa0",
-                "inverse-primary": "#424ed2",
-                "inverse-on-surface": "#2f3131",
-                "on-primary-fixed-variant": "#2632ba",
-                "background": "#121414",
-                "on-surface-variant": "#c6c5d7",
-                "on-primary": "#000ea4",
-                "on-error": "#690005",
-                "festival-navy": "#010D85"
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Fun Art Festival 21 | Waves of Creativity</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anybody:wght@900&family=Space+Grotesk:wght@700&family=Work+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#bec2ff",
+              "secondary-fixed": "#e0e0ff",
+              "surface-container-high": "#282a2b",
+              "on-tertiary-container": "#ffad8b",
+              "secondary-fixed-dim": "#bdc2ff",
+              "on-tertiary": "#591d00",
+              "secondary-container": "#2f39a4",
+              secondary: "#bdc2ff",
+              "primary-fixed": "#e0e0ff",
+              "on-secondary-fixed-variant": "#2f39a4",
+              "on-background": "#e2e2e2",
+              "primary-container": "#303cc2",
+              "on-tertiary-fixed": "#360f00",
+              "on-secondary-fixed": "#000767",
+              "surface-variant": "#333535",
+              "surface-container-lowest": "#0c0f0f",
+              "error-container": "#93000a",
+              "inverse-surface": "#e2e2e2",
+              "on-tertiary-fixed-variant": "#7e2c00",
+              "tertiary-fixed": "#ffdbcd",
+              "primary-fixed-dim": "#bec2ff",
+              "tertiary-container": "#8b3200",
+              "surface-container-low": "#1a1c1c",
+              "on-secondary-container": "#a8afff",
+              "surface-container": "#1e2020",
+              "on-primary-fixed": "#000568",
+              "surface-container-highest": "#333535",
+              "on-surface": "#e2e2e2",
+              "surface-bright": "#37393a",
+              tertiary: "#ffb597",
+              "tertiary-fixed-dim": "#ffb597",
+              "on-secondary": "#131e8d",
+              "on-error-container": "#ffdad6",
+              error: "#ffb4ab",
+              "outline-variant": "#454654",
+              "on-primary-container": "#b6bcff",
+              "surface-tint": "#bec2ff",
+              "surface-dim": "#121414",
+              surface: "#121414",
+              outline: "#908fa0",
+              "inverse-primary": "#424ed2",
+              "inverse-on-surface": "#2f3131",
+              "on-primary-fixed-variant": "#2632ba",
+              background: "#121414",
+              "on-surface-variant": "#c6c5d7",
+              "on-primary": "#000ea4",
+              "on-error": "#690005",
+              "festival-navy": "#010D85",
             },
-            "borderRadius": {
-                "DEFAULT": "0px",
-                "lg": "0px",
-                "xl": "0px",
-                "full": "9999px"
+            borderRadius: {
+              DEFAULT: "0px",
+              lg: "0px",
+              xl: "0px",
+              full: "9999px",
             },
-            "spacing": {
-                "gutter": "24px",
-                "margin-desktop": "64px",
-                "unit": "8px",
-                "margin-mobile": "20px",
-                "section-gap": "120px",
-                "container-max": "1440px"
+            spacing: {
+              gutter: "24px",
+              "margin-desktop": "64px",
+              unit: "8px",
+              "margin-mobile": "20px",
+              "section-gap": "120px",
+              "container-max": "1440px",
             },
-            "fontFamily": {
-                "headline-md": ["Space Grotesk"],
-                "label-bold": ["Space Grotesk"],
-                "display-xl": ["Anybody"],
-                "body-lg": ["Work Sans"],
-                "headline-lg": ["Anybody"],
-                "display-xl-mobile": ["Anybody"],
-                "body-md": ["Work Sans"]
+            fontFamily: {
+              "headline-md": ["Space Grotesk"],
+              "label-bold": ["Space Grotesk"],
+              "display-xl": ["Anybody"],
+              "body-lg": ["Work Sans"],
+              "headline-lg": ["Anybody"],
+              "display-xl-mobile": ["Anybody"],
+              "body-md": ["Work Sans"],
             },
-            "fontSize": {
-                "headline-md": ["32px", {"lineHeight": "36px", "fontWeight": "700"}],
-                "label-bold": ["14px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "700"}],
-                "display-xl": ["120px", {"lineHeight": "110px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
-                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                "headline-lg": ["48px", {"lineHeight": "52px", "fontWeight": "800"}],
-                "display-xl-mobile": ["64px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "900"}],
-                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
-            }
-        }
-    }
-}
-</script>
-<style>
-    body {
-        background-color: #010D85;
+            fontSize: {
+              "headline-md": [
+                "32px",
+                { lineHeight: "36px", fontWeight: "700" },
+              ],
+              "label-bold": [
+                "14px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.1em",
+                  fontWeight: "700",
+                },
+              ],
+              "display-xl": [
+                "120px",
+                {
+                  lineHeight: "110px",
+                  letterSpacing: "-0.04em",
+                  fontWeight: "900",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+              "headline-lg": [
+                "48px",
+                { lineHeight: "52px", fontWeight: "800" },
+              ],
+              "display-xl-mobile": [
+                "64px",
+                {
+                  lineHeight: "60px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "900",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #010d85;
         color: #e2e2e2;
         overflow-x: hidden;
-    }
-    .editorial-grid {
+      }
+      .editorial-grid {
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: 24px;
-    }
-    .liquid-bg {
-        background: radial-gradient(circle at 50% 50%, #010D85 0%, #000767 100%);
-    }
-    .btn-block {
+      }
+      .liquid-bg {
+        background: radial-gradient(
+          circle at 50% 50%,
+          #010d85 0%,
+          #000767 100%
+        );
+      }
+      .btn-block {
         background-color: #ffb597;
         color: #591d00;
         border: 2px solid transparent;
         transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
         font-weight: 700;
         cursor: pointer;
-    }
-    .btn-block:hover {
+      }
+      .btn-block:hover {
         box-shadow: 6px 6px 0px #303cc2;
         transform: translate(-3px, -3px);
-    }
+      }
 
-    /* FIX: Parallax text overflow terkendali, tidak trigger horizontal scroll */
-    .parallax-text {
+      /* FIX: Parallax text overflow terkendali, tidak trigger horizontal scroll */
+      .parallax-text {
         white-space: nowrap;
         font-size: 15rem;
         opacity: 0.05;
@@ -137,193 +174,233 @@ tailwind.config = {
         user-select: none;
         left: 0;
         right: 0;
-    }
-    @media (max-width: 768px) {
-        .parallax-text { font-size: 6rem; }
-    }
+      }
+      @media (max-width: 768px) {
+        .parallax-text {
+          font-size: 6rem;
+        }
+      }
 
-    @keyframes floating {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-    }
-    .float-animation {
+      @keyframes floating {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      .float-animation {
         animation: floating 6s ease-in-out infinite;
-    }
+      }
 
-    /* Scroll Reveal */
-    .reveal {
+      /* Scroll Reveal */
+      .reveal {
         opacity: 0;
         transform: translateY(30px);
         transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
-    }
-    .reveal.active {
+      }
+      .reveal.active {
         opacity: 1;
         transform: translateY(0);
-    }
+      }
 
-    /* Particles */
-    #particles-container {
+      /* Particles */
+      #particles-container {
         position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         pointer-events: none;
         z-index: 1;
         overflow: hidden;
-    }
-    .particle {
+      }
+      .particle {
         position: absolute;
         background: rgba(190, 194, 255, 0.2);
         border-radius: 50%;
         pointer-events: none;
-    }
+      }
 
-    /* Carousel */
-    .carousel-stage {
+      /* Carousel */
+      .carousel-stage {
         position: relative;
         width: 100%;
         height: 580px;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    @media (min-width: 768px) { .carousel-stage { height: 660px; } }
+      }
+      @media (min-width: 768px) {
+        .carousel-stage {
+          height: 660px;
+        }
+      }
 
-    .carousel-slide {
+      .carousel-slide {
         position: absolute;
         transition: all 0.65s cubic-bezier(0.23, 1, 0.32, 1);
         width: 300px;
-    }
-    @media (min-width: 768px) { .carousel-slide { width: 440px; } }
+      }
+      @media (min-width: 768px) {
+        .carousel-slide {
+          width: 440px;
+        }
+      }
 
-    .carousel-slide.center-slide {
+      .carousel-slide.center-slide {
         width: 310px;
         z-index: 20;
         transform: translateX(0) scale(1);
         opacity: 1;
         filter: none;
         pointer-events: auto;
-    }
-    @media (min-width: 768px) { .carousel-slide.center-slide { width: 500px; } }
+      }
+      @media (min-width: 768px) {
+        .carousel-slide.center-slide {
+          width: 500px;
+        }
+      }
 
-    .carousel-slide.left-slide {
+      .carousel-slide.left-slide {
         z-index: 10;
         transform: translateX(-260px) scale(0.78);
         opacity: 0.35;
         filter: blur(2px) brightness(0.7);
         pointer-events: none;
-    }
-    @media (min-width: 768px) { .carousel-slide.left-slide { transform: translateX(-360px) scale(0.78); } }
+      }
+      @media (min-width: 768px) {
+        .carousel-slide.left-slide {
+          transform: translateX(-360px) scale(0.78);
+        }
+      }
 
-    .carousel-slide.right-slide {
+      .carousel-slide.right-slide {
         z-index: 10;
         transform: translateX(260px) scale(0.78);
         opacity: 0.35;
         filter: blur(2px) brightness(0.7);
         pointer-events: none;
-    }
-    @media (min-width: 768px) { .carousel-slide.right-slide { transform: translateX(360px) scale(0.78); } }
+      }
+      @media (min-width: 768px) {
+        .carousel-slide.right-slide {
+          transform: translateX(360px) scale(0.78);
+        }
+      }
 
-    .carousel-slide.hidden-slide {
+      .carousel-slide.hidden-slide {
         opacity: 0;
         pointer-events: none;
         z-index: 0;
         transform: scale(0.5);
-    }
+      }
 
-    /* Card-specific styles */
-    /* Sponsor card — dark industrial */
-    .card-sponsor {
+      /* Card-specific styles */
+      /* Sponsor card — dark industrial */
+      .card-sponsor {
         background: #0c0f0f;
-        border: 1px solid rgba(190,194,255,0.15);
-    }
-    .card-sponsor .card-tag {
-        background: rgba(190,194,255,0.1);
+        border: 1px solid rgba(190, 194, 255, 0.15);
+      }
+      .card-sponsor .card-tag {
+        background: rgba(190, 194, 255, 0.1);
         color: #bec2ff;
         font-size: 11px;
         letter-spacing: 0.2em;
         padding: 4px 10px;
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: "Space Grotesk", sans-serif;
         font-weight: 700;
         text-transform: uppercase;
         display: inline-block;
         margin-bottom: 12px;
-    }
-    /* Competition card — hero bold */
-    .card-competition {
+      }
+      /* Competition card — hero bold */
+      .card-competition {
         background: #2f39a4;
         border: 2px solid #bec2ff;
-        box-shadow: 16px 16px 0px rgba(255,181,151,0.25);
-    }
-    /* Guest Stars card — warm accent */
-    .card-guests {
+        box-shadow: 16px 16px 0px rgba(255, 181, 151, 0.25);
+      }
+      /* Guest Stars card — warm accent */
+      .card-guests {
         background: #1a0c05;
-        border: 1px solid rgba(255,181,151,0.25);
-    }
-    .card-guests .card-accent-line {
+        border: 1px solid rgba(255, 181, 151, 0.25);
+      }
+      .card-guests .card-accent-line {
         height: 3px;
         background: linear-gradient(90deg, #ffb597, transparent);
         margin-bottom: 16px;
-    }
+      }
 
-    /* Gallery */
-    .gallery-item {
+      /* Gallery */
+      .gallery-item {
         transition: all 0.5s ease;
         position: relative;
-    }
-    .gallery-container:hover .gallery-item:not(:hover) {
+      }
+      .gallery-container:hover .gallery-item:not(:hover) {
         filter: blur(3px) brightness(0.6);
         transform: scale(0.97);
-    }
-    .gallery-item:hover {
+      }
+      .gallery-item:hover {
         transform: scale(1.03);
         z-index: 20;
-    }
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
 
-    /* Timeline */
-    .timeline-path {
+      /* Timeline */
+      .timeline-path {
         stroke-dasharray: 2000;
         stroke-dashoffset: 2000;
         transition: stroke-dashoffset 2s linear;
-    }
+      }
 
-    /* FIX: Navbar bg pakai inline style via JS, bukan Tailwind dynamic class */
-    #navbar {
-        transition: background-color 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-    }
-    #navbar.scrolled {
+      /* FIX: Navbar bg pakai inline style via JS, bukan Tailwind dynamic class */
+      #navbar {
+        transition:
+          background-color 0.4s ease,
+          backdrop-filter 0.4s ease,
+          box-shadow 0.4s ease,
+          border-color 0.4s ease;
+      }
+      #navbar.scrolled {
         background-color: rgba(30, 32, 32, 0.92);
         backdrop-filter: blur(16px);
-        box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+        box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
         border-bottom-color: rgba(190, 194, 255, 0.2);
-    }
+      }
 
-    /* FIX: FAQ accordion JS-driven */
-    .faq-answer {
+      /* FIX: FAQ accordion JS-driven */
+      .faq-answer {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.45s cubic-bezier(0.23, 1, 0.32, 1), padding 0.3s ease;
-    }
-    .faq-answer.open {
+        transition:
+          max-height 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+          padding 0.3s ease;
+      }
+      .faq-answer.open {
         max-height: 200px;
-    }
-    .faq-icon {
+      }
+      .faq-icon {
         transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
         display: inline-block;
-    }
-    .faq-item.open .faq-icon {
+      }
+      .faq-item.open .faq-icon {
         transform: rotate(45deg);
-    }
-    .faq-item {
+      }
+      .faq-item {
         cursor: pointer;
-    }
-    .faq-item:hover h3 {
+      }
+      .faq-item:hover h3 {
         color: #ffb597;
-    }
+      }
 
-    /* FIX: Mobile nav hamburger */
-    #mobile-menu {
+      /* FIX: Mobile nav hamburger */
+      #mobile-menu {
         display: none;
         flex-direction: column;
         position: absolute;
@@ -336,674 +413,1499 @@ tailwind.config = {
         padding: 24px 20px;
         gap: 20px;
         z-index: 99;
-    }
-    #mobile-menu.open {
+      }
+      #mobile-menu.open {
         display: flex;
-    }
-    .hamburger-line {
+      }
+      .hamburger-line {
         display: block;
         width: 24px;
         height: 2px;
         background: #bec2ff;
         transition: all 0.3s ease;
         transform-origin: center;
-    }
-    #hamburger-btn.open .hamburger-line:nth-child(1) {
+      }
+      #hamburger-btn.open .hamburger-line:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
-    }
-    #hamburger-btn.open .hamburger-line:nth-child(2) {
+      }
+      #hamburger-btn.open .hamburger-line:nth-child(2) {
         opacity: 0;
-    }
-    #hamburger-btn.open .hamburger-line:nth-child(3) {
+      }
+      #hamburger-btn.open .hamburger-line:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
-    }
+      }
 
-    /* FIX: Hero section overflow clip agar parallax text tidak bikin hscroll */
-    #home {
+      /* FIX: Hero section overflow clip agar parallax text tidak bikin hscroll */
+      #home {
         overflow: hidden;
-    }
-</style>
-</head>
-<body class="font-body-md text-on-background relative">
+      }
+    </style>
+  </head>
+  <body class="font-body-md text-on-background relative">
+    <!-- Particles Background -->
+    <div id="particles-container"></div>
 
-<!-- Particles Background -->
-<div id="particles-container"></div>
-
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full z-[100] h-20 border-b border-transparent" id="navbar">
-    <div class="flex justify-between items-center px-5 md:px-16 w-full h-full max-w-[1440px] mx-auto relative">
-        <div class="font-display-xl-mobile text-headline-md text-primary flex items-center gap-2">
-            <img alt="Fun Art Festival Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEq3Ad-XilW8qJc-vqrMGxP0hx5TDYMSVeSsop461i8mmIVk6BDdqGZYH90JG8x0Pbt_BlJ7CheH1Lv5wMB6nQgFnlu4bTEl53g_XRZKf6W21ttdK8SI1Q8dUnVDr9CvucfeVddOSoHPa72HxUOMiIUif1WGcEVbL30g-eESqYgN18WTcfFWK2jsVXR-ZQu0-9ntOape_9jzxSYea6qSTzFAOvreMd9mIfCCKcVQW9WQVe6zvSHWj4CwmWpTQgZx5kI7WwdlcB_EG"/>
+    <!-- TopNavBar -->
+    <header
+      class="fixed top-0 w-full z-[100] h-20 border-b border-transparent"
+      id="navbar"
+    >
+      <div
+        class="flex justify-between items-center px-5 md:px-16 w-full h-full max-w-[1440px] mx-auto relative"
+      >
+        <div
+          class="font-display-xl-mobile text-headline-md text-primary flex items-center gap-2"
+        >
+          <img
+            alt="Fun Art Festival Logo"
+            class="h-12 w-auto"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEq3Ad-XilW8qJc-vqrMGxP0hx5TDYMSVeSsop461i8mmIVk6BDdqGZYH90JG8x0Pbt_BlJ7CheH1Lv5wMB6nQgFnlu4bTEl53g_XRZKf6W21ttdK8SI1Q8dUnVDr9CvucfeVddOSoHPa72HxUOMiIUif1WGcEVbL30g-eESqYgN18WTcfFWK2jsVXR-ZQu0-9ntOape_9jzxSYea6qSTzFAOvreMd9mIfCCKcVQW9WQVe6zvSHWj4CwmWpTQgZx5kI7WwdlcB_EG"
+          />
         </div>
 
         <!-- Desktop Nav -->
         <nav class="hidden md:flex gap-6 items-center">
-            <a class="font-label-bold text-label-bold text-tertiary font-bold border-b-2 border-tertiary pb-1 hover:text-tertiary transition-colors duration-300" href="#home">Home</a>
-            <a class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300" href="#about">About</a>
-            <a class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300" href="#timeline">Timeline</a>
-            <a class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300" href="#gallery">Gallery</a>
-            <a class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300" href="#sponsor">Sponsor</a>
-            <a class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300" href="#contact">Contact</a>
+          <a
+            class="font-label-bold text-label-bold text-tertiary font-bold border-b-2 border-tertiary pb-1 hover:text-tertiary transition-colors duration-300"
+            href="#home"
+            >Home</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300"
+            href="#timeline"
+            >Timeline</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300"
+            href="#gallery"
+            >Gallery</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300"
+            href="#sponsor"
+            >Sponsor</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-background opacity-80 hover:text-tertiary transition-colors duration-300"
+            href="#contact"
+            >Contact</a
+          >
         </nav>
 
         <div class="flex items-center gap-4">
-            <!-- FIX: Hamburger menu button untuk mobile -->
-            <button aria-label="Toggle menu" class="md:hidden flex flex-col gap-[6px] p-2" id="hamburger-btn">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
+          <!-- FIX: Hamburger menu button untuk mobile -->
+          <button
+            aria-label="Toggle menu"
+            class="md:hidden flex flex-col gap-[6px] p-2"
+            id="hamburger-btn"
+          >
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
         </div>
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu">
-            <a class="font-label-bold text-label-bold text-tertiary" href="#home">Home</a>
-            <a class="font-label-bold text-label-bold text-on-background opacity-80" href="#about">About</a>
-            <a class="font-label-bold text-label-bold text-on-background opacity-80" href="#timeline">Timeline</a>
-            <a class="font-label-bold text-label-bold text-on-background opacity-80" href="#gallery">Gallery</a>
-            <a class="font-label-bold text-label-bold text-on-background opacity-80" href="#sponsor">Sponsor</a>
-            <a class="font-label-bold text-label-bold text-on-background opacity-80" href="#contact">Contact</a>
-            <button class="btn-block px-6 py-3 font-label-bold text-label-bold uppercase tracking-widest w-full mt-2">
-                Join The Festival
-            </button>
+          <a class="font-label-bold text-label-bold text-tertiary" href="#home"
+            >Home</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-background opacity-80"
+            href="#about"
+            >About</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-background opacity-80"
+            href="#timeline"
+            >Timeline</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-background opacity-80"
+            href="#gallery"
+            >Gallery</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-background opacity-80"
+            href="#sponsor"
+            >Sponsor</a
+          >
+          <a
+            class="font-label-bold text-label-bold text-on-background opacity-80"
+            href="#contact"
+            >Contact</a
+          >
+          <button
+            class="btn-block px-6 py-3 font-label-bold text-label-bold uppercase tracking-widest w-full mt-2"
+          >
+            Join The Festival
+          </button>
         </div>
-    </div>
-</header>
+      </div>
+    </header>
 
-<!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-[120px] liquid-bg" id="home">
-    <div class="parallax-text font-display-xl top-1/4" data-speed="0.2" style="font-family: 'Anybody', sans-serif; font-weight: 900;">FESTIVAL</div>
-    <div class="parallax-text font-display-xl bottom-1/4" data-speed="-0.15" style="font-family: 'Anybody', sans-serif; font-weight: 900;">CREATIVITY</div>
+    <!-- Hero Section -->
+    <section
+      class="relative min-h-screen flex flex-col justify-center items-center pt-24 pb-[120px] liquid-bg"
+      id="home"
+    >
+      <div
+        class="parallax-text font-display-xl top-1/4"
+        data-speed="0.2"
+        style="font-family: &quot;Anybody&quot;, sans-serif; font-weight: 900"
+      >
+        FESTIVAL
+      </div>
+      <div
+        class="parallax-text font-display-xl bottom-1/4"
+        data-speed="-0.15"
+        style="font-family: &quot;Anybody&quot;, sans-serif; font-weight: 900"
+      >
+        CREATIVITY
+      </div>
 
-    <div class="container mx-auto px-5 md:px-16 relative z-10 editorial-grid">
-        <div class="col-span-12 lg:col-span-8 flex flex-col justify-center reveal">
-            <h1 class="text-[64px] leading-[60px] md:text-[120px] md:leading-[110px] tracking-tight font-black text-white drop-shadow-2xl mb-8" style="font-family: 'Anybody', sans-serif; font-weight: 900;">
-                WAVES OF<br/>CREATIVITY<br/><span class="text-tertiary">FAF 21</span>
-            </h1>
-            <p class="text-lg leading-7 max-w-xl text-primary/80 mb-10" style="font-family: 'Work Sans', sans-serif;">
-                Dive into a professional creative ocean where imagination breaks the shoreline. Fun Art Festival 21 brings together the wildest minds for a high-fashion, tropical art odyssey.
-            </p>
+      <div class="container mx-auto px-5 md:px-16 relative z-10 editorial-grid">
+        <div
+          class="col-span-12 lg:col-span-8 flex flex-col justify-center reveal"
+        >
+          <h1
+            class="text-[64px] leading-[60px] md:text-[120px] md:leading-[110px] tracking-tight font-black text-white drop-shadow-2xl mb-8"
+            style="
+              font-family: &quot;Anybody&quot;, sans-serif;
+              font-weight: 900;
+            "
+          >
+            WAVES OF<br />CREATIVITY<br /><span class="text-tertiary"
+              >FAF 21</span
+            >
+          </h1>
+          <p
+            class="text-lg leading-7 max-w-xl text-primary/80 mb-10"
+            style="font-family: &quot;Work Sans&quot;, sans-serif"
+          >
+            Dive into a professional creative ocean where imagination breaks the
+            shoreline. Fun Art Festival 21 brings together the wildest minds for
+            a high-fashion, tropical art odyssey.
+          </p>
         </div>
-        <div class="col-span-12 lg:col-span-4 relative mt-12 lg:mt-0 reveal" style="transition-delay: 200ms">
-            <div class="absolute -top-20 -right-10 w-64 h-64 bg-tertiary/20 rounded-full blur-3xl"></div>
-            <img alt="Character Illustration" class="w-full h-auto object-contain relative z-20 float-animation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEq3Ad-XilW8qJc-vqrMGxP0hx5TDYMSVeSsop461i8mmIVk6BDdqGZYH90JG8x0Pbt_BlJ7CheH1Lv5wMB6nQgFnlu4bTEl53g_XRZKf6W21ttdK8SI1Q8dUnVDr9CvucfeVddOSoHPa72HxUOMiIUif1WGcEVbL30g-eESqYgN18WTcfFWK2jsVXR-ZQu0-9ntOape_9jzxSYea6qSTzFAOvreMd9mIfCCKcVQW9WQVe6zvSHWj4CwmWpTQgZx5kI7WwdlcB_EG"/>
+        <div
+          class="col-span-12 lg:col-span-4 relative mt-12 lg:mt-0 reveal"
+          style="transition-delay: 200ms"
+        >
+          <div
+            class="absolute -top-20 -right-10 w-64 h-64 bg-tertiary/20 rounded-full blur-3xl"
+          ></div>
+          <img
+            alt="Character Illustration"
+            class="w-full h-auto object-contain relative z-20 float-animation"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEq3Ad-XilW8qJc-vqrMGxP0hx5TDYMSVeSsop461i8mmIVk6BDdqGZYH90JG8x0Pbt_BlJ7CheH1Lv5wMB6nQgFnlu4bTEl53g_XRZKf6W21ttdK8SI1Q8dUnVDr9CvucfeVddOSoHPa72HxUOMiIUif1WGcEVbL30g-eESqYgN18WTcfFWK2jsVXR-ZQu0-9ntOape_9jzxSYea6qSTzFAOvreMd9mIfCCKcVQW9WQVe6zvSHWj4CwmWpTQgZx5kI7WwdlcB_EG"
+          />
         </div>
-    </div>
+      </div>
 
-    <!-- Abstract Waves -->
-    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10">
-        <svg class="relative block w-[150%] h-48 parallax-wave" data-speed="0.05" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
-            <path class="fill-primary/10" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C58.15,114.18,113.88,124,173.23,109.11,232.58,94.2,284.14,75.31,321.39,56.44Z"></path>
+      <!-- Abstract Waves -->
+      <div
+        class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-10"
+      >
+        <svg
+          class="relative block w-[150%] h-48 parallax-wave"
+          data-speed="0.05"
+          preserveAspectRatio="none"
+          viewBox="0 0 1200 120"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="fill-primary/10"
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C58.15,114.18,113.88,124,173.23,109.11,232.58,94.2,284.14,75.31,321.39,56.44Z"
+          ></path>
         </svg>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Interactive Hero Slideshow -->
-<section class="py-[120px] bg-[#010D85]/50 relative overflow-hidden reveal">
-    <div class="container mx-auto px-5 md:px-16 text-center mb-16">
-        <h2 class="text-[48px] leading-[52px] font-extrabold text-white mb-4" style="font-family: 'Anybody', sans-serif;">WHAT'S HAPPENING?</h2>
+    <!-- Interactive Hero Slideshow -->
+    <section class="py-[120px] bg-[#010D85]/50 relative overflow-hidden reveal">
+      <div class="container mx-auto px-5 md:px-16 text-center mb-16">
+        <h2
+          class="text-[48px] leading-[52px] font-extrabold text-white mb-4"
+          style="font-family: &quot;Anybody&quot;, sans-serif"
+        >
+          WHAT'S HAPPENING?
+        </h2>
         <div class="w-24 h-2 bg-tertiary mx-auto"></div>
-    </div>
+      </div>
 
-    <!-- FIX: Carousel dengan struktur position yang benar -->
-    <div class="relative overflow-hidden" style="padding: 0 20px;">
-        <button aria-label="Previous" class="absolute left-2 md:left-16 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-primary/10 hover:bg-primary/30 text-white transition-all" id="prevSlide">
-            <span class="material-symbols-outlined text-4xl">chevron_left</span>
+      <!-- FIX: Carousel dengan struktur position yang benar -->
+      <div class="relative overflow-hidden" style="padding: 0 20px">
+        <button
+          aria-label="Previous"
+          class="absolute left-2 md:left-16 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-primary/10 hover:bg-primary/30 text-white transition-all"
+          id="prevSlide"
+        >
+          <span class="material-symbols-outlined text-4xl">chevron_left</span>
         </button>
-        <button aria-label="Next" class="absolute right-2 md:right-16 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-primary/10 hover:bg-primary/30 text-white transition-all" id="nextSlide">
-            <span class="material-symbols-outlined text-4xl">chevron_right</span>
+        <button
+          aria-label="Next"
+          class="absolute right-2 md:right-16 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-primary/10 hover:bg-primary/30 text-white transition-all"
+          id="nextSlide"
+        >
+          <span class="material-symbols-outlined text-4xl">chevron_right</span>
         </button>
 
         <div class="carousel-stage mx-auto max-w-6xl" id="carousel-stage">
-
-            <!-- CARD 0 — SPONSOR -->
-            <div class="carousel-slide hidden-slide group cursor-pointer overflow-hidden" data-index="0" style="background:#1a1060; border:1px solid rgba(190,194,255,0.2);">
-                <!-- Tag -->
-                <div class="flex items-center justify-between px-6 md:px-8 pt-6 pb-3">
-                    <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(190,194,255,0.5);">FAF 21</span>
-                    <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#bec2ff; background:rgba(190,194,255,0.1); padding:3px 10px; border:1px solid rgba(190,194,255,0.2);">PARTNERSHIP</span>
-                </div>
-                <!-- Image -->
-                <div class="relative w-full overflow-hidden" style="height:260px; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.2);">
-                    <img alt="Sponsor" class="h-[130%] w-auto transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Dkh_cQxR5d1CV40wn2A72ZSrbyk-N9tab_8zFvV8f5SQHfavbWVnhAEJT-W_rd0GzWFnwvaOsGBdpCFK_IXCDdjaCJP6iX9qumold6dRV5NXBfWZTn-IhEDRfQy-CZvNY0-c7R5viM3bJlt-5bBTnRq7pWh2DyN967zsG47dvu8I7eQutTJmknd7p3uxooO7q1GIM_sDVjDQxfKOq9z9DizdZlBFJ1Fa_8T8OkGodttVch1BABxQJ69xlFe7LxaVyfTig1NI6B_s"/>
-                    <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 40%, #1a1060 100%); pointer-events:none;"></div>
-                </div>
-                <!-- Content -->
-                <div class="px-6 md:px-8 pt-5 pb-7">
-                    <h3 style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:#fff; text-transform:uppercase; margin-bottom:8px; line-height:1.1;">Sponsor Us</h3>
-                    <p style="font-family:'Work Sans',sans-serif; font-size:14px; color:rgba(190,194,255,0.6); line-height:1.6; margin-bottom:20px;">Elevate your brand at the heart of creativity. Reach 10K+ engaged artists &amp; collectors.</p>
-                    <div style="height:1px; background:rgba(190,194,255,0.12); margin-bottom:20px;"></div>
-                    <a class="inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-300" style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#bec2ff;" href="#">
-                        HUBUNGI VIA WHATSAPP <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span>
-                    </a>
-                </div>
+          <!-- CARD 0 — SPONSOR -->
+          <div
+            class="carousel-slide hidden-slide group cursor-pointer overflow-hidden"
+            data-index="0"
+            style="
+              background: #1a1060;
+              border: 1px solid rgba(190, 194, 255, 0.2);
+            "
+          >
+            <!-- Tag -->
+            <div
+              class="flex items-center justify-between px-6 md:px-8 pt-6 pb-3"
+            >
+              <span
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.2em;
+                  text-transform: uppercase;
+                  color: rgba(190, 194, 255, 0.5);
+                "
+                >FAF 21</span
+              >
+              <span
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.15em;
+                  text-transform: uppercase;
+                  color: #bec2ff;
+                  background: rgba(190, 194, 255, 0.1);
+                  padding: 3px 10px;
+                  border: 1px solid rgba(190, 194, 255, 0.2);
+                "
+                >PARTNERSHIP</span
+              >
             </div>
-
-            <!-- CARD 1 — COMPETITION (default center) -->
-            <div class="carousel-slide center-slide group cursor-pointer overflow-hidden" data-index="1" style="background:#2f39a4; border:1px solid rgba(190,194,255,0.35);">
-                <!-- Tag -->
-                <div class="flex items-center justify-between px-6 md:px-8 pt-6 pb-3">
-                    <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(190,194,255,0.5);">FAF 21</span>
-                    <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#ffb597; background:rgba(255,181,151,0.12); padding:3px 10px; border:1px solid rgba(255,181,151,0.25);">REG OPEN ●</span>
-                </div>
-                <!-- Image -->
-                <div class="relative w-full overflow-hidden" style="height:260px; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.2);">
-                    <img alt="Competition" class="h-[120%] w-auto transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYMnm6pQ3JZOa746YAEOHrYDXJK65eJfBwpcXy7eAgs4HhCWw-JsStMt4mbBleVUvp15zxy5FdhYeG171PNEr-xb_UcvRAFa8W9pUnHnWbsrOqTfh-GvInAea3NFJ_0kY3v4gnuhnjjUwZCh9rcnLdrwP5d6VTjSz_O9PdFf6a1h7KXGgbWLy42LvV_QY7dm3NFLZ_DnfLia5Kgn8-ix8-Rm4ZXGQYaV77mZ3aG2whdEl3T_AHtIoETtZW1M2SUf8R63TYTrDcR-Xd"/>
-                    <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 40%, #2f39a4 100%); pointer-events:none;"></div>
-                </div>
-                <!-- Content -->
-                <div class="px-6 md:px-8 pt-5 pb-7">
-                    <h3 style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:#fff; text-transform:uppercase; margin-bottom:8px; line-height:1.1;">Join Competition</h3>
-                    <p style="font-family:'Work Sans',sans-serif; font-size:14px; color:rgba(255,255,255,0.6); line-height:1.6; margin-bottom:20px;">Showcase your skills and win exclusive rewards. Open for digital, traditional &amp; multimedia.</p>
-                    <div style="height:1px; background:rgba(190,194,255,0.2); margin-bottom:20px;"></div>
-                    <a class="inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-300" style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#ffb597;" href="#">
-                        DAFTAR SEKARANG <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span>
-                    </a>
-                </div>
+            <!-- Image -->
+            <div
+              class="relative w-full overflow-hidden"
+              style="
+                height: 260px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.2);
+              "
+            >
+              <img
+                alt="Sponsor"
+                class="h-[130%] w-auto transition-transform duration-700 group-hover:scale-105"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1Dkh_cQxR5d1CV40wn2A72ZSrbyk-N9tab_8zFvV8f5SQHfavbWVnhAEJT-W_rd0GzWFnwvaOsGBdpCFK_IXCDdjaCJP6iX9qumold6dRV5NXBfWZTn-IhEDRfQy-CZvNY0-c7R5viM3bJlt-5bBTnRq7pWh2DyN967zsG47dvu8I7eQutTJmknd7p3uxooO7q1GIM_sDVjDQxfKOq9z9DizdZlBFJ1Fa_8T8OkGodttVch1BABxQJ69xlFe7LxaVyfTig1NI6B_s"
+              />
+              <div
+                class="absolute inset-0"
+                style="
+                  background: linear-gradient(
+                    to bottom,
+                    transparent 40%,
+                    #1a1060 100%
+                  );
+                  pointer-events: none;
+                "
+              ></div>
             </div>
-
-            <!-- CARD 2 — GUEST STARS -->
-            <div class="carousel-slide hidden-slide group cursor-pointer overflow-hidden" data-index="2" style="background:#2a0e00; border:1px solid rgba(255,181,151,0.2);">
-                <!-- Tag -->
-                <div class="flex items-center justify-between px-6 md:px-8 pt-6 pb-3">
-                    <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,181,151,0.4);">FAF 21</span>
-                    <span style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.15em; text-transform:uppercase; color:#ffb597; background:rgba(255,181,151,0.1); padding:3px 10px; border:1px solid rgba(255,181,151,0.2);">CONFIRMED ✦</span>
-                </div>
-                <!-- Image -->
-                <div class="relative w-full overflow-hidden" style="height:260px; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.2);">
-                    <img alt="Guest Stars" class="h-[100%] w-auto transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVnZ569vTdMQu8q1mSFW_nM-UGYNrQK07fcFcG2Fie48-ZRmvkCFrbB8CC92XE8PF3mCW06T1thDXoUSuBgnrrKMUfT1ZX42P3T8QZnnskwrGag5fIGwpRkGQCPlnsTkmTw2amvW5OD0OJVahqFU6HAXxP3LEZodY0kPbwn5nOCdKt713ht_Q9oFvs7AJTc7Zni4wyGJTbMdn0BdVbBxj2sPLZUKSLG7dVDARdmE8ujpgYdXGPpkCSnO6wjbe0i0cBU9W8cJbgjsIz"/>
-                    <div class="absolute inset-0" style="background:linear-gradient(to bottom, transparent 40%, #2a0e00 100%); pointer-events:none;"></div>
-                </div>
-                <!-- Content -->
-                <div class="px-6 md:px-8 pt-5 pb-7">
-                    <h3 style="font-family:'Space Grotesk',sans-serif; font-size:26px; font-weight:700; color:#fff; text-transform:uppercase; margin-bottom:8px; line-height:1.1;">Guest Stars</h3>
-                    <p style="font-family:'Work Sans',sans-serif; font-size:14px; color:rgba(255,181,151,0.55); line-height:1.6; margin-bottom:20px;">The biggest names in creative industry. Live performances, talks &amp; masterclasses.</p>
-                    <div style="height:1px; background:rgba(255,181,151,0.12); margin-bottom:20px;"></div>
-                    <a class="inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-300" style="font-family:'Space Grotesk',sans-serif; font-size:11px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; color:#ffb597;" href="#">
-                        CEK DI INSTAGRAM <span class="material-symbols-outlined" style="font-size:16px;">arrow_forward</span>
-                    </a>
-                </div>
+            <!-- Content -->
+            <div class="px-6 md:px-8 pt-5 pb-7">
+              <h3
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 26px;
+                  font-weight: 700;
+                  color: #fff;
+                  text-transform: uppercase;
+                  margin-bottom: 8px;
+                  line-height: 1.1;
+                "
+              >
+                Sponsor Us
+              </h3>
+              <p
+                style="
+                  font-family: &quot;Work Sans&quot;, sans-serif;
+                  font-size: 14px;
+                  color: rgba(190, 194, 255, 0.6);
+                  line-height: 1.6;
+                  margin-bottom: 20px;
+                "
+              >
+                Elevate your brand at the heart of creativity. Reach 10K+
+                engaged artists &amp; collectors.
+              </p>
+              <div
+                style="
+                  height: 1px;
+                  background: rgba(190, 194, 255, 0.12);
+                  margin-bottom: 20px;
+                "
+              ></div>
+              <a
+                class="inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-300"
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.18em;
+                  text-transform: uppercase;
+                  color: #bec2ff;
+                "
+                href="#"
+              >
+                HUBUNGI VIA WHATSAPP
+                <span class="material-symbols-outlined" style="font-size: 16px"
+                  >arrow_forward</span
+                >
+              </a>
             </div>
+          </div>
+
+          <!-- CARD 1 — COMPETITION (default center) -->
+          <div
+            class="carousel-slide center-slide group cursor-pointer overflow-hidden"
+            data-index="1"
+            style="
+              background: #2f39a4;
+              border: 1px solid rgba(190, 194, 255, 0.35);
+            "
+          >
+            <!-- Tag -->
+            <div
+              class="flex items-center justify-between px-6 md:px-8 pt-6 pb-3"
+            >
+              <span
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.2em;
+                  text-transform: uppercase;
+                  color: rgba(190, 194, 255, 0.5);
+                "
+                >FAF 21</span
+              >
+              <span
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.15em;
+                  text-transform: uppercase;
+                  color: #ffb597;
+                  background: rgba(255, 181, 151, 0.12);
+                  padding: 3px 10px;
+                  border: 1px solid rgba(255, 181, 151, 0.25);
+                "
+                >REG OPEN ●</span
+              >
+            </div>
+            <!-- Image -->
+            <div
+              class="relative w-full overflow-hidden"
+              style="
+                height: 260px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.2);
+              "
+            >
+              <img
+                alt="Competition"
+                class="h-[120%] w-auto transition-transform duration-700 group-hover:scale-105"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYMnm6pQ3JZOa746YAEOHrYDXJK65eJfBwpcXy7eAgs4HhCWw-JsStMt4mbBleVUvp15zxy5FdhYeG171PNEr-xb_UcvRAFa8W9pUnHnWbsrOqTfh-GvInAea3NFJ_0kY3v4gnuhnjjUwZCh9rcnLdrwP5d6VTjSz_O9PdFf6a1h7KXGgbWLy42LvV_QY7dm3NFLZ_DnfLia5Kgn8-ix8-Rm4ZXGQYaV77mZ3aG2whdEl3T_AHtIoETtZW1M2SUf8R63TYTrDcR-Xd"
+              />
+              <div
+                class="absolute inset-0"
+                style="
+                  background: linear-gradient(
+                    to bottom,
+                    transparent 40%,
+                    #2f39a4 100%
+                  );
+                  pointer-events: none;
+                "
+              ></div>
+            </div>
+            <!-- Content -->
+            <div class="px-6 md:px-8 pt-5 pb-7">
+              <h3
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 26px;
+                  font-weight: 700;
+                  color: #fff;
+                  text-transform: uppercase;
+                  margin-bottom: 8px;
+                  line-height: 1.1;
+                "
+              >
+                Join Competition
+              </h3>
+              <p
+                style="
+                  font-family: &quot;Work Sans&quot;, sans-serif;
+                  font-size: 14px;
+                  color: rgba(255, 255, 255, 0.6);
+                  line-height: 1.6;
+                  margin-bottom: 20px;
+                "
+              >
+                Showcase your skills and win exclusive rewards. Open for
+                digital, traditional &amp; multimedia.
+              </p>
+              <div
+                style="
+                  height: 1px;
+                  background: rgba(190, 194, 255, 0.2);
+                  margin-bottom: 20px;
+                "
+              ></div>
+              <a
+                class="inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-300"
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.18em;
+                  text-transform: uppercase;
+                  color: #ffb597;
+                "
+                href="#"
+              >
+                DAFTAR SEKARANG
+                <span class="material-symbols-outlined" style="font-size: 16px"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+
+          <!-- CARD 2 — GUEST STARS -->
+          <div
+            class="carousel-slide hidden-slide group cursor-pointer overflow-hidden"
+            data-index="2"
+            style="
+              background: #2a0e00;
+              border: 1px solid rgba(255, 181, 151, 0.2);
+            "
+          >
+            <!-- Tag -->
+            <div
+              class="flex items-center justify-between px-6 md:px-8 pt-6 pb-3"
+            >
+              <span
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.2em;
+                  text-transform: uppercase;
+                  color: rgba(255, 181, 151, 0.4);
+                "
+                >FAF 21</span
+              >
+              <span
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.15em;
+                  text-transform: uppercase;
+                  color: #ffb597;
+                  background: rgba(255, 181, 151, 0.1);
+                  padding: 3px 10px;
+                  border: 1px solid rgba(255, 181, 151, 0.2);
+                "
+                >CONFIRMED ✦</span
+              >
+            </div>
+            <!-- Image -->
+            <div
+              class="relative w-full overflow-hidden"
+              style="
+                height: 260px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.2);
+              "
+            >
+              <img
+                alt="Guest Stars"
+                class="h-[100%] w-auto transition-transform duration-700 group-hover:scale-105"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVnZ569vTdMQu8q1mSFW_nM-UGYNrQK07fcFcG2Fie48-ZRmvkCFrbB8CC92XE8PF3mCW06T1thDXoUSuBgnrrKMUfT1ZX42P3T8QZnnskwrGag5fIGwpRkGQCPlnsTkmTw2amvW5OD0OJVahqFU6HAXxP3LEZodY0kPbwn5nOCdKt713ht_Q9oFvs7AJTc7Zni4wyGJTbMdn0BdVbBxj2sPLZUKSLG7dVDARdmE8ujpgYdXGPpkCSnO6wjbe0i0cBU9W8cJbgjsIz"
+              />
+              <div
+                class="absolute inset-0"
+                style="
+                  background: linear-gradient(
+                    to bottom,
+                    transparent 40%,
+                    #2a0e00 100%
+                  );
+                  pointer-events: none;
+                "
+              ></div>
+            </div>
+            <!-- Content -->
+            <div class="px-6 md:px-8 pt-5 pb-7">
+              <h3
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 26px;
+                  font-weight: 700;
+                  color: #fff;
+                  text-transform: uppercase;
+                  margin-bottom: 8px;
+                  line-height: 1.1;
+                "
+              >
+                Guest Stars
+              </h3>
+              <p
+                style="
+                  font-family: &quot;Work Sans&quot;, sans-serif;
+                  font-size: 14px;
+                  color: rgba(255, 181, 151, 0.55);
+                  line-height: 1.6;
+                  margin-bottom: 20px;
+                "
+              >
+                The biggest names in creative industry. Live performances, talks
+                &amp; masterclasses.
+              </p>
+              <div
+                style="
+                  height: 1px;
+                  background: rgba(255, 181, 151, 0.12);
+                  margin-bottom: 20px;
+                "
+              ></div>
+              <a
+                class="inline-flex items-center gap-2 group-hover:gap-4 transition-all duration-300"
+                style="
+                  font-family: &quot;Space Grotesk&quot;, sans-serif;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.18em;
+                  text-transform: uppercase;
+                  color: #ffb597;
+                "
+                href="#"
+              >
+                CEK DI INSTAGRAM
+                <span class="material-symbols-outlined" style="font-size: 16px"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-
-    </div>
-</section>
-
-<!-- About Section -->
-<section class="py-[120px] relative" id="about">
-    <div class="container mx-auto px-5 md:px-16 editorial-grid">
+    <!-- About Section -->
+    <section class="py-[120px] relative" id="about">
+      <div class="container mx-auto px-5 md:px-16 editorial-grid">
         <div class="col-span-12 lg:col-span-6 lg:col-start-2 reveal">
-            <span class="text-xs font-bold text-tertiary uppercase tracking-[0.4em] mb-4 block" style="font-family: 'Space Grotesk', sans-serif;">Manifesto</span>
-            <h2 class="text-[64px] md:text-[48px] font-extrabold text-white mb-8 leading-tight" style="font-family: 'Anybody', sans-serif;">
-                A SYMPHONY OF<br/><span class="italic text-primary">CHAOS &amp; COLOR</span>
-            </h2>
-            <div class="space-y-6 text-lg leading-relaxed text-on-surface-variant" style="font-family: 'Work Sans', sans-serif;">
-                <p>Fun Art Festival is not just an event; it's a movement. Born from the need to break free from traditional gallery constraints, we invite creators to step into the "Wild at Heart" territory.</p>
-                <p>This year, 2024, we focus on the fluid intersection of high-fashion aesthetics and tropical vibrancy. Our layout is asymmetric, our energy is uncontainable, and our goal is pure creative liberation.</p>
-            </div>
+          <span
+            class="text-xs font-bold text-tertiary uppercase tracking-[0.4em] mb-4 block"
+            style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >Manifesto</span
+          >
+          <h2
+            class="text-[64px] md:text-[48px] font-extrabold text-white mb-8 leading-tight"
+            style="font-family: &quot;Anybody&quot;, sans-serif"
+          >
+            A SYMPHONY OF<br /><span class="italic text-primary"
+              >CHAOS &amp; COLOR</span
+            >
+          </h2>
+          <div
+            class="space-y-6 text-lg leading-relaxed text-on-surface-variant"
+            style="font-family: &quot;Work Sans&quot;, sans-serif"
+          >
+            <p>
+              Fun Art Festival is not just an event; it's a movement. Born from
+              the need to break free from traditional gallery constraints, we
+              invite creators to step into the "Wild at Heart" territory.
+            </p>
+            <p>
+              This year, 2024, we focus on the fluid intersection of
+              high-fashion aesthetics and tropical vibrancy. Our layout is
+              asymmetric, our energy is uncontainable, and our goal is pure
+              creative liberation.
+            </p>
+          </div>
         </div>
-        <div class="col-span-12 lg:col-span-4 lg:col-start-8 mt-12 lg:mt-24 reveal" style="transition-delay: 200ms">
-            <div class="p-12 border-2 border-primary bg-primary/5 hover:bg-primary/10 transition-colors group relative overflow-hidden">
-                <h3 class="text-2xl font-bold text-tertiary mb-4" style="font-family: 'Space Grotesk', sans-serif;">THE VISION</h3>
-                <p class="text-base text-white/70 mb-8 italic" style="font-family: 'Work Sans', sans-serif;">
-                    "To build a world where the character peeks over the headline and the grid is just a suggestion."
-                </p>
-                <div class="h-1 w-full bg-primary/20 overflow-hidden">
-                    <div class="h-full bg-tertiary w-0 group-hover:w-full transition-all duration-1000"></div>
-                </div>
+        <div
+          class="col-span-12 lg:col-span-4 lg:col-start-8 mt-12 lg:mt-24 reveal"
+          style="transition-delay: 200ms"
+        >
+          <div
+            class="p-12 border-2 border-primary bg-primary/5 hover:bg-primary/10 transition-colors group relative overflow-hidden"
+          >
+            <h3
+              class="text-2xl font-bold text-tertiary mb-4"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >
+              THE VISION
+            </h3>
+            <p
+              class="text-base text-white/70 mb-8 italic"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              "To build a world where the character peeks over the headline and
+              the grid is just a suggestion."
+            </p>
+            <div class="h-1 w-full bg-primary/20 overflow-hidden">
+              <div
+                class="h-full bg-tertiary w-0 group-hover:w-full transition-all duration-1000"
+              ></div>
             </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Event Timeline -->
-<section class="py-[120px] bg-[#0c0f0f] relative overflow-hidden" id="timeline">
-    <div class="absolute inset-0 z-0 flex justify-center items-center opacity-20 pointer-events-none">
-        <svg fill="none" height="1000" viewBox="0 0 1000 1000" width="1000" xmlns="http://www.w3.org/2000/svg">
-            <path class="timeline-path" d="M500,0 C600,150 400,250 500,400 C600,550 400,650 500,800 C600,950 400,1050 500,1200" id="scrollTimeline" stroke="#bec2ff" stroke-linecap="round" stroke-width="4"/>
+    <!-- Event Timeline -->
+    <section
+      class="py-[120px] bg-[#0c0f0f] relative overflow-hidden"
+      id="timeline"
+    >
+      <div
+        class="absolute inset-0 z-0 flex justify-center items-center opacity-20 pointer-events-none"
+      >
+        <svg
+          fill="none"
+          height="1000"
+          viewBox="0 0 1000 1000"
+          width="1000"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            class="timeline-path"
+            d="M500,0 C600,150 400,250 500,400 C600,550 400,650 500,800 C600,950 400,1050 500,1200"
+            id="scrollTimeline"
+            stroke="#bec2ff"
+            stroke-linecap="round"
+            stroke-width="4"
+          />
         </svg>
-    </div>
-    <div class="container mx-auto px-5 md:px-16 text-center mb-24 relative z-10 reveal">
-        <h2 class="text-[48px] leading-[52px] font-extrabold text-white uppercase" style="font-family: 'Anybody', sans-serif;">The Voyage</h2>
-    </div>
-    <div class="relative max-w-4xl mx-auto px-5 z-10">
+      </div>
+      <div
+        class="container mx-auto px-5 md:px-16 text-center mb-24 relative z-10 reveal"
+      >
+        <h2
+          class="text-[48px] leading-[52px] font-extrabold text-white uppercase"
+          style="font-family: &quot;Anybody&quot;, sans-serif"
+        >
+          The Voyage
+        </h2>
+      </div>
+      <div class="relative max-w-4xl mx-auto px-5 z-10">
         <!-- Center line -->
-        <div class="absolute left-1/2 top-0 bottom-0 w-px bg-primary/10 -translate-x-1/2 hidden md:block"></div>
+        <div
+          class="absolute left-1/2 top-0 bottom-0 w-px bg-primary/10 -translate-x-1/2 hidden md:block"
+        ></div>
 
         <!-- Milestone 1 -->
-        <div class="relative flex items-center justify-between mb-24 md:mb-32 group reveal">
-            <div class="w-5/12 text-right pr-6 md:pr-8">
-                <span class="text-3xl font-bold text-tertiary block mb-2" style="font-family: 'Space Grotesk', sans-serif;">OCT 15</span>
-                <h4 class="text-2xl font-bold text-white uppercase mb-1" style="font-family: 'Space Grotesk', sans-serif;">Competition</h4>
-                <p class="text-base text-primary/60 hidden md:block" style="font-family: 'Work Sans', sans-serif;">Digital and traditional art submissions open worldwide.</p>
-            </div>
-            <div class="z-10 w-10 h-10 md:w-12 md:h-12 bg-[#010D85] border-4 border-tertiary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform flex-shrink-0" style="box-shadow: 0 0 20px rgba(255,181,151,0.5)">
-                <span class="material-symbols-outlined text-tertiary text-sm md:text-base">draw</span>
-            </div>
-            <div class="w-5/12 pl-6 md:pl-8">
-                <p class="text-base text-primary/60 md:hidden" style="font-family: 'Work Sans', sans-serif;">Digital and traditional art submissions open worldwide.</p>
-            </div>
+        <div
+          class="relative flex items-center justify-between mb-24 md:mb-32 group reveal"
+        >
+          <div class="w-5/12 text-right pr-6 md:pr-8">
+            <span
+              class="text-3xl font-bold text-tertiary block mb-2"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >OCT 15</span
+            >
+            <h4
+              class="text-2xl font-bold text-white uppercase mb-1"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >
+              Competition
+            </h4>
+            <p
+              class="text-base text-primary/60 hidden md:block"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              Digital and traditional art submissions open worldwide.
+            </p>
+          </div>
+          <div
+            class="z-10 w-10 h-10 md:w-12 md:h-12 bg-[#010D85] border-4 border-tertiary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform flex-shrink-0"
+            style="box-shadow: 0 0 20px rgba(255, 181, 151, 0.5)"
+          >
+            <span
+              class="material-symbols-outlined text-tertiary text-sm md:text-base"
+              >draw</span
+            >
+          </div>
+          <div class="w-5/12 pl-6 md:pl-8">
+            <p
+              class="text-base text-primary/60 md:hidden"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              Digital and traditional art submissions open worldwide.
+            </p>
+          </div>
         </div>
 
         <!-- Milestone 2 -->
-        <div class="relative flex items-center justify-between mb-24 md:mb-32 group reveal">
-            <div class="w-5/12 pr-6 md:pr-8">
-                <p class="text-base text-primary/60 md:hidden text-right" style="font-family: 'Work Sans', sans-serif;">The grand announcement of winners and gala dinner.</p>
-            </div>
-            <div class="z-10 w-10 h-10 md:w-12 md:h-12 bg-[#010D85] border-4 border-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform flex-shrink-0" style="box-shadow: 0 0 20px rgba(190,194,255,0.5)">
-                <span class="material-symbols-outlined text-primary text-sm md:text-base">celebration</span>
-            </div>
-            <div class="w-5/12 text-left pl-6 md:pl-8">
-                <span class="text-3xl font-bold text-primary block mb-2" style="font-family: 'Space Grotesk', sans-serif;">NOV 20</span>
-                <h4 class="text-2xl font-bold text-white uppercase mb-1" style="font-family: 'Space Grotesk', sans-serif;">Ceremony</h4>
-                <p class="text-base text-primary/60 hidden md:block" style="font-family: 'Work Sans', sans-serif;">The grand announcement of winners and gala dinner.</p>
-            </div>
+        <div
+          class="relative flex items-center justify-between mb-24 md:mb-32 group reveal"
+        >
+          <div class="w-5/12 pr-6 md:pr-8">
+            <p
+              class="text-base text-primary/60 md:hidden text-right"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              The grand announcement of winners and gala dinner.
+            </p>
+          </div>
+          <div
+            class="z-10 w-10 h-10 md:w-12 md:h-12 bg-[#010D85] border-4 border-primary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform flex-shrink-0"
+            style="box-shadow: 0 0 20px rgba(190, 194, 255, 0.5)"
+          >
+            <span
+              class="material-symbols-outlined text-primary text-sm md:text-base"
+              >celebration</span
+            >
+          </div>
+          <div class="w-5/12 text-left pl-6 md:pl-8">
+            <span
+              class="text-3xl font-bold text-primary block mb-2"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >NOV 20</span
+            >
+            <h4
+              class="text-2xl font-bold text-white uppercase mb-1"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >
+              Ceremony
+            </h4>
+            <p
+              class="text-base text-primary/60 hidden md:block"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              The grand announcement of winners and gala dinner.
+            </p>
+          </div>
         </div>
 
         <!-- Milestone 3 -->
         <div class="relative flex items-center justify-between group reveal">
-            <div class="w-5/12 text-right pr-6 md:pr-8">
-                <span class="text-3xl font-bold text-secondary block mb-2" style="font-family: 'Space Grotesk', sans-serif;">DEC 05</span>
-                <h4 class="text-2xl font-bold text-white uppercase mb-1" style="font-family: 'Space Grotesk', sans-serif;">Festival Day</h4>
-                <p class="text-base text-primary/60 hidden md:block" style="font-family: 'Work Sans', sans-serif;">A 12-hour explosion of music, art, and immersive installations.</p>
-            </div>
-            <div class="z-10 w-10 h-10 md:w-12 md:h-12 bg-[#010D85] border-4 border-secondary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform flex-shrink-0" style="box-shadow: 0 0 20px rgba(189,194,255,0.5)">
-                <span class="material-symbols-outlined text-secondary text-sm md:text-base">festival</span>
-            </div>
-            <div class="w-5/12 pl-6 md:pl-8">
-                <p class="text-base text-primary/60 md:hidden" style="font-family: 'Work Sans', sans-serif;">A 12-hour explosion of music, art, and immersive installations.</p>
-            </div>
+          <div class="w-5/12 text-right pr-6 md:pr-8">
+            <span
+              class="text-3xl font-bold text-secondary block mb-2"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >DEC 05</span
+            >
+            <h4
+              class="text-2xl font-bold text-white uppercase mb-1"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >
+              Festival Day
+            </h4>
+            <p
+              class="text-base text-primary/60 hidden md:block"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              A 12-hour explosion of music, art, and immersive installations.
+            </p>
+          </div>
+          <div
+            class="z-10 w-10 h-10 md:w-12 md:h-12 bg-[#010D85] border-4 border-secondary rounded-full flex items-center justify-center group-hover:scale-125 transition-transform flex-shrink-0"
+            style="box-shadow: 0 0 20px rgba(189, 194, 255, 0.5)"
+          >
+            <span
+              class="material-symbols-outlined text-secondary text-sm md:text-base"
+              >festival</span
+            >
+          </div>
+          <div class="w-5/12 pl-6 md:pl-8">
+            <p
+              class="text-base text-primary/60 md:hidden"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              A 12-hour explosion of music, art, and immersive installations.
+            </p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Highlights from FAF 20 -->
-<section class="py-[120px] bg-[#010D85]" id="gallery">
-    <div class="container mx-auto px-5 md:px-16 mb-16 flex flex-col md:flex-row justify-between items-end gap-8 reveal">
+    <!-- Highlights from FAF 20 -->
+    <section class="py-[120px] bg-[#010D85]" id="gallery">
+      <div
+        class="container mx-auto px-5 md:px-16 mb-16 flex flex-col md:flex-row justify-between items-end gap-8 reveal"
+      >
         <div>
-            <span class="text-xs font-bold text-primary mb-2 block uppercase tracking-widest" style="font-family: 'Space Grotesk', sans-serif;">Flashback</span>
-            <h2 class="text-[48px] leading-[52px] font-extrabold text-white" style="font-family: 'Anybody', sans-serif;">HIGHLIGHTS FROM FAF 20</h2>
+          <span
+            class="text-xs font-bold text-primary mb-2 block uppercase tracking-widest"
+            style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >Flashback</span
+          >
+          <h2
+            class="text-[48px] leading-[52px] font-extrabold text-white"
+            style="font-family: &quot;Anybody&quot;, sans-serif"
+          >
+            HIGHLIGHTS FROM FAF 20
+          </h2>
         </div>
-        <button class="btn-block px-8 py-4 text-xs font-bold tracking-widest uppercase flex-shrink-0" style="font-family: 'Space Grotesk', sans-serif;">WATCH FAF 20 RECAP</button>
-    </div>
-    <div class="flex overflow-x-auto pb-12 gap-6 px-5 md:px-16 no-scrollbar snap-x gallery-container">
-        <div class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer">
-            <img alt="Performance Highlight" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQJfy3-9eBR6JWMzhmmOBHAmTlNQ52fe_f6x7dr5_x4P-8dE-CIotj7y7pdS8T2wAdOfZ-HKeFq1uDEAmgzBV_-ICxDdkd2ORdrZT-yIEh7T69sYj4BceOdRzvQBOF4TggoXj-qkH2XZH_zYbO_8dHoxMxk10kmkVmLU_-nshA7UAllirUoldOV6AAaTViSQOVBbvdtWh_zN4yVFZOi08NmtCWG_NjnAvED0hcL5oIFMw_X3-cSBXnWP84uvwLuTSyAQsfkreZDU2"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0">
-                <h3 class="text-2xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">Opening Act</h3>
-                <p class="text-base text-primary" style="font-family: 'Work Sans', sans-serif;">Unforgettable energy that set the tone.</p>
-            </div>
+        <button
+          class="btn-block px-8 py-4 text-xs font-bold tracking-widest uppercase flex-shrink-0"
+          style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+        >
+          WATCH FAF 20 RECAP
+        </button>
+      </div>
+      <div
+        class="flex overflow-x-auto pb-12 gap-6 px-5 md:px-16 no-scrollbar snap-x gallery-container"
+      >
+        <div
+          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
+        >
+          <img
+            alt="Performance Highlight"
+            class="w-full aspect-[4/5] object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRQJfy3-9eBR6JWMzhmmOBHAmTlNQ52fe_f6x7dr5_x4P-8dE-CIotj7y7pdS8T2wAdOfZ-HKeFq1uDEAmgzBV_-ICxDdkd2ORdrZT-yIEh7T69sYj4BceOdRzvQBOF4TggoXj-qkH2XZH_zYbO_8dHoxMxk10kmkVmLU_-nshA7UAllirUoldOV6AAaTViSQOVBbvdtWh_zN4yVFZOi08NmtCWG_NjnAvED0hcL5oIFMw_X3-cSBXnWP84uvwLuTSyAQsfkreZDU2"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
+          >
+            <h3
+              class="text-2xl font-bold text-white"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >
+              Opening Act
+            </h3>
+            <p
+              class="text-base text-primary"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              Unforgettable energy that set the tone.
+            </p>
+          </div>
         </div>
-        <div class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer">
-            <img alt="Stage Crowd" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDps-NrRnhmgh-kjEJBQpwhPJQ3PNYEU_F6ztlKMnVAjth2LgPPoxPOdTjJSdWhrAM4dVEo0PYXKHzsfbcxNZqS3AqULaTG17G1d4hUtLJlKbi3HLbpWcOJmAXslsYZMZvVm6nomZvXQ5j9xBrrBHCjr0DiCQeabPeRqpHeio_of5aNm33fZQvpIzgxNTqNoUsqaqyfq6Er268dCuOEbtZNH3-m3lddU6Td23Fmm1pzvbgxbGczXm8hiKsWTa8wxrvTlXebPjBNwZAT"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0">
-                <h3 class="text-2xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">The Big Stage</h3>
-                <p class="text-base text-primary" style="font-family: 'Work Sans', sans-serif;">Where legends were born in 2020.</p>
-            </div>
+        <div
+          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
+        >
+          <img
+            alt="Stage Crowd"
+            class="w-full aspect-[4/5] object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDps-NrRnhmgh-kjEJBQpwhPJQ3PNYEU_F6ztlKMnVAjth2LgPPoxPOdTjJSdWhrAM4dVEo0PYXKHzsfbcxNZqS3AqULaTG17G1d4hUtLJlKbi3HLbpWcOJmAXslsYZMZvVm6nomZvXQ5j9xBrrBHCjr0DiCQeabPeRqpHeio_of5aNm33fZQvpIzgxNTqNoUsqaqyfq6Er268dCuOEbtZNH3-m3lddU6Td23Fmm1pzvbgxbGczXm8hiKsWTa8wxrvTlXebPjBNwZAT"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
+          >
+            <h3
+              class="text-2xl font-bold text-white"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >
+              The Big Stage
+            </h3>
+            <p
+              class="text-base text-primary"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              Where legends were born in 2020.
+            </p>
+          </div>
         </div>
-        <div class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer">
-            <img alt="Release Ceremony" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBn19AmrLzQNaqd5kA2JklyBKu_BR_t8QJ3bVJ4JiUvMQO0aYwkAJFnaMtaoJc4QcHx0S5ibBkCQBv2MplYIMWFRST0W5bYFFlobfwVqCpvjuIJzcae0SBTWjhed1oe3bSsm7VHo-k-6gBwymGJfkcxc4SDbJyPJsFN7dxCZJ9iqvLxVDhWPuw9xdJLCEOKYKrWIMybuANPAv3E36t5_yKTAcRtXWvxUEzUe_aYbFuc4APEFPinQTO2JGcficDhKxvfnAPPY8ZWwn3"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0">
-                <h3 class="text-2xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">Peace &amp; Art</h3>
-                <p class="text-base text-primary" style="font-family: 'Work Sans', sans-serif;">Symbolic moments of artistic freedom.</p>
-            </div>
+        <div
+          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
+        >
+          <img
+            alt="Release Ceremony"
+            class="w-full aspect-[4/5] object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBn19AmrLzQNaqd5kA2JklyBKu_BR_t8QJ3bVJ4JiUvMQO0aYwkAJFnaMtaoJc4QcHx0S5ibBkCQBv2MplYIMWFRST0W5bYFFlobfwVqCpvjuIJzcae0SBTWjhed1oe3bSsm7VHo-k-6gBwymGJfkcxc4SDbJyPJsFN7dxCZJ9iqvLxVDhWPuw9xdJLCEOKYKrWIMybuANPAv3E36t5_yKTAcRtXWvxUEzUe_aYbFuc4APEFPinQTO2JGcficDhKxvfnAPPY8ZWwn3"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
+          >
+            <h3
+              class="text-2xl font-bold text-white"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >
+              Peace &amp; Art
+            </h3>
+            <p
+              class="text-base text-primary"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              Symbolic moments of artistic freedom.
+            </p>
+          </div>
         </div>
-        <div class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer">
-            <img alt="Music Performance" class="w-full aspect-[4/5] object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA06B9ni0UFpqrsZgN1m5UusG1PTKyYFPNS4_AID8OC-ArPzlS700f1hYVZTpT67JTo34Cdhz-UH4LAi0mDgLZnq9ygqz-qddTElVxHzv-dKXPKgLeV20M1LNSmFo_3O8qd6pYPHiePDvVZrSu-C_aeGJ00nCoPzWuWwQGT02pXpcYgCxWzgbWvUmlu8UDhKsA5vztZQQg_-n3kpl4LUAz8dQYxkFozmLJBye_ea37-mZ4qSY5au4lDo7nfOFVrj-JzZ5eXJN3kvKGP"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0">
-                <h3 class="text-2xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">Midnight Melodies</h3>
-                <p class="text-base text-primary" style="font-family: 'Work Sans', sans-serif;">Fusing sound and visual storytelling.</p>
-            </div>
+        <div
+          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
+        >
+          <img
+            alt="Music Performance"
+            class="w-full aspect-[4/5] object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA06B9ni0UFpqrsZgN1m5UusG1PTKyYFPNS4_AID8OC-ArPzlS700f1hYVZTpT67JTo34Cdhz-UH4LAi0mDgLZnq9ygqz-qddTElVxHzv-dKXPKgLeV20M1LNSmFo_3O8qd6pYPHiePDvVZrSu-C_aeGJ00nCoPzWuWwQGT02pXpcYgCxWzgbWvUmlu8UDhKsA5vztZQQg_-n3kpl4LUAz8dQYxkFozmLJBye_ea37-mZ4qSY5au4lDo7nfOFVrj-JzZ5eXJN3kvKGP"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
+          >
+            <h3
+              class="text-2xl font-bold text-white"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >
+              Midnight Melodies
+            </h3>
+            <p
+              class="text-base text-primary"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              Fusing sound and visual storytelling.
+            </p>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Sponsors -->
-<section class="py-[120px] bg-[#1a1c1c] border-y border-primary/10 reveal" id="sponsor">
-    <div class="container mx-auto px-5 md:px-16 text-center mb-12">
-        <h2 class="text-xs font-bold text-primary opacity-50 uppercase tracking-[0.5em]" style="font-family: 'Space Grotesk', sans-serif;">Our Creative Partners</h2>
-    </div>
-    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 px-5 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500">
+    <!-- Sponsors -->
+    <section
+      class="py-[120px] bg-[#1a1c1c] border-y border-primary/10 reveal"
+      id="sponsor"
+    >
+      <div class="container mx-auto px-5 md:px-16 text-center mb-12">
+        <h2
+          class="text-xs font-bold text-primary opacity-50 uppercase tracking-[0.5em]"
+          style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+        >
+          Our Creative Partners
+        </h2>
+      </div>
+      <div
+        class="flex flex-wrap justify-center items-center gap-8 md:gap-16 px-5 opacity-60 hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-500"
+      >
         <div class="h-12 w-32 bg-white/20"></div>
         <div class="h-12 w-48 bg-white/20"></div>
         <div class="h-12 w-32 bg-white/20"></div>
         <div class="h-12 w-40 bg-white/20"></div>
         <div class="h-12 w-32 bg-white/20"></div>
         <div class="h-12 w-36 bg-white/20"></div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- FAQ Section -->
-<section class="py-[120px] reveal">
-    <div class="container mx-auto px-5 md:px-16 editorial-grid">
+    <!-- FAQ Section -->
+    <section class="py-[120px] reveal">
+      <div class="container mx-auto px-5 md:px-16 editorial-grid">
         <div class="col-span-12 lg:col-span-4">
-            <h2 class="text-[64px] leading-[60px] font-black text-white leading-none mb-8" style="font-family: 'Anybody', sans-serif;">
-                FREQUENTLY ASKED <span class="text-tertiary">STUFF</span>
-            </h2>
+          <h2
+            class="text-[64px] leading-[60px] font-black text-white leading-none mb-8"
+            style="font-family: &quot;Anybody&quot;, sans-serif"
+          >
+            FREQUENTLY ASKED <span class="text-tertiary">STUFF</span>
+          </h2>
         </div>
-        <div class="col-span-12 lg:col-span-7 lg:col-start-6 space-y-6 mt-8 lg:mt-0">
-            <!-- FAQ Item 1 -->
-            <div class="faq-item border-b border-primary/20 pb-6" data-faq="0">
-                <div class="flex justify-between items-center mb-2 py-2">
-                    <h3 class="text-2xl font-bold text-white pr-4 transition-colors" style="font-family: 'Space Grotesk', sans-serif;">How do I enter the competition?</h3>
-                    <span class="faq-icon material-symbols-outlined text-primary flex-shrink-0">add</span>
-                </div>
-                <div class="faq-answer">
-                    <p class="text-base text-on-surface-variant pb-2" style="font-family: 'Work Sans', sans-serif;">Click on the Registration slide above or head to our Instagram link in bio. Submissions are open for digital, traditional, and multimedia art categories.</p>
-                </div>
+        <div
+          class="col-span-12 lg:col-span-7 lg:col-start-6 space-y-6 mt-8 lg:mt-0"
+        >
+          <!-- FAQ Item 1 -->
+          <div class="faq-item border-b border-primary/20 pb-6" data-faq="0">
+            <div class="flex justify-between items-center mb-2 py-2">
+              <h3
+                class="text-2xl font-bold text-white pr-4 transition-colors"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                How do I enter the competition?
+              </h3>
+              <span
+                class="faq-icon material-symbols-outlined text-primary flex-shrink-0"
+                >add</span
+              >
             </div>
-            <!-- FAQ Item 2 -->
-            <div class="faq-item border-b border-primary/20 pb-6" data-faq="1">
-                <div class="flex justify-between items-center mb-2 py-2">
-                    <h3 class="text-2xl font-bold text-white pr-4 transition-colors" style="font-family: 'Space Grotesk', sans-serif;">Is the festival open to all ages?</h3>
-                    <span class="faq-icon material-symbols-outlined text-primary flex-shrink-0">add</span>
-                </div>
-                <div class="faq-answer">
-                    <p class="text-base text-on-surface-variant pb-2" style="font-family: 'Work Sans', sans-serif;">Yes! Fun Art Festival is a family-friendly celebration of creativity. We have specific zones for kids and professional workshop areas for adults.</p>
-                </div>
+            <div class="faq-answer">
+              <p
+                class="text-base text-on-surface-variant pb-2"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Click on the Registration slide above or head to our Instagram
+                link in bio. Submissions are open for digital, traditional, and
+                multimedia art categories.
+              </p>
             </div>
-            <!-- FAQ Item 3 bonus -->
-            <div class="faq-item border-b border-primary/20 pb-6" data-faq="2">
-                <div class="flex justify-between items-center mb-2 py-2">
-                    <h3 class="text-2xl font-bold text-white pr-4 transition-colors" style="font-family: 'Space Grotesk', sans-serif;">How can I become a sponsor?</h3>
-                    <span class="faq-icon material-symbols-outlined text-primary flex-shrink-0">add</span>
-                </div>
-                <div class="faq-answer">
-                    <p class="text-base text-on-surface-variant pb-2" style="font-family: 'Work Sans', sans-serif;">Reach out to us at hello@funartfest.com or via our official WhatsApp for sponsorship packages tailored to your brand's goals.</p>
-                </div>
+          </div>
+          <!-- FAQ Item 2 -->
+          <div class="faq-item border-b border-primary/20 pb-6" data-faq="1">
+            <div class="flex justify-between items-center mb-2 py-2">
+              <h3
+                class="text-2xl font-bold text-white pr-4 transition-colors"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                Is the festival open to all ages?
+              </h3>
+              <span
+                class="faq-icon material-symbols-outlined text-primary flex-shrink-0"
+                >add</span
+              >
             </div>
+            <div class="faq-answer">
+              <p
+                class="text-base text-on-surface-variant pb-2"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Yes! Fun Art Festival is a family-friendly celebration of
+                creativity. We have specific zones for kids and professional
+                workshop areas for adults.
+              </p>
+            </div>
+          </div>
+          <!-- FAQ Item 3 bonus -->
+          <div class="faq-item border-b border-primary/20 pb-6" data-faq="2">
+            <div class="flex justify-between items-center mb-2 py-2">
+              <h3
+                class="text-2xl font-bold text-white pr-4 transition-colors"
+                style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+              >
+                How can I become a sponsor?
+              </h3>
+              <span
+                class="faq-icon material-symbols-outlined text-primary flex-shrink-0"
+                >add</span
+              >
+            </div>
+            <div class="faq-answer">
+              <p
+                class="text-base text-on-surface-variant pb-2"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+              >
+                Reach out to us at hello@funartfest.com or via our official
+                WhatsApp for sponsorship packages tailored to your brand's
+                goals.
+              </p>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- Footer -->
-<footer class="relative w-full py-[120px] bg-[#1a1c1c] border-t border-primary/10 reveal" id="contact">
-    <div class="max-w-[1440px] mx-auto px-5 md:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Footer -->
+    <footer
+      class="relative w-full py-[120px] bg-[#1a1c1c] border-t border-primary/10 reveal"
+      id="contact"
+    >
+      <div
+        class="max-w-[1440px] mx-auto px-5 md:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
         <div class="lg:col-span-1">
-            <img alt="FAF Logo" class="h-20 w-auto mb-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEq3Ad-XilW8qJc-vqrMGxP0hx5TDYMSVeSsop461i8mmIVk6BDdqGZYH90JG8x0Pbt_BlJ7CheH1Lv5wMB6nQgFnlu4bTEl53g_XRZKf6W21ttdK8SI1Q8dUnVDr9CvucfeVddOSoHPa72HxUOMiIUif1WGcEVbL30g-eESqYgN18WTcfFWK2jsVXR-ZQu0-9ntOape_9jzxSYea6qSTzFAOvreMd9mIfCCKcVQW9WQVe6zvSHWj4CwmWpTQgZx5kI7WwdlcB_EG"/>
-            <p class="text-base text-on-surface-variant mb-8" style="font-family: 'Work Sans', sans-serif;">Elevating creative boundaries since 2019. Join the movement.</p>
-            <div class="flex gap-4">
-                <a class="w-12 h-12 bg-primary flex items-center justify-center text-[#010D85] hover:scale-110 transition-transform" href="#" aria-label="Share"><span class="material-symbols-outlined">share</span></a>
-                <a class="w-12 h-12 bg-tertiary flex items-center justify-center text-on-tertiary hover:scale-110 transition-transform" href="#" aria-label="Instagram"><span class="material-symbols-outlined">photo_camera</span></a>
-                <a class="w-12 h-12 bg-secondary flex items-center justify-center text-on-secondary hover:scale-110 transition-transform" href="#" aria-label="YouTube"><span class="material-symbols-outlined">video_library</span></a>
-            </div>
+          <img
+            alt="FAF Logo"
+            class="h-20 w-auto mb-6"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvEq3Ad-XilW8qJc-vqrMGxP0hx5TDYMSVeSsop461i8mmIVk6BDdqGZYH90JG8x0Pbt_BlJ7CheH1Lv5wMB6nQgFnlu4bTEl53g_XRZKf6W21ttdK8SI1Q8dUnVDr9CvucfeVddOSoHPa72HxUOMiIUif1WGcEVbL30g-eESqYgN18WTcfFWK2jsVXR-ZQu0-9ntOape_9jzxSYea6qSTzFAOvreMd9mIfCCKcVQW9WQVe6zvSHWj4CwmWpTQgZx5kI7WwdlcB_EG"
+          />
+          <p
+            class="text-base text-on-surface-variant mb-8"
+            style="font-family: &quot;Work Sans&quot;, sans-serif"
+          >
+            Elevating creative boundaries since 2019. Join the movement.
+          </p>
+          <div class="flex gap-4">
+            <a
+              class="w-12 h-12 bg-primary flex items-center justify-center text-[#010D85] hover:scale-110 transition-transform"
+              href="#"
+              aria-label="Share"
+              ><span class="material-symbols-outlined">share</span></a
+            >
+            <a
+              class="w-12 h-12 bg-tertiary flex items-center justify-center text-on-tertiary hover:scale-110 transition-transform"
+              href="#"
+              aria-label="Instagram"
+              ><span class="material-symbols-outlined">photo_camera</span></a
+            >
+            <a
+              class="w-12 h-12 bg-secondary flex items-center justify-center text-on-secondary hover:scale-110 transition-transform"
+              href="#"
+              aria-label="YouTube"
+              ><span class="material-symbols-outlined">video_library</span></a
+            >
+          </div>
         </div>
         <div class="lg:col-start-3">
-            <h4 class="text-xs font-bold text-tertiary mb-6 uppercase tracking-widest" style="font-family: 'Space Grotesk', sans-serif;">Quick Links</h4>
-            <ul class="space-y-4">
-                <li><a class="text-base text-on-surface-variant hover:text-on-tertiary-container transition-all" style="font-family: 'Work Sans', sans-serif;" href="#">Privacy Policy</a></li>
-                <li><a class="text-base text-on-surface-variant hover:text-on-tertiary-container transition-all" style="font-family: 'Work Sans', sans-serif;" href="#">Terms of Service</a></li>
-            </ul>
+          <h4
+            class="text-xs font-bold text-tertiary mb-6 uppercase tracking-widest"
+            style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+          >
+            Quick Links
+          </h4>
+          <ul class="space-y-4">
+            <li>
+              <a
+                class="text-base text-on-surface-variant hover:text-on-tertiary-container transition-all"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+                href="#"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                class="text-base text-on-surface-variant hover:text-on-tertiary-container transition-all"
+                style="font-family: &quot;Work Sans&quot;, sans-serif"
+                href="#"
+                >Terms of Service</a
+              >
+            </li>
+          </ul>
         </div>
         <div>
-            <h4 class="text-xs font-bold text-tertiary mb-6 uppercase tracking-widest" style="font-family: 'Space Grotesk', sans-serif;">Contact</h4>
-            <ul class="space-y-4 text-base text-on-surface-variant" style="font-family: 'Work Sans', sans-serif;">
-                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">mail</span> hello@funartfest.com</li>
-                <li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">location_on</span> Creative Hub, Jakarta</li>
-                <li class="flex items-center gap-2 font-bold text-primary">#FAF21 #WavesOfCreativity</li>
-            </ul>
+          <h4
+            class="text-xs font-bold text-tertiary mb-6 uppercase tracking-widest"
+            style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+          >
+            Contact
+          </h4>
+          <ul
+            class="space-y-4 text-base text-on-surface-variant"
+            style="font-family: &quot;Work Sans&quot;, sans-serif"
+          >
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">mail</span>
+              hello@funartfest.com
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-sm">location_on</span>
+              Creative Hub, Jakarta
+            </li>
+            <li class="flex items-center gap-2 font-bold text-primary">
+              #FAF21 #WavesOfCreativity
+            </li>
+          </ul>
         </div>
-    </div>
-    <div class="max-w-[1440px] mx-auto px-5 md:px-16 mt-24 pt-8 border-t border-primary/5 text-center">
-        <p class="text-base text-on-surface-variant opacity-50" style="font-family: 'Work Sans', sans-serif;">© 2024 Fun Art Festival. All Rights Reserved. Created for the Wild at Heart.</p>
-    </div>
-</footer>
+      </div>
+      <div
+        class="max-w-[1440px] mx-auto px-5 md:px-16 mt-24 pt-8 border-t border-primary/5 text-center"
+      >
+        <p
+          class="text-base text-on-surface-variant opacity-50"
+          style="font-family: &quot;Work Sans&quot;, sans-serif"
+        >
+          © 2024 Fun Art Festival. All Rights Reserved. Created for the Wild at
+          Heart.
+        </p>
+      </div>
+    </footer>
 
-<script>
-// --- 1. Particles System ---
-const particleContainer = document.getElementById('particles-container');
-for (let i = 0; i < 40; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    const size = Math.random() * 15 + 5;
-    particle.style.cssText = `
+    <script>
+      // --- 1. Particles System ---
+      const particleContainer = document.getElementById("particles-container");
+      for (let i = 0; i < 40; i++) {
+        const particle = document.createElement("div");
+        particle.className = "particle";
+        const size = Math.random() * 15 + 5;
+        particle.style.cssText = `
         width:${size}px; height:${size}px;
-        left:${Math.random()*100}%;
-        top:${Math.random()*100}%;
-        opacity:${Math.random()*0.4};
-        animation: floating ${Math.random()*5+5}s ease-in-out infinite;
-        animation-delay: ${Math.random()*5}s;
+        left:${Math.random() * 100}%;
+        top:${Math.random() * 100}%;
+        opacity:${Math.random() * 0.4};
+        animation: floating ${Math.random() * 5 + 5}s ease-in-out infinite;
+        animation-delay: ${Math.random() * 5}s;
     `;
-    particleContainer.appendChild(particle);
-}
+        particleContainer.appendChild(particle);
+      }
 
-// --- 2. FIX: Navbar sticky via class + active section highlighting ---
-window.addEventListener('scroll', () => {
-    const nav = document.getElementById('navbar');
-    if (window.scrollY > 80) {
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
+      // --- 2. FIX: Navbar sticky via class + active section highlighting ---
+      window.addEventListener(
+        "scroll",
+        () => {
+          const nav = document.getElementById("navbar");
+          if (window.scrollY > 80) {
+            nav.classList.add("scrolled");
+          } else {
+            nav.classList.remove("scrolled");
+          }
 
-    // Highlight active section
-    const sections = document.querySelectorAll('section[id]');
-    let activeSectionId = 'home';
+          // Highlight active section
+          const sections = document.querySelectorAll("section[id]");
+          let activeSectionId = "home";
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        const sectionBottom = sectionTop + section.offsetHeight;
-        if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-            activeSectionId = section.getAttribute('id');
-        }
-    });
-
-    // Update navbar links
-    const navLinks = document.querySelectorAll('nav a, #mobile-menu a');
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('#')) {
-            const targetId = href.substring(1);
-            if (targetId === activeSectionId) {
-                link.classList.add('text-tertiary');
-                link.classList.remove('opacity-80');
-                link.style.borderBottom = '2px solid #ffb597';
-                link.style.paddingBottom = '4px';
-            } else {
-                link.classList.remove('text-tertiary');
-                link.classList.add('opacity-80');
-                link.style.borderBottom = 'none';
-                link.style.paddingBottom = '0px';
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            if (
+              window.scrollY >= sectionTop &&
+              window.scrollY < sectionBottom
+            ) {
+              activeSectionId = section.getAttribute("id");
             }
-        }
-    });
-}, { passive: true });
+          });
 
-// --- 3. Parallax (hanya desktop, mobile skip untuk performa) ---
-const isMobile = window.innerWidth < 768;
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
+          // Update navbar links
+          const navLinks = document.querySelectorAll("nav a, #mobile-menu a");
+          navLinks.forEach((link) => {
+            const href = link.getAttribute("href");
+            if (href && href.startsWith("#")) {
+              const targetId = href.substring(1);
+              if (targetId === activeSectionId) {
+                link.classList.add("text-tertiary");
+                link.classList.remove("opacity-80");
+                link.style.borderBottom = "2px solid #ffb597";
+                link.style.paddingBottom = "4px";
+              } else {
+                link.classList.remove("text-tertiary");
+                link.classList.add("opacity-80");
+                link.style.borderBottom = "none";
+                link.style.paddingBottom = "0px";
+              }
+            }
+          });
+        },
+        { passive: true },
+      );
 
-    if (!isMobile) {
-        document.querySelectorAll('.parallax-text').forEach(el => {
-            const speed = parseFloat(el.getAttribute('data-speed')) || 0.5;
-            el.style.transform = `translateX(${scrolled * speed}px)`;
+      // --- 3. Parallax (hanya desktop, mobile skip untuk performa) ---
+      const isMobile = window.innerWidth < 768;
+      window.addEventListener(
+        "scroll",
+        () => {
+          const scrolled = window.pageYOffset;
+
+          if (!isMobile) {
+            document.querySelectorAll(".parallax-text").forEach((el) => {
+              const speed = parseFloat(el.getAttribute("data-speed")) || 0.5;
+              el.style.transform = `translateX(${scrolled * speed}px)`;
+            });
+            const wave = document.querySelector(".parallax-wave");
+            if (wave) {
+              const speed = parseFloat(wave.getAttribute("data-speed")) || 0.1;
+              wave.style.transform = `translateX(-${scrolled * speed}px)`;
+            }
+          }
+
+          // Timeline progress
+          const timeline = document.getElementById("scrollTimeline");
+          if (timeline) {
+            const section = timeline.closest("section");
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const scrollPercent =
+              (scrolled - sectionTop + window.innerHeight) /
+              (sectionHeight + window.innerHeight);
+            const draw = 2000 * Math.max(0, Math.min(1, scrollPercent));
+            timeline.style.strokeDashoffset = Math.max(0, 2000 - draw * 1.5);
+          }
+        },
+        { passive: true },
+      );
+
+      // --- 4. Carousel — infinite loop to the LEFT, pause on hover ---
+      const slides = document.querySelectorAll(".carousel-slide");
+      const carouselStage = document.querySelector(".carousel-stage");
+
+      let currentIdx = 1;
+      let autoPlay = null;
+      let isPaused = false;
+      const INTERVAL = 4000;
+
+      function updateCarousel(idx) {
+        currentIdx = ((idx % slides.length) + slides.length) % slides.length;
+        const prev = (currentIdx - 1 + slides.length) % slides.length;
+        const next = (currentIdx + 1) % slides.length;
+
+        slides.forEach((slide, i) => {
+          slide.classList.remove(
+            "center-slide",
+            "left-slide",
+            "right-slide",
+            "hidden-slide",
+          );
+          if (i === currentIdx) slide.classList.add("center-slide");
+          else if (i === prev) slide.classList.add("left-slide");
+          else if (i === next) slide.classList.add("right-slide");
+          else slide.classList.add("hidden-slide");
         });
-        const wave = document.querySelector('.parallax-wave');
-        if (wave) {
-            const speed = parseFloat(wave.getAttribute('data-speed')) || 0.1;
-            wave.style.transform = `translateX(-${scrolled * speed}px)`;
-        }
-    }
+      }
 
-    // Timeline progress
-    const timeline = document.getElementById('scrollTimeline');
-    if (timeline) {
-        const section = timeline.closest('section');
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const scrollPercent = (scrolled - sectionTop + window.innerHeight) / (sectionHeight + window.innerHeight);
-        const draw = 2000 * Math.max(0, Math.min(1, scrollPercent));
-        timeline.style.strokeDashoffset = Math.max(0, 2000 - draw * 1.5);
-    }
-}, { passive: true });
+      function startAuto() {
+        clearInterval(autoPlay);
+        autoPlay = setInterval(() => {
+          if (!isPaused) {
+            updateCarousel(currentIdx - 1);
+          }
+        }, INTERVAL);
+      }
 
-// --- 4. Carousel — infinite loop to the LEFT, pause on hover ---
-const slides = document.querySelectorAll('.carousel-slide');
-const carouselStage = document.querySelector('.carousel-stage');
+      // Nav buttons
+      document.getElementById("nextSlide").addEventListener("click", () => {
+        updateCarousel(currentIdx + 1);
+        startAuto();
+      });
+      document.getElementById("prevSlide").addEventListener("click", () => {
+        updateCarousel(currentIdx - 1);
+        startAuto();
+      });
 
-let currentIdx = 1;
-let autoPlay = null;
-let isPaused = false;
-const INTERVAL = 4000;
+      // Pause on hover
+      const carouselSection = carouselStage.closest("section");
+      carouselSection.addEventListener("mouseenter", () => {
+        isPaused = true;
+        clearInterval(autoPlay);
+      });
+      carouselSection.addEventListener("mouseleave", () => {
+        isPaused = false;
+        startAuto();
+      });
 
-function updateCarousel(idx) {
-    currentIdx = ((idx % slides.length) + slides.length) % slides.length;
-    const prev = (currentIdx - 1 + slides.length) % slides.length;
-    const next = (currentIdx + 1) % slides.length;
+      // Touch swipe
+      let touchX = 0;
+      carouselStage.addEventListener(
+        "touchstart",
+        (e) => {
+          touchX = e.touches[0].clientX;
+        },
+        { passive: true },
+      );
+      carouselStage.addEventListener(
+        "touchend",
+        (e) => {
+          const d = touchX - e.changedTouches[0].clientX;
+          if (Math.abs(d) > 50) {
+            updateCarousel(currentIdx + (d > 0 ? -1 : 1));
+            startAuto();
+          }
+        },
+        { passive: true },
+      );
 
-    slides.forEach((slide, i) => {
-        slide.classList.remove('center-slide', 'left-slide', 'right-slide', 'hidden-slide');
-        if (i === currentIdx) slide.classList.add('center-slide');
-        else if (i === prev) slide.classList.add('left-slide');
-        else if (i === next) slide.classList.add('right-slide');
-        else slide.classList.add('hidden-slide');
-    });
-}
+      updateCarousel(1);
+      startAuto();
 
-function startAuto() {
-    clearInterval(autoPlay);
-    autoPlay = setInterval(() => {
-        if (!isPaused) { updateCarousel(currentIdx - 1); }
-    }, INTERVAL);
-}
+      // --- 5. Gallery Carousel — auto-scroll infinite loop with pause on hover ---
+      const galleryContainer = document.querySelector(".gallery-container");
+      const galleryItems = document.querySelectorAll(".gallery-item");
 
-// Nav buttons
-document.getElementById('nextSlide').addEventListener('click', () => { updateCarousel(currentIdx + 1); startAuto(); });
-document.getElementById('prevSlide').addEventListener('click', () => { updateCarousel(currentIdx - 1); startAuto(); });
+      if (galleryContainer && galleryItems.length > 0) {
+        let galleryAutoScroll = null;
+        let galleryPaused = false;
+        const GALLERY_SCROLL_SPEED = 100; // pixels per interval
+        const GALLERY_INTERVAL = 20; // milliseconds (smooth scrolling)
 
-// Pause on hover
-const carouselSection = carouselStage.closest('section');
-carouselSection.addEventListener('mouseenter', () => {
-    isPaused = true;
-    clearInterval(autoPlay);
-});
-carouselSection.addEventListener('mouseleave', () => {
-    isPaused = false;
-    startAuto();
-});
+        // Duplicate items for infinite scroll
+        galleryItems.forEach((item) => {
+          const clone = item.cloneNode(true);
+          galleryContainer.appendChild(clone);
+        });
 
-// Touch swipe
-let touchX = 0;
-carouselStage.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
-carouselStage.addEventListener('touchend', e => {
-    const d = touchX - e.changedTouches[0].clientX;
-    if (Math.abs(d) > 50) { updateCarousel(currentIdx + (d > 0 ? -1 : 1)); startAuto(); }
-}, { passive: true });
-
-updateCarousel(1);
-startAuto();
-
-// --- 5. Gallery Carousel — auto-scroll infinite loop with pause on hover ---
-const galleryContainer = document.querySelector('.gallery-container');
-const galleryItems = document.querySelectorAll('.gallery-item');
-
-if (galleryContainer && galleryItems.length > 0) {
-    let galleryAutoScroll = null;
-    let galleryPaused = false;
-    const GALLERY_SCROLL_SPEED = 100; // pixels per interval
-    const GALLERY_INTERVAL = 20; // milliseconds (smooth scrolling)
-
-    // Duplicate items for infinite scroll
-    galleryItems.forEach(item => {
-        const clone = item.cloneNode(true);
-        galleryContainer.appendChild(clone);
-    });
-
-    function autoScrollGallery() {
-        if (!galleryPaused && galleryContainer) {
+        function autoScrollGallery() {
+          if (!galleryPaused && galleryContainer) {
             galleryContainer.scrollLeft += GALLERY_SCROLL_SPEED;
-            
+
             // Reset to start when reaching end (seamless loop)
             const scrollWidth = galleryContainer.scrollWidth;
             const containerWidth = galleryContainer.offsetWidth;
             if (galleryContainer.scrollLeft >= scrollWidth / 2) {
-                galleryContainer.scrollLeft = 0;
+              galleryContainer.scrollLeft = 0;
             }
+          }
         }
-    }
 
-    function startGalleryAuto() {
-        clearInterval(galleryAutoScroll);
-        galleryAutoScroll = setInterval(autoScrollGallery, GALLERY_INTERVAL);
-    }
+        function startGalleryAuto() {
+          clearInterval(galleryAutoScroll);
+          galleryAutoScroll = setInterval(autoScrollGallery, GALLERY_INTERVAL);
+        }
 
-    // Pause on hover
-    galleryContainer.addEventListener('mouseenter', () => {
-        galleryPaused = true;
-    });
-
-    galleryContainer.addEventListener('mouseleave', () => {
-        galleryPaused = false;
-    });
-
-    // Start auto-scroll
-    startGalleryAuto();
-}
-
-// --- 6. FIX: FAQ accordion dengan JS proper ---
-document.querySelectorAll('.faq-item').forEach(item => {
-    item.addEventListener('click', () => {
-        const answer = item.querySelector('.faq-answer');
-        const isOpen = item.classList.contains('open');
-
-        // Tutup semua dulu
-        document.querySelectorAll('.faq-item').forEach(other => {
-            other.classList.remove('open');
-            other.querySelector('.faq-answer').classList.remove('open');
-            other.querySelector('h3').style.color = '';
+        // Pause on hover
+        galleryContainer.addEventListener("mouseenter", () => {
+          galleryPaused = true;
         });
 
-        // Buka yang diklik kalau belum open
-        if (!isOpen) {
-            item.classList.add('open');
-            answer.classList.add('open');
-            item.querySelector('h3').style.color = '#ffb597';
-        }
-    });
-});
+        galleryContainer.addEventListener("mouseleave", () => {
+          galleryPaused = false;
+        });
 
-// --- 7. FIX: Mobile nav hamburger ---
-const hamburgerBtn = document.getElementById('hamburger-btn');
-const mobileMenu = document.getElementById('mobile-menu');
+        // Start auto-scroll
+        startGalleryAuto();
+      }
 
-hamburgerBtn.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('open');
-    hamburgerBtn.classList.toggle('open', isOpen);
-    // Tutup menu saat link diklik
-});
+      // --- 6. FIX: FAQ accordion dengan JS proper ---
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          const answer = item.querySelector(".faq-answer");
+          const isOpen = item.classList.contains("open");
 
-mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburgerBtn.classList.remove('open');
-    });
-});
+          // Tutup semua dulu
+          document.querySelectorAll(".faq-item").forEach((other) => {
+            other.classList.remove("open");
+            other.querySelector(".faq-answer").classList.remove("open");
+            other.querySelector("h3").style.color = "";
+          });
 
-// --- 8. Scroll Reveal ---
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, { threshold: 0.1 });
+          // Buka yang diklik kalau belum open
+          if (!isOpen) {
+            item.classList.add("open");
+            answer.classList.add("open");
+            item.querySelector("h3").style.color = "#ffb597";
+          }
+        });
+      });
 
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+      // --- 7. FIX: Mobile nav hamburger ---
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-// --- 9. Smooth Scroll ---
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-            window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' });
-        }
-    });
-});
-</script>
-</body>
+      hamburgerBtn.addEventListener("click", () => {
+        const isOpen = mobileMenu.classList.toggle("open");
+        hamburgerBtn.classList.toggle("open", isOpen);
+        // Tutup menu saat link diklik
+      });
+
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.remove("open");
+          hamburgerBtn.classList.remove("open");
+        });
+      });
+
+      // --- 8. Scroll Reveal ---
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => revealObserver.observe(el));
+
+      // --- 9. Smooth Scroll ---
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
+          if (href === "#") return;
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            window.scrollTo({ top: target.offsetTop - 80, behavior: "smooth" });
+          }
+        });
+      });
+    </script>
+  </body>
 </html>
