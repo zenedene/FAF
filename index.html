@@ -1413,12 +1413,15 @@
             HIGHLIGHTS FROM FAF 20
           </h2>
         </div>
-        <button
+        <a
           class="btn-block px-8 py-4 text-xs font-bold tracking-widest uppercase flex-shrink-0"
           style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+          href="https://www.youtube.com/watch?v=KIFWakPBmIk&t"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           WATCH FAF 20 RECAP
-        </button>
+        </a>
       </div>
       <div
         class="flex overflow-x-auto pb-12 gap-6 px-5 md:px-16 no-scrollbar snap-x gallery-container"
@@ -1520,6 +1523,56 @@
               style="font-family: &quot;Work Sans&quot;, sans-serif"
             >
               Fusing sound and visual storytelling.
+            </p>
+          </div>
+        </div>
+        <div
+          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
+        >
+          <img
+            alt="Traditional Dance"
+            class="w-full aspect-[4/5] object-cover"
+            src="tari.jpg"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
+          >
+            <h3
+              class="text-2xl font-bold text-white"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >
+              Traditional Dance
+            </h3>
+            <p
+              class="text-base text-primary"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              Celebrating cultural heritage through movement.
+            </p>
+          </div>
+        </div>
+        <div
+          class="gallery-item snap-center flex-shrink-0 w-72 md:w-[420px] relative group overflow-hidden cursor-pointer"
+        >
+          <img
+            alt="Audience Vibes"
+            class="w-full aspect-[4/5] object-cover"
+            src="crowd.jpg"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#010D85] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0"
+          >
+            <h3
+              class="text-2xl font-bold text-white"
+              style="font-family: &quot;Space Grotesk&quot;, sans-serif"
+            >
+              Audience Vibes
+            </h3>
+            <p
+              class="text-base text-primary"
+              style="font-family: &quot;Work Sans&quot;, sans-serif"
+            >
+              The heartbeat of the festival experience.
             </p>
           </div>
         </div>
@@ -1943,11 +1996,7 @@
         const GALLERY_SCROLL_SPEED = 100; // pixels per interval
         const GALLERY_INTERVAL = 20; // milliseconds (smooth scrolling)
 
-        // Duplicate items for infinite scroll
-        galleryItems.forEach((item) => {
-          const clone = item.cloneNode(true);
-          galleryContainer.appendChild(clone);
-        });
+        // Keep original 6 gallery items only; no duplicate clone.
 
         function autoScrollGallery() {
           if (!galleryPaused && galleryContainer) {
@@ -1956,7 +2005,7 @@
             // Reset to start when reaching end (seamless loop)
             const scrollWidth = galleryContainer.scrollWidth;
             const containerWidth = galleryContainer.offsetWidth;
-            if (galleryContainer.scrollLeft >= scrollWidth / 2) {
+            if (galleryContainer.scrollLeft >= scrollWidth - containerWidth) {
               galleryContainer.scrollLeft = 0;
             }
           }
